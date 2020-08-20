@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/welcome-anim.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Js Documentation</title>
+    <style>
+        input:focus {
+            animation: input-anim 1s 1;
+        }
+        
+        @keyframes input-anim {
+            from {
+                border: 0.5rem double black;
+            }
+            to {
+                border: 0.1rem double black;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        function search() {
+            if (document.getElementById('search').value === '') {
+                alert('Please enter valid text in search bar.')
+            } else {
+                window.location.href = `https://developer.mozilla.org/en-US/search?q=${document.getElementById('search').value}`
+            }
+        }
+    </script>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;" onclick="settingsClick()">
+                edit
+            </i>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./content/variables.html">Storing Data</a></li>
+                    <li><a href="./content/functions.html">Funtions</a></li>
+                    <li><a href="./content/math.html">Math</a></li>
+                    <li><a href="./content/ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./content/dom.html">The DOM</a></li>
+                    <li><a href="./content/write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./content/tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="search.html">Documentation</a></b></li>
+            <li><b><a href="./editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <h1 style="font-family: Montserrat; text-align: center;"> Search on Mozilla's Database:</h1>
+    <br>
+    <br>
+    <center>
+        <table>
+            <tr>
+                <td><input type="text" id="search" style="text-align: center; width: 17rem; height:2rem; font-size: 1.5em; font-family: 'Wallpoet'; border:none; " placeholder="Search ">
+                </td>
+                <td onlick="search()" style="border: 0.1rem double black;"><i class="fas fa-search " style="text-align: center; background-color: white; height:1rem; padding: 0.5rem;" onclick="search()"></i></td>
+            </tr>
+        </table>
+    </center>
+</body>
+<script src="main.js "></script>
+
+</html>

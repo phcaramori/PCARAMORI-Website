@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Variables</title>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <a href="../settings.html">
+            <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;"> edit</i>
+        </a>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./variables.html">Storing Data</a></li>
+                    <li><a href="./functions.html">Funtions</a></li>
+                    <li><a href="./math.html">Math</a></li>
+                    <li><a href="./ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./dom.html">The DOM</a></li>
+                    <li><a href="./write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="../search.html">Documentation</a></b></li>
+            <li><b><a href="../editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>The DOM</h1>
+        <h3>What is the DOM?</h3>
+        <p>The DOM is the Document Object Model. It is used to allow JavaScript to navigate a HTML document, and find what you want to change. Elements are commonly found using the getElementById function, where JavaScript finds an element by its ID. </p>
+        <br>
+        <h3>How to use getElementById</h3>
+        <p>You can store HTML elements into variables, and call those variables when you want to. You do not have to store the elements in variables, but it can make your code much shorter and easier to understand.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">let</o> head
+                <o class="pink">=</o>
+                <o class="blue">document.getElementById('header')</o><br>
+                <o class="green">head.innerHTML</o> =
+                <o class="blue">'Some text'</o>
+            </div>
+        </div>
+        <p>Important! Notice that document at the beginning? It is telling the code to look inside the html document. Without it, your code won't work.</p>
+        <br>
+        <h3>Navigating the DOM</h3>
+        <p>To navigate the dom, you start at the beginning, and work your way down. You separate each statement with dots, sort of like slashes and files.</p>
+        <br>
+        <p>Here is an image, showing the structure of an HTML document from the eyes of JavaScript.</p>
+        <img src="../images/Js-Dom-Tree.png" alt="" width="95%" style="margin-top: 2rem;">
+    </div>
+</body>
+<script src="../main.js "></script>
+
+</html>

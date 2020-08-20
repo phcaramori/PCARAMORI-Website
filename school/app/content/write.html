@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Math Operators</title>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <a href="../settings.html">
+            <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;"> edit</i>
+        </a>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./variables.html">Storing Data</a></li>
+                    <li><a href="./functions.html">Funtions</a></li>
+                    <li><a href="./math.html">Math</a></li>
+                    <li><a href="./ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./dom.html">The DOM</a></li>
+                    <li><a href="./write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="../search.html">Documentation</a></b></li>
+            <li><b><a href="../editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Changing content with JavaScript</h1>
+        <h3>InnerHTML</h3>
+        <p>A simple way to change text in JavaScript is by using the innerHTML method. It allows you to change to content within an element. It is assigned to a string in JavaScript.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">documnet.getElementById('edit-me').innerHTML</o> =
+                <o class="blue">'Edited!'</o>
+                <o style="color:lightgray">//It is important to make sure that the HTML is upper case, or else it will throw an error.</o>
+            </div>
+        </div>
+        <h3>Changing an objects style</h3>
+        <p>This is extremely frequent with web-apps, as it can also be used to create pop-ups. Changing style allows you to change almost every possible css property. In css, properties frequtently have hyphens in them. JavaScript does not allow for hyphens,
+            so we use camelCasing. camelCasing is where the first word is not capitalized, but every other word is. thisIsCamelCasing. A property like font-size becomes fontSize when in JavaScript. Whenver you want to change style, you add '.style' at
+            the end of the element, and than add what you want to change.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">const</o> changeMe
+                <o class="pink">=</o>
+                <o class="blue">document.getElementById('a')</o><br>
+                <o class="blue">changeMe.style.color</o> =
+                <o class="pink">red</o><br>
+                <o style="color: lightgray;">//Changes the element with an id of 'a' to be red.</o><br>
+                <o class="blue">changeMe.style.fontSize</o> =
+                <o class="pink">20px</o><br>
+                <o style="color: lightgray;">//Makes changeMe's text size equal to 20px.</o>
+            </div>
+        </div>
+        <p>You can find all changable styles <a href="https://www.w3schools.com/cssref/">here.</a></p>
+        <p>There are many ways to change content, but these are the most simple. Tip! Want to make a pop-up? Look at the simple code behind <a href="http://pcaramori.com.br/experiments/pop-up/index.html">this web page</a></p>
+    </div>
+</body>
+<script src="../main.js "></script>
+
+</html>

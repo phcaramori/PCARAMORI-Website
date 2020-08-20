@@ -1,0 +1,164 @@
+        /*
+Color Pallete:
+(0, 113, 128) - Cyan color. Links and navigation
+(205, 205, 205) - Light gray color. Used for top bar and slight accents
+(255, 94, 0) - Orange color. Used for secondary accents.
+*/
+        
+         :root {
+            --main-bg-color: white;
+            /*normally white*/
+            --main-accent-color: rgb(255, 94, 0);
+            /*normally orange*/
+            --secondary-accent-color: rgb(0, 113, 128);
+            /*normally cyan*/
+            --main-nav-color: rgb(205, 205, 205);
+            /*normally gray*/
+            --main-text-color: black;
+            /*normally black*/
+        }
+        
+        html {
+            font-size: 100%;
+            color: var(--main-text-color);
+        }
+        
+        h1 {
+            color: var(--main-text-color);
+        }
+        
+        h2 {
+            color: var(--main-text-color);
+        }
+        
+        p {
+            color: var(--main-text-color);
+        }
+        
+        button:focus {
+            border: none;
+        }
+        
+        body {
+            background-color: var(--main-bg-color);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            width: 100%;
+            position: sticky;
+            padding: 0.1rem;
+            font-size: 2rem;
+            top: 0;
+            background-color: var(--main-nav-color);
+            text-shadow: 0.2rem 0.2rem var(--secondary-accent-color);
+        }
+        
+        .content {
+            font-family: 'Roboto', "sans-serif";
+            margin: 0.3rem;
+        }
+        
+        #nav-menu {
+            background: var(--secondary-accent-color);
+            width: 11rem;
+            height: auto;
+            position: absolute;
+            color: var(--main-accent-color);
+            font-family: 'Montserrat';
+            font-size: 1.1rem;
+            padding: 0.25rem;
+            display: none;
+            z-index: 1;
+        }
+        
+        #nav-menu ul {
+            margin-left: 0.5rem;
+            margin-top: 0.7rem;
+            list-style: none;
+        }
+        
+        #nav-menu li {
+            margin-top: 1rem;
+        }
+        
+        #nav-menu b {
+            font-size: 1.3rem;
+            font-weight: bolder;
+        }
+        
+        #dropbtn {
+            color: var(--main-accent-color);
+            cursor: pointer;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--main-accent-color);
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .show {
+            display: block !important;
+            animation: menu-anim 0.7s 1;
+        }
+        
+        i {
+            color: var(--main-accent-color);
+        }
+        
+        .btn:focus {
+            border: 2px double var(--main-accent-color);
+        }
+        
+        .code-box {
+            background-color: gray;
+            font-family: monospace;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 0.2rem;
+        }
+        
+        .code {
+            margin: 0.25rem;
+        }
+        
+        .pink {
+            color: pink;
+        }
+        
+        .blue {
+            color: blue;
+        }
+        
+        .green {
+            color: lime;
+        }
+        
+        @keyframes menu-anim {
+            0% {
+                font-size: 0.1px;
+                background: rgb(0, 65, 128);
+                height: 5%;
+                color: transparent;
+            }
+            70% {
+                font-size: 5px;
+                background: rgb(0, 65, 128);
+                border-radius: 100%;
+                opacity: 0.8;
+            }
+            100% {
+                color: transparent;
+                height: 27.5rem;
+                opacity: 1;
+                width: 11rem;
+            }
+        }

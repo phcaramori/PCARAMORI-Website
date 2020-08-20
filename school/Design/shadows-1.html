@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Modak|Roboto|Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!--contains everything-->
+        <div class="main">
+            <!--Contains main gray box-->
+            <h1 id="shadow" style="line-height: 40px;">Shadows</h1>
+            <h3 id="bshadow">Box-Shadow:</h3>
+            <ul>
+                <li>Horizontal and Vertical offset</li>
+                <li>Optional: Blur</li>
+                <li>Optional: Color</li>
+                <li>Optional: Inset</li>
+            </ul>
+            <div class="box1">Yellow box with red shadow</div>
+            <div class="box2">Red box with black, blurry shadow</div>
+            <div class="box3">Transparent box with inwards blurry shadow</div>
+            <div class="box4">Orange box with red shadow and purple glow</div>
+            <textarea cols="50" rows="10">
+.box{
+    background-color: rgb(255,255,0);
+    box-shadow: horizontal | vertical | blur | color;
+}
+.box2{
+    background-color: rgb(255,255,0);
+}
+.box3{
+    background-color: rgba(0,0,0,0.4);
+}
+.box4{
+    background-color: rgb(255,68,0);
+}
+            </textarea>
+        </div>
+
+        <div class="buttons">
+            <!--Contains buttons-->
+            <div class="next">
+                <a href="shadows-2.html"><button>Next</button></a>
+            </div>
+            <div class="back">
+                <a href="fonts-1.html"><button>Back</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

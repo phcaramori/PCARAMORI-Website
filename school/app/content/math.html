@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Math Operators</title>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <a href="../settings.html">
+            <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;"> edit</i>
+        </a>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./variables.html">Storing Data</a></li>
+                    <li><a href="./functions.html">Funtions</a></li>
+                    <li><a href="./math.html">Math</a></li>
+                    <li><a href="./ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./dom.html">The DOM</a></li>
+                    <li><a href="./write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="../search.html">Documentation</a></b></li>
+            <li><b><a href="../editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Using Math in Javascript</h1>
+        <h3>Simple operations with integers</h3>
+        <p>JavaScript has math operators built in. This means that you don't have to import a library just to add some numbers. You can do all the operations as expected.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">let </o>a
+                <o class="pink">=</o>
+                <o class="blue">7</o>
+                <o class="pink">+</o>
+                <o class="blue">5</o><br>
+                <o class="pink">let </o>b
+                <o class="pink">=</o>
+                <o class="blue">15</o><br>
+                <o class="pink">let </o>c
+                <o class="pink">=</o>
+                <o class="blue">b+a</o><br>
+                <o class="green">console</o>.log
+                <o class="blue">(c)</o>
+                <o style="color:lightgray;">//Expected output: 27</o><br>
+                <o class="green">console</o>.log
+                <o class="blue">(b*a)</o>
+                <o style="color:lightgray;">//Expected output: 180</o><br>
+            </div>
+        </div>
+        <p>You can use all basic operations, and can even use addition to join strings together. This isn't the best way to join strings together, but it is commonly used as it is very simple.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">const</o> userName
+                <o class="pink">=</o>
+                <o class="blue">'Jeff'</o><br>
+                <o class="pink">let</o> greet
+                <o class="pink">=</o>
+                <o class="blue">'Welcome '</o>
+                <o class="pink"> + </o>
+                <o class="green">userName</o>
+                <o class="pink"> + </o>
+                <o class="blue">'!'</o>
+                <o class="green">console</o>.log
+                <o class="blue">(greet)</o><br>
+                <o style="color:lightgray">//Expected output: Welcome Jeff!</o>
+            </div>
+        </div>
+        <h2>Using the Math object</h2>
+        <p>JavaScript has a built-in Math object, which you can use to do more complex mathemactical operators. This object is very commonly used, and can do think like round numbers and pick random numbers from a certain range. In this article, we will
+            only go in depth with picking random numbers, rounding numbers and exponents.</p>
+        <h3>Picking random numbers</h3>
+        <p>It is very useful, especially when something has to be chosen in ranodom, not only numbers. the random function picks a number from 0-1, so if you have more than 2 options you have to multiply it by the number of options.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">const</o> randomNum
+                <o class="pink">=</o>
+                <o class="blue">Math.random()</o>
+                <br>
+                <o style="color:lightgray">// Random picks a number from 1 to 0. Ex: 0.5417369</o><br>
+                <o class="pink">const</o> randomNum2
+                <o class="pink">=</o>
+                <o class="blue">Math.random()</o>
+                <o class="pink">*</o>
+                <o class="blue">10</o><br>
+                <o style="color:lightgray">//Picks a num from 0 to 10</o><br>
+            </div>
+        </div>
+        <p>This is still not ready, as the number could still have a decimal. How do we round it? Well, there are many different ways. You can do the normal rounding, where a integer goes to its closest value(.round), you can round down(.floor) or round
+            up(.celi)
+        </p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">let</o> rounded
+                <o class="pink">=</o>
+                <o class="blue">Math.round(4.4)</o><br>
+                <o style="color:lightgray">//Returns 4</o><br>
+                <o class="pink">let</o> rounded2
+                <o class="pink">=</o>
+                <o class="blue">Math.round(4.7)</o><br>
+                <o style="color:lightgray">//Returns 5</o><br>
+                <o class="pink">let</o> rounded3
+                <o class="pink">=</o>
+                <o class="blue">Math.floor(14.7)</o><br>
+                <o style="color:lightgray">//Returns 14</o><br>
+                <o class="pink">let</o> rounded4
+                <o class="pink">=</o>
+                <o class="blue">Math.celi(2.1)</o><br>
+                <o style="color:lightgray">//Returns 3</o><br><br>
+                <o class="pink">const</o> random
+                <o class="pink">=</o>
+                <o class="blue">Math.round(Math.random()*9)</o><br>
+                <o style="color:lightgray">//Picks an integer from 0-9, and then rounds it.</o><br>
+                <o style="color:lightgray">//Possible numbers: 0,1,2,3,4,5,6,7,8,9.</o>
+            </div>
+        </div>
+        <h3>Other math types:</h3>
+        <p>You can use many functions in JavaScript. Some useful ones include: sqrt(number), pow(num,exponent), and math.pi()</p><br>
+        <a href="https://www.w3schools.com/js/js_math.asp">Read more about those methods here.</a>
+    </div>
+</body>
+<script src="../main.js "></script>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Functions</title>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <a href="../settings.html">
+            <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;"> edit</i>
+        </a>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./variables.html">Storing Data</a></li>
+                    <li><a href="./functions.html">Funtions</a></li>
+                    <li><a href="./math.html">Math</a></li>
+                    <li><a href="./ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./dom.html">The DOM</a></li>
+                    <li><a href="./write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="../search.html">Documentation</a></b></li>
+            <li><b><a href="../editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Functions</h1>
+        <p>Functions can get very complex in javascript, but this is just the beggining.</p>
+        <h3>How to make simple funcitons</h3>
+        <p>Functions are first declared with the function keyword, and a name is given to it. Parameters can also be added, to allow data input in functions.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">function</o>
+                <o class="green">myFunction</o>(){<br>
+                <o class="green">console.</o>log('hello world')<br>}<br>
+                <o class="blue">myFunction()</o>
+                <o style="color:lightgray">//Will log Hello World to console whenever called.</o>
+            </div>
+        </div>
+        <h3>Using parameters in functions</h3>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">function</o>
+                <o class="green">myFunction</o>(a) { <br>
+                <o class="pink">let</o> addOne
+                <o class="pink">=</o>
+                <o class="blue">a + 1</o><br>
+                <o class="green">console.</o>log(addOne)<br>}
+                <o style="color:lightgray;">//Adds one to the number put in, and than logs that number to the console.</o><br>
+                <o class="blue">myFunction(10)</o>
+                <o style="color:lightgray;">//Returns 11</o><br> //<br>
+                <o class="pink">function</o>
+                <o class="green">adder</o>(a,b) { <br>
+                <o class="pink">let</o> final
+                <o class="pink">=</o>
+                <o class="blue">a + b</o><br>
+                <o class="green">console.</o>log(final)<br>}
+                <o style="color:lightgray;">//Adds two numbers, and than logs that number to the console.</o><br>
+                <o class="blue">adder(1,7)</o>
+                <o style="color:lightgray;">//Returns 8</o>
+            </div>
+        </div>
+        <h3>Getting more advanced with functions</h3>
+        <p>You can also save a function's value to a variable. You do this using the return keyword.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">let</o> myFunctionValue
+                <o class="pink">=</o>
+                <o class="green">function</o>() { <br>
+                <o class="pink">let</o> a
+                <o class="pink">=</o>
+                <o class="blue">1</o><br>
+                <o class="green">return</o> a<br>}
+                <o style="color:lightgray">//The value of the variable myFunctionValue is 1.</o>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../main.js "></script>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Variables</title>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <a href="../settings.html">
+            <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;"> edit</i>
+        </a>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./variables.html">Storing Data</a></li>
+                    <li><a href="./functions.html">Funtions</a></li>
+                    <li><a href="./math.html">Math</a></li>
+                    <li><a href="./ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./dom.html">The DOM</a></li>
+                    <li><a href="./write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="../search.html">Documentation</a></b></li>
+            <li><b><a href="../editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>JavaScript & Variables</h1>
+        <p>Variables are the basis of any programing language, and are the backbone of any web-app ever. JavaScript has lots of different types of variables, each with their own advantages.</p>
+        <br>
+        <br>
+        <h2>The Different Data Types</h2>
+        <p>You can store different types of things in variables. One of the most used is a string, used to store text. This could be used to store a user's name. The string has to be surrounded by quotes. You can also store numbers, and booleans (True/False).
+            There are also two datatypes that signify a variable is empty, these are null and undefined. These types are norally only used as outputs of functions, or when a user does not fill out a certain field.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">var</o> num
+                <o class="pink">=</o>
+                <o class="blue">14</o>
+                <br>
+                <o class="pink">var</o> string
+                <o class="pink">=</o>
+                <o class="blue">'This is a string.'</o>
+                <br>
+                <o class="pink">var</o> boolean
+                <o class="pink">=</o>
+                <o class="blue">false</o>
+                <br>
+                <o class="pink">var</o> name
+                <o class="pink">=</o>
+                <o class="blue">undefined</o>
+            </div>
+        </div>
+        <h2>Declaring basic variables</h2>
+        <p>In modern JavaScript(ECMAscript 6), there are 3 ways to declare basic variables. These declarations use the key words: Let, Const and Var.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class="pink">let</o> var1
+                <o class="pink">=</o>
+                <o class="blue">'Some text.'</o>
+                <br>
+                <o class="pink">const</o> var2
+                <o class="pink">=</o>
+                <o class="blue">735.13</o>
+                <br>
+                <o class="pink">var</o> var3
+                <o class="pink">=</o>
+                <o class="blue">true</o>
+            </div>
+        </div>
+        <h3>Whats the difference between them?</h3>
+        <p>The keyword <b>let</b> creates a variable that can be changed throughout the script, while a <b>const</b> variable can't, as it is a constant. If you do attempt to reassign a constant, an error will show up in the console, and your program will
+            stop. The keyword <b>var</b>, is almost the same thing as <b>let</b>, but variables defined with var will always be in the global scope.<a href="https://www.w3schools.com/js/js_scope.asp">(see here)</a></p>
+        <br>
+        <h2>Arrays</h2>
+        <p>Arrays are huge in JavaScript, and are what make the language so powerful. They are very complex, and have many different functions that can be used on them <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">(see here)</a>.
+            This article will only scratch the surface of what arrays can do.</p>
+        <br>
+        <h3>Creating Arrays</h3>
+        <p>Arrays are created by declaring normal variables, but they can have multiple elements in them.</p>
+        <div class="code-box">
+            <div class="code">
+                <o class='pink'>let</o> myArray
+                <o class="pink">=</o> [
+                <o class="blue">'element1','element2','element3'</o>]
+                <br>
+                <o style="color:lightgray;">//This array contains 3 string elements.</o>
+            </div>
+        </div>
+        <p>Arrays can have all type of datatypes. This includes: Booleans, Strings, and Integers.</p>
+    </div>
+</body>
+<script src="../main.js "></script>
+
+</html>

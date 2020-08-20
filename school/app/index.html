@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/welcome-anim.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body id='body' style="background-color: black " onload="loadTheme()" onload="welcomeLoad">
+    <div id='fakeBody1' onclick="bodyClick()">
+        <div class="anim-welcome">
+            <h1 id="welcome">Welcome!</h1>
+            <p id="info">To your personalized coding course.</p>
+            <p id="tap-to-continue">Tap to continue...</p>
+        </div>
+    </div>
+    <div id="after">
+        <nav>
+            <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+            <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem; cursor: pointer; " onclick="settingsClick()">
+                edit
+            </i>
+        </nav>
+        <div id="nav-menu" class="dropdown-content">
+            <ul>
+                <li href="#"></li>
+                <li><b>Basics</b>
+                    <ul>
+                        <li><a href="./content/variables.html">Storing Data</a></li>
+                        <li><a href="./content/functions.html">Funtions</a></li>
+                        <li><a href="./content/math.html">Math</a></li>
+                        <li><a href="./content/ui.html">User Input</a></li>
+                    </ul>
+                </li>
+                <li><b>HTML Interaction</b>
+                    <ul>
+                        <li><a href="./content/dom.html">The DOM</a></li>
+                        <li><a href="./content/write.html">Writing</a></li>
+                    </ul>
+                </li>
+                <li><b><a href="./content/tips.html">Tips & Tricks</a></b></li>
+                <li><b><a href="search.html">Documentation</a></b></li>
+                <li><b><a href="./editor/editor.html">Practice</a></b></li>
+            </ul>
+        </div>
+
+        <!--End of Nav-->
+        <div class="content" style="text-align: center;">
+            <h1 style="text-align: center;">About the course</h1>
+            <p>Welcome to your persolanized JavaScript programming course. Here, you will learn everything from variables to how to make complex funcitons to add interaction to a website.</p>
+            <br>
+            <h2 style="text-align: center;">How to use:</h2>
+            <h4 style="font-weight: bolder;">A few tips on how to use the app</h4>
+            <br>
+            <p>You navigate through the app using the dropdown menu, found in the top left corner. You can also change themes with the pencil in the top right corner, which will be kept until you change them. (Yes, even after closing the app).</p>
+            <br>
+            <h4 style="font-weight: bolder;">App's Resources</h4>
+            <p>This app has many cool features, that are super easy to use. There is a fully-online, automatically updating code editor. There are multiple quizzes you can take to make sure the content is correct. There also are many examples on the code
+                shown.
+            </p>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

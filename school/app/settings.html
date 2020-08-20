@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Settings Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Roboto|Wallpoet&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/welcome-anim.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/eef712acae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .btn {
+            padding: 1rem;
+            width: 14rem;
+            height: 22rem;
+            text-align: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background-color: gainsboro;
+        }
+        
+        .selectors {
+            text-align: center;
+        }
+        
+        #btn1 {
+            background-image: url(./images/theme1.png);
+        }
+        
+        #btn2 {
+            background-image: url(./images/theme2.png);
+        }
+        
+        #btn3 {
+            background-image: url(./images/theme3.png);
+        }
+        
+        #btn4 {
+            background-image: url(./images/theme4.png);
+        }
+        
+        #btn5 {
+            background-image: url(./images/theme5.png);
+        }
+    </style>
+</head>
+
+<body onload="loadTheme()">
+    <nav>
+        <i class="fas fa-bars" id="dropbtn" onclick="dropdown()"></i>
+        <i class="material-icons" style="float: right; font-size: 2rem; margin: 0.1rem;" onclick="settingsClick()">
+            edit
+        </i>
+        <i class="fas fa-home" style="margin-left:133px;" onclick="home()"></i>
+    </nav>
+    <div id="nav-menu" class="dropdown-content">
+        <ul>
+            <li href="#"></li>
+            <li><b>Basics</b>
+                <ul>
+                    <li><a href="./content/variables.html">Storing Data</a></li>
+                    <li><a href="./content/functions.html">Funtions</a></li>
+                    <li><a href="./content/math.html">Math</a></li>
+                    <li><a href="./content/ui.html">User Input</a></li>
+                </ul>
+            </li>
+            <li><b>HTML Interaction</b>
+                <ul>
+                    <li><a href="./content/dom.html">The DOM</a></li>
+                    <li><a href="./content/write.html">Writing</a></li>
+                </ul>
+            </li>
+            <li><b><a href="./content/tips.html">Tips & Tricks</a></b></li>
+            <li><b><a href="search.html">Documentation</a></b></li>
+            <li><b><a href="./editor/editor.html">Practice</a></b></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="selectors">
+            <h2>Original Theme:</h2>
+            <button class="btn" id="btn1" onclick='theme1()'></button>
+            <h2>Dark Mode:</h2>
+            <button class="btn" id="btn2" onclick='theme2()'></button>
+            <h2>By the beach:</h2>
+            <button class="btn" id="btn3" onclick='theme3()'></button>
+            <h2>Abyss (High Contrast):</h2>
+            <button class="btn" id="btn4" onclick='theme4()'></button>
+            <h2>Valentines Day:</h2>
+            <button class="btn" id="btn5" onclick='theme5()'></button>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

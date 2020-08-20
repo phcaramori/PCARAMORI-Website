@@ -1,0 +1,27 @@
+:root{
+    --main-bg-color: rgb(15, 22, 24); /*gray1*/
+    --main-text-color: rgb(233, 233, 233); /*light-gray 1*/
+    --main-accent-color: rgb(215, 62, 0); /*orange 1*/
+    --bright-main-accent-color: rgb(235, 62, 0); /*orange 2*/
+    --secondary-bg-color: rgb(42, 47, 51); /*gray2*/
+    --secondary-accent-color: rgb(51, 192, 110); /*green 1*/
+
+    --light-gray-1: rgb(255,255,255);
+    --gray-1: rgb(15, 22, 24); 
+    --gray-2: rgb(42, 47, 51); 
+    --gray-3: rgb(63,71,78);
+    --orange-1: rgb(215, 62, 0);
+    --orange-2: rgb(235, 62, 0);
+    --green-1: rgb(51, 192, 110);
+    --green-2: rgb(9, 255, 0);
+    --green-3: rgb(0, 80, 43);
+    --blue-1: rgb(26, 53, 170);
+    --blue-2: rgb(2,0,36);
+    --purple-1: rgb(80, 5, 141);
+    --purple-2: rgb(40, 4, 124);
+    --purple-3: rgb(117,11,152);
+
+    --orange-pink: linear-gradient(25deg, rgba(215,62,0,1) 0%, rgba(117,11,152,1) 100%);
+    --blue-purple: linear-gradient(25deg, rgba(26,53,170,1) 0%, rgba(80,5,141,1) 100%);
+    --green-blue: linear-gradient(25deg, rgb(41, 170, 86) 0%, rgb(24, 19, 116) 100%);
+}

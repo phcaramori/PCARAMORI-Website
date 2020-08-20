@@ -1,0 +1,216 @@
+/* universal styles | applied to all pages*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
+@import url("colors.css");
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-color: var(--main-bg-color);
+}
+
+/*---- COLOR VARIABLES ----*/
+
+
+
+
+/*---- SCROLL BAR -----*/
+::-webkit-scrollbar {
+    width: 12px;
+    opacity: 0;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: var(--gray-2);
+    border-radius: 0.1rem;
+
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: var(--orange-1); 
+    border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: var(--orange-2); 
+}
+
+/*----- PRESETS -----*/
+
+.flex-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 50%;
+}
+.space-around{
+    justify-content: space-around;
+}
+.flex-center h1{
+    align-self: center;
+}
+
+.flex-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: right;
+    text-align: right;
+}
+
+.flex-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+}
+
+.highlight{
+    background-color: var(--orange-2);
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+}
+
+.orange-pink{
+    background-image: var(--orange-pink);
+}
+
+.blue-purple{
+    background-image: var(--blue-purple);
+}
+
+.green-blue{
+    background-image: var(--green-blue);
+}
+
+/*----Top Nav Bar----*/
+
+.nav-left{
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+.nav-right{
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.navbar{
+    padding-top: 0.5rem;
+    padding-bottom: 0.6rem;
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--gray-2);
+    z-index: 2;
+}
+
+.transparent-nav{
+    background: linear-gradient(0deg, rgba(15,22,24,0) 0%, rgba(15,22,24,0.8) 60%, rgba(15,22,24,1) 95%) !important;
+}
+
+/*----Logo----*/
+
+.logo{
+    font-family: Oxanium, sans-serif;
+    color: white;
+    font-size: 2rem;
+    border: 0.3rem solid white; 
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.logo-hover:hover{
+    color: var(--green-1);
+    border: 0.3rem solid var(--blue-2); 
+    transition: ease-out 0.6s;
+}
+
+/*----big nav----*/
+
+.nav-window{
+    display: none;
+    height: 100%;
+    width: 100%;
+    opacity: 0.985;
+    position: absolute;
+    background-image: var(--green-blue);
+}
+
+.nav-item{
+    font-family: MuseoModerno, sans-serif;
+    cursor: pointer;
+    transition: ease-out 0.25s;
+    color: var(--green-1);
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+}
+
+.nav-item:hover{
+    opacity: 1;
+    border: 0.25rem solid;
+    border-image: linear-gradient(to top, var(--green-2), rgba(0,0,0,0)) 1 100%;
+}
+
+
+.nav-window hr{ /*or .menu-line*/
+    width: 30%;
+    text-align: right;
+    opacity: 0;
+    flex:none;
+    position: block;
+    height: 0.2rem;
+    border: 0;
+    background-color: var(--green-1);
+}
+
+
+/*---- ICONS -----*/
+
+.fa-bars{ /*hamburger / menu bars*/
+    font-size: 3rem;
+    color: var(--gray-3 );
+    cursor: pointer;
+}
+.fa-times{ /*cross / X */
+    font-size: 2.5rem;
+    display:none; 
+    color:var(--orange-1);
+    cursor: pointer;
+    z-index: 4;
+}
+
+/*----content presets----*/
+
+.content{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: Lato, Roboto, Arial, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: var(--main-text-color);
+    text-align: justify;
+}
+
+/*----Footer----*/

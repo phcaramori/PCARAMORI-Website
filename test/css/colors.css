@@ -5,6 +5,7 @@
     --bright-main-accent-color: rgb(235, 62, 0); /*orange 2*/
     --secondary-bg-color: rgb(42, 47, 51); /*gray2*/
     --secondary-accent-color: rgb(51, 192, 110); /*green 1*/
+    --transparent-bg-color:rgba(15, 22, 24,0.5);
 
     --light-gray-1: rgb(255,255,255);
     --gray-1: rgb(15, 22, 24); 

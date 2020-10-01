@@ -17,7 +17,7 @@ html{
     z-index: 2;
 }
 .s1::before {
-    background-image: url(../resources/tenor.gif);
+    background-image: url(../resources/landing.jpg);
     background-size: cover;
     content: "";
     display: block;

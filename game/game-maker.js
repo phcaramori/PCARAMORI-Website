@@ -1,0 +1,7 @@
+let gamename = prompt('Game name')
+let gamedesc = prompt('Game description')
+let gameframe = prompt('I-frame')
+
+let finalcode = `<head> <link href="../../test-css.css" type="text/css" rel="stylesheet "> <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css?family=Cute+Font&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> <title> ${gamename} | Jubisclei </title> </head> <body> <nav><div class="sidebar" id="game"><a href="../../index.htm " id="firstlink"><h1> Home Page </h1></a><a href="../action/index.html "><h1> Action/Adventure </h1></a><a href="../planes/index.html "><h1> Aviation games </h1></a><a href="../classics/index.html "><h1> Classics </h1></a><a href="../io/index.html "><h1> .IO games </h1></a><a href="../sports/index.html "><h1> Sports Games </h1></a><a href="../td/index.html "><h1> Tower-Defence </h1></a><a href="../store-management/index.html"><h1> Store-Managment</h1></a><a href="../restaurant-management/index.html"><h1> Restaurant-Managment</h1></a></nav> <h1 class="title" style="text-align: center;"> ${gamename}: </h1> <div class="main"> ${gameframe} <p class="description"> ${gamedesc} </p> </div> </body>`
+
+confirm(finalcode)

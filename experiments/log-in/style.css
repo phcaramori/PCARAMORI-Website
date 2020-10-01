@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous|Turret+Road|Roboto&display=swap');
+html {
+    height: 100%;
+    overflow: hidden;
+    font: 1rem;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(58, 29, 226), rgb(52, 0, 112));
+    background-repeat: no-repeat;
+}
+
+#signup{/*Have no account?*/
+    color: white;
+    font-family: 'Turret Road', serif;
+    margin-top: 0.25em;
+    margin-bottom: 2em;
+}
+::placeholder{/*Styles the text already on each box*/
+    color:rgba(0, 0, 0, 0.50);
+}
+input{
+    margin-bottom: 10px;
+    background-color: rgb(100,100,100);
+    border:none;
+    border-bottom: 0.1em solid rgb(96, 7, 168);
+    padding: 0.2em;
+    font-size:1.5em;
+    width: 15em;
+    font-family:'Turret Road', sans-serif;
+}
+
+input:hover{/*input on hover*/
+    background-color: rgb(110, 110, 110);
+    padding: 0.3em;
+    transition-duration: 100ms;
+}
+
+input:focus{/*input on click*/
+    border-bottom: 0.15em solid rgb(57, 0, 80);
+    padding: 0.3em;
+    background-color: rgb(110, 110, 110);
+}
+
+h1.title {
+    color: white;
+    font-size: 3em;
+    font-family: 'Righteous', Roboto, sans-serif;
+    margin-bottom: 0;
+}
+
+.content {
+    width: 30%;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    background-image: linear-gradient(to bottom right, rgb(0, 60, 255), rgb(0, 255, 213));
+    padding: 1em;
+    border-radius: 7%;
+    box-shadow: 7px 7px rgba(0, 0, 0, 0.25);
+}
+button{
+    margin-top: 2em;
+    width:100%;
+    padding: 1em;
+    border:none;
+    background-color: rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    cursor: pointer;
+    font-family:'Turret Road', sans-serif;
+    font-size: 1.5em;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    transition-duration: 200ms;
+}
+.bottom {
+    /*author*/
+    background-color: rgba(255, 255, 255, 0.075);
+    position: absolute;
+    bottom: 0;
+    width: 35%;
+    margin-left: 0px;
+    padding: 7px;
+    font-family: 'Turret Road';
+    font-size: 16px;
+    text-align: left;
+}
+
+a{
+    text-decoration: none;
+}
+
+label{
+    font-family: 'Righteous';
+    color:white;
+    font-weight: 100;
+}
+
+.sign-up-forms ::placeholder{
+    color:rgb(90,90,90);
+}
+
+.sign-up-forms input{
+    font-size: 1.3em;
+    width:100%;
+    color: white;
+}
+
+.sign-up .content{
+    background-image: linear-gradient(to top left, rgb(0, 60, 255), rgb(0, 255, 213))
+}

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color:black;
+    background-color: white;
+    text-align: center;
+    font-family: 'Fredoka One'
+}
+h1{
+    font-size: 50px;
+}
+p{font-size:20px;}
+.buttons{
+    bottom: 10px;
+    position: absolute;
+    width: 100%;
+}
+button{
+    background-color:rgb(100,100,100);
+    color:white;
+    border: 1px solid black;
+    font-size: 25px;
+    font-family: Roboto;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color:rgb(115,115,115);
+}
+input{
+    background-color:slategray;
+    color:white;
+    border: none;
+    border-bottom: 2px solid orange;
+    margin-top: 50px;
+    font-size: 20px;
+    padding: 5px;
+}
+input:focus{
+    border-bottom: 4px solid orange;
+    padding:6px;
+}
+input:hover{
+    border-bottom: 4px solid orange;
+    padding:6px;
+}
+input::placeholder{
+    color:lightgrey;
+}
+span{
+    font-family: Roboto;
+}
+
+.corner{
+    font-family: Roboto;
+    position: absolute;
+    bottom: 0;
+    margin: 2px;
+}
+
+.right-corner{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-family: Roboto;
+    margin: 2px;
+}

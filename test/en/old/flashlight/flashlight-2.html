@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Auto-Color Changing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    /* Pedro Caramori - 2019 */
+    function permaOn(){
+        setInterval(function(){
+        var color = document.getElementById('color').value;
+        var backgroundColor = document.getElementById('background-color').value;
+        document.getElementById('body').style.backgroundColor = backgroundColor;
+        document.getElementById('body').style.color = color;document.getElementById('resultColor').innerHTML = `Text color: ${color}`
+        document.getElementById('resultBackgroundColor').innerHTML = `Background color: ${backgroundColor}`}, 1000);
+    }
+    function off () {
+        document.getElementById('body').style.backgroundColor = 'white';
+        document.getElementById('body').style.color = 'black';
+        document.getElementById('color').value = '';
+        document.getElementById('background-color').value = '';
+        document.getElementById('body').style.color = color;
+    }
+    
+    </script>
+</head>
+<body id="body" onload="permaOn()">
+    <h1>The Auto-Color Changing Page</h1>
+    <p> Just type in two colors!</p>
+    <input type="text" placeholder="Color" id="color"></input>
+    <input type="text" placeholder="Background Color" id="background-color"></input>
+    <br>
+    <span id="resultColor"></span>
+    <br>
+    <span id="resultBackgroundColor"></span>
+    <div class="buttons">
+        <button class="button_2" onclick="off()">Off</button>
+    </div>
+    <div class="corner">
+        <a href="index.html">Click here</a> to return. 
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+
+        function validate(){
+            if(document.getElementById('user').value=="yeet"&&document.getElementById('psw').value=="yeet"){
+            document.write('<a href="welcome.html">Click me!')
+            }else{}
+            console.log('wrong user/pass');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h1 class="title">Log-in</h1>
+            <p id="signup">Have no account? Create one <a href="./sign-up.html">here</a>.</p>
+            <div class="forms">
+                <form onsubmit="validate()">
+                    <input type="text" id="user" name="user" placeholder="Username"></input>
+                    <input type="password" id="psw" name="psw" placeholder="Passowrd"></input>
+                    <button id="submit" onclick="validate()">Get Me In!</button>
+                </form>
+            </div>
+        </div>
+        <div class="credits">
+            <span class="bottom">Pedro Caramori</span>
+        </div>
+    </div>
+</body>
+
+</html>

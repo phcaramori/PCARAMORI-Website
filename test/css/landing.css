@@ -55,8 +55,8 @@ html{
     font-family: MuseoModerno;
     margin: 0;
     font-size: 2rem;
-    color: var(--orange-1);
-    background-color: var(--transparent-bg-color);
+    color: var(--green-1);
+    text-shadow: 0 0 4px rgb(12, 71, 233);
 }
 
 /* 2nd section - boxes */

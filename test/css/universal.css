@@ -82,6 +82,14 @@ body,html{
     text-align: left;
 }
 
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
 .highlight{
     background-color: var(--orange-2);
 }
@@ -133,6 +141,7 @@ body,html{
     height: 50px;
     margin: 4px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .flags{
@@ -229,6 +238,95 @@ body,html{
     text-align: justify;
 }
 
+/*----Presets for Boxes----*/
+
+.box{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 45vw;
+    z-index: 1;
+    margin-bottom: 100px;
+    transition: cubic-bezier(0.63, 0.4, 0, 1.43) 500ms;
+}
+
+.box-heading{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: MuseoModerno;
+}
+
+.box p{
+    color: var(--gray-3);
+    font-size: 1.4rem;
+}
+
+.box:hover{
+    transform: translateX(100px);
+}
+
+.box-align-right:hover{
+    transform: translateX(-100px);
+}
+
+.box-align-right{
+    margin-left: 40vw;
+}
+
+/*----Individual styles for boxes----*/
+
+.orange-box{
+    box-shadow: 10px -10px 5px var(--orange-1);
+}
+
+.orange-box h1{
+    color: var(--orange-2);
+}
+
+.orange-box:hover{
+    box-shadow: 0 0 7px 4px var(--orange-2);
+}
+
+
+.green-box{
+    box-shadow: -10px 10px 5px var(--green-2);
+}
+
+.green-box h1{
+    color: var(--green-1)
+}
+
+.green-box:hover{
+    box-shadow: 0 0 7px 4px var(--green-2);
+}
+
+
+.blue-box{
+    box-shadow: -10px -10px 5px var(--blue-1);
+}
+
+.blue-box h1{
+    color: var(--blue-2);
+}
+
+.blue-box:hover{
+    box-shadow: 0 0 7px 4px var(--blue-1);
+}
+
+
+.purple-box{
+    box-shadow: 10px 10px 5px var(--purple-1);
+}
+
+.purple-box h1{
+    color: var(--purple-2)
+}
+
+
+.purple-box:hover{
+    box-shadow: 0 0 7px 4px var(--purple-1);
+}
 /*----Footer----*/
 
 .footer{

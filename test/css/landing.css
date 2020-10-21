@@ -9,9 +9,9 @@ html{
     background-color: var(--main-bg-color);
 }
 .s1{
-    height: 100%;
-    min-height: 100%;
-    min-width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    min-width: 100vw;
     position: relative;
     text-align: center;
     z-index: 2;
@@ -24,20 +24,20 @@ html{
     position: absolute;
     top: -70px;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
 }
 @media (min-aspect-ratio: 16/9){
     .s1{
-        width: 100%;
+        width: 100vw;
         height: auto;
     }
 }
 @media (max-aspect-ratio: 16/9){
     .s1{
         width: auto;
-        height: 100%;
+        height: 100vh;
         
     }
 }
@@ -59,5 +59,10 @@ html{
     background-color: var(--transparent-bg-color);
 }
 
+/* 2nd section - boxes */
+
+.content{
+    margin-top: 0% !important;
+}
 
 

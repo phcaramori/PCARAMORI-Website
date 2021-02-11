@@ -179,7 +179,7 @@ html{
 
 .orange-box{
     border-top: 4px solid var(--orange-1);
-    box-shadow: 10px -10px 5px var(--orange-1);
+    box-shadow: -10px 10px 5px var(--orange-1);
 }
 
 .orange-box h1{
@@ -188,6 +188,19 @@ html{
 
 .orange-box:hover{
     box-shadow: 0 0 7px 4px var(--orange-2);
+}
+
+.purple-box{
+    border-top: 4px solid var(--purple-1);
+    box-shadow: 10px 10px 5px var(--purple-1);
+}
+
+.purple-box h1{
+    color: var(--purple-2)
+}
+
+.purple-box:hover{
+    box-shadow: 0 0 7px 4px var(--purple-1);
 }
 
 .green-box{
@@ -204,7 +217,7 @@ html{
 }
 
 .blue-box{
-    box-shadow: -10px -10px 5px var(--blue-1);
+    box-shadow: 10px 10px 5px var(--blue-1);
     border-top: 4px solid var(--blue-1);
 }
 
@@ -215,19 +228,3 @@ html{
 .blue-box:hover{
     box-shadow: 0 0 7px 4px var(--blue-1);
 }
-
-
-.purple-box{
-    border-top: 4px solid var(--purple-1);
-    box-shadow: 10px 10px 5px var(--purple-1);
-}
-
-.purple-box h1{
-    color: var(--purple-2)
-}
-
-.purple-box:hover{
-    box-shadow: 0 0 7px 4px var(--purple-1);
-}
-
-

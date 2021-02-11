@@ -31,6 +31,10 @@
     animation: nav-menu-lines 0.9s ease-in 0.35s;
 }
 
+
+
+
+
 @keyframes nav-menu-lines{
     0%{
         opacity: 1;

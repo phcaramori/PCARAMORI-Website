@@ -10,4 +10,20 @@
     left: 50%;
     transform: translate(-50%,-50%);
     font-family: system-ui;
+    padding: 50px;
+    text-align: center;
+}
+.pop-up hr{
+    width: 400px;
+    height: 5px;
+    margin-bottom: 20px;
+    background-color: rgb(150,150,150);
+    border: none;
+    outline: none;
+}
+.pop-up h1{
+    margin-bottom: 30px;
+}
+.pop-up p{
+    font-size: 18px;
 }

@@ -1,3 +1,11 @@
+/*
+
+    1 - Show/hide nav
+    2 - lock/allow scroll
+    3 - pop-up maker
+
+*/
+
 function showNav(){
     document.getElementById('nav-window').style.display = 'flex';
     document.getElementById('nav-button').style.display = 'none';
@@ -36,8 +44,36 @@ function closeNav(){
 }
 //
 function lockScroll(){
-    document.getElementsByTagName('body')[0].classList.add('noScroll')
+    document.getElementsByTagName('body')[0].classList.add('noscroll')
 }
 function allowScroll(){
-    document.getElementsByTagName('body')[0].classList.remove('noScroll')
+    document.getElementsByTagName('body')[0].classList.remove('noscroll')
+}
+
+// pop-ups
+
+function popUp(text){
+    //lock scrolling
+    lockScroll();
+    
+    //create div and give it the pop-up class
+    let newPopUp = document.createElement("div");
+    document.body.appendChild(newPopUp);
+    newPopUp.classList.add("pop-up");
+    let p = document.createElement("p");
+    newPopUp.appendChild(p);
+    p.innerHTML = text;
+
+    // pop-up removal
+    document.addEventListener('click', function(event){
+        let isClickInside = newPopUp.contains(event.target);
+        if(!isClickInside){ //if the click isn't inside the pop-up, hide it.
+            hidePopUp();
+        }
+    })
+}
+
+function hidePopUp(){
+    document.getElementsByClassName("pop-up")[0].remove();
+    allowScroll();
 }

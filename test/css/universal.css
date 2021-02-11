@@ -14,7 +14,6 @@
     7 - Icons
     8 - Content Presets
     9 - Footer
-    10 - Pop-ups
 */
 
 
@@ -262,17 +261,3 @@ body,html{
     height: auto;
 }
 
-/*--- POP-UPS ---*/
-
-.pop-up{
-    background-color: var(--light-gray-1);
-    color: var(--gray-2);
-    width: 400px;
-    height: 300px;
-    border-radius: 5px;
-    position: absolute;
-    z-index: 1000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}

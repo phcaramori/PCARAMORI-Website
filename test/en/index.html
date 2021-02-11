@@ -2,18 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <base href="http://127.0.0.1:5500/test/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Pcaramori</title>
-    <link rel="stylesheet" href="../css/landing.css">
-    <link rel="stylesheet" href="../css/universal.css">
-    <link rel="stylesheet" href="../css/colors.css">
-    <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/sizing.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/landing.css">
+    <link rel="stylesheet" href="/css/universal.css">
+    <link rel="stylesheet" href="/css/colors.css">
+    <link rel="stylesheet" href="/css/animations.css">
+    <link rel="stylesheet" href="/css/sizing.css">
+    <!-- JS -->
     <script src="https://kit.fontawesome.com/10baeb6ba4.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script src="./js/landing.js"></script>
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="intro()">
     <div class="nav-window flex-center space-around noscroll" id="nav-window">
         <h1></h1>
         <h1 class="nav-item">About Me</h1><hr class="menu-line">
@@ -21,17 +26,17 @@
         <h1 class="nav-item">History</h1><hr class="menu-line">
         <h1 class="nav-item">Contact</h1><hr class="menu-line">
         <div class="flags">
-            <a href="../pt/"><img src="../resources/br-flag.png" alt="PT" id="br-flag"></a>
-            <a href="../en/"><img src="../resources/us-flag.png" alt="EN" id="us-flag"></a>
+            <a href="./pt/"><img src="./resources/br-flag.png" alt="PT" id="br-flag"></a>
+            <a href="./en/"><img src="./resources/us-flag.png" alt="EN" id="us-flag"></a>
         </div>
-     </div>
-     <nav class="sticky navbar transparent-nav" id="navbar">
+    </div>
+    <nav class="sticky navbar transparent-nav" id="navbar">
         <div class="nav-left">
             <i class="fas fa-bars bar-2" id="nav-button" onclick="showNav()"></i>
             <i class="fas fa-times" id="close-nav" style="display: none;" onclick="closeNav()"></i>
         </div>
         <div class="nav-right">
-            <a href="../index.html"><div class="logo logo-hover" id='logo' style="display: inline-block;">
+            <a href="./index.html"><div class="logo logo-hover" id='logo' style="display: inline-block;">
                 Pcaramori
             </div></a>
         </div>
@@ -42,28 +47,63 @@
             <span class="desc">Modern Web Design</span>
         </div>
     </div>
-
-</body>
-</html> 
+    <div class="intro">    
+        <span>Welcome to</span>
+        <div class="logo">Pcaramori</div>
+        <span>Web Design</span>
+    </div>
+    <!-- CONTENT -->
     <div class="content" id="content">
-        <div class="box orange-box">         
+        <div class="box orange-box">      
+            <div class="box-img">
+                <img src="./resources/red-box-detail.png" alt="">
+            </div>   
             <h1 class="box-heading">About Me</h1>
             <p>You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. </p>
         </div>
-        <div class="box purple-box box-align-right">         
+        <div class="box purple-box box-align-right"> 
+            <div class="box-img">
+                <img src="./resources/purple-box-detail.png" alt="" width="80px">   
+            </div>     
             <h1 class="box-heading">History</h1>
             <p>You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. </p>
         </div>
-        <div class="box green-box">         
+        <div class="box green-box">   
+            <div class="box-img">
+                <img src="./resources/green-box-detail.png" alt=""> 
+            </div>     
             <h1 class="box-heading">Projects</h1>
             <p>You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. </p>
         </div>
-        <div class="box blue-box box-align-right">         
+        <div class="box blue-box box-align-right green-blue">  
+            <div class="box-img">
+                <img src="./resources/blue-box-detail.png" alt="">       
+            </div>
             <h1 class="box-heading">Game Website</h1>
             <p>You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. You are gay. </p>
         </div>
         
+    </div>   
+    <svg id="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#222629" fill-opacity="1" d="M0,256L48,234.7C96,213,192,171,288,149.3C384,128,480,128,576,138.7C672,149,768,171,864,192C960,213,1056,235,1152,208C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+    <div class="footer">
+        <div class="col1">
+            <h2>c1</h2>
+            <ul>
+                <li><a href="">Option</a></li>
+                <li><a href="">Option</a></li>
+                <li><a href="">Option</a></li>
+                <li><a href="">Option</a></li>
+            </ul>
+        </div>
+        <div class="col3">
+            <h2>c3</h2>
+            <ul>
+                <li><a href="">Option</a></li>
+                <li><a href="">Option</a></li>
+                <li><a href="">Option</a></li>
+                <li><a href="">Option</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="footer"></div>
 </body>
 </html>

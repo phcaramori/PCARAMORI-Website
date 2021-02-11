@@ -1,5 +1,6 @@
 /* universal styles | applied to all pages*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 @import url("colors.css");
 *{
     margin: 0;
@@ -11,11 +12,6 @@ body,html{
     overflow-x: hidden;
     background-color: var(--main-bg-color);
 }
-
-/*---- COLOR VARIABLES ----*/
-
-
-
 
 /*---- SCROLL BAR -----*/
 ::-webkit-scrollbar {
@@ -52,34 +48,11 @@ body,html{
     text-align: center;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    width: 50%;
-}
 .space-around{
     justify-content: space-around;
 }
 .flex-center h1{
     align-self: center;
-}
-
-.flex-right{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: right;
-    text-align: right;
-}
-
-.flex-left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    text-align: left;
 }
 
 .float-left{
@@ -128,12 +101,10 @@ body,html{
     justify-content: space-between;
     width: 100vw;
     background-color: var(--gray-2);
-    z-index: 2;
+    z-index: 1;
 }
 
-.transparent-nav{
-    background: linear-gradient(0deg, rgba(15,22,24,0) 0%, rgba(15,22,24,0.8) 60%, rgba(15,22,24,1) 95%) !important;
-}
+/*TRANSPARENT NAV IS DEFINED IN MEDIA QUERIES*/
 
 /*----FLAGS----*/
 
@@ -243,7 +214,7 @@ body,html{
 .box{
     background: white;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 3px;
     width: 45vw;
     z-index: 1;
     margin-bottom: 100px;
@@ -263,6 +234,7 @@ body,html{
 }
 
 .box:hover{
+    z-index: 0;
     transform: translateX(100px);
 }
 
@@ -274,9 +246,18 @@ body,html{
     margin-left: 40vw;
 }
 
+.box-img{
+    float: right;
+    margin-right: -30px;
+    margin-top: -34px;
+}
+.box-img img{
+    height: 40px;
+}
 /*----Individual styles for boxes----*/
 
 .orange-box{
+    border-top: 4px solid var(--orange-1);
     box-shadow: 10px -10px 5px var(--orange-1);
 }
 
@@ -288,9 +269,9 @@ body,html{
     box-shadow: 0 0 7px 4px var(--orange-2);
 }
 
-
 .green-box{
     box-shadow: -10px 10px 5px var(--green-2);
+    border-top: 4px solid var(--green-2);
 }
 
 .green-box h1{
@@ -301,9 +282,9 @@ body,html{
     box-shadow: 0 0 7px 4px var(--green-2);
 }
 
-
 .blue-box{
     box-shadow: -10px -10px 5px var(--blue-1);
+    border-top: 4px solid var(--blue-1);
 }
 
 .blue-box h1{
@@ -316,13 +297,13 @@ body,html{
 
 
 .purple-box{
+    border-top: 4px solid var(--purple-1);
     box-shadow: 10px 10px 5px var(--purple-1);
 }
 
 .purple-box h1{
     color: var(--purple-2)
 }
-
 
 .purple-box:hover{
     box-shadow: 0 0 7px 4px var(--purple-1);
@@ -332,6 +313,34 @@ body,html{
 .footer{
     background-color: var(--gray-2);
     width: 100vw;
+    height: 200px;
     display: flex;
-    height: 10rem;
+    justify-content: space-around;
+    align-items: center;
+    font-family: lato,arial,sans-serif,;
+}
+.footer div{
+    margin-top: -50px;
+    height: 150px;
+    width: 150px;
+}
+.footer li{
+    list-style: none;
+    margin: 5px;
+}
+.footer li a{
+    font-family: lato;
+    color: rgb(200,200,200);
+}
+.footer h2{
+    margin-bottom: 20px;
+    color: white;
+    margin-left: 30px;
+    text-decoration: underline;
+    font-family: lato,sans-serif;
+}
+#footer-svg{
+    margin-bottom: -3%;
+    width: 100vw;
+    height: auto;
 }

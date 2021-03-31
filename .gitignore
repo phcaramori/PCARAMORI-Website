@@ -1,3 +1,4 @@
 test/en/tarefas/
 test/en/projects/cardGameStuff
-.gitignore
+*.gitignore
+mozinha.html

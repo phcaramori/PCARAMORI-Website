@@ -20,7 +20,7 @@ let Game = {
     },
 
     //display functions
-    display = {
+    display : {
         displayCard : function(div,cardNum){ // put . in front of div name when calling function, Ex: .first
             //displays a specified card
             let element = document.createElement('img');

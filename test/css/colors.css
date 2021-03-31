@@ -1,10 +1,6 @@
 :root{
     --main-bg-color: rgb(15, 22, 24); /*gray1*/
     --main-text-color: rgb(233, 233, 233); /*light-gray 1*/
-    --main-accent-color: rgb(215, 62, 0); /*orange 1*/
-    --bright-main-accent-color: rgb(235, 62, 0); /*orange 2*/
-    --secondary-bg-color: rgb(42, 47, 51); /*gray2*/
-    --secondary-accent-color: rgb(51, 192, 110); /*green 1*/
     --transparent-bg-color:rgba(15, 22, 24,0.5);
 
     --light-gray-1: rgb(199, 199, 199);

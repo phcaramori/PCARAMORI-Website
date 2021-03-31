@@ -1,3 +1,4 @@
+//idea: have one div with all cards, which can be fully deleted and changed without changing the webpage
 let Game = {
     deck: [], //the deck with all the playing cards for the game
     shuffledDeck: [], //the shuffled deck of cards for the game
@@ -21,35 +22,40 @@ let Game = {
 
     //display functions
     display : {
-        displayCard : function(div,card){ // put . in front of div name when calling function, Ex: .first
+        displayCard : function(element,card){ // put . in front of div name when calling function, Ex: .first
             //displays a specified card. Must call with the card's object
-            let element = document.createElement('img');
-            element.setAttribute('src',`./res/${card.number}_of_${card.suit}.png`); //add src to image
-            document.querySelector(div).appendChild(element) //create img element in given div
+            let img = document.createElement('img');
+            img.setAttribute('src',`./res/${card.number}_of_${card.suit}.png`); //add src to image
+            element.appendChild(img) //create img element in given div
         },
-        displayAll : function(div, deck){ // put . in front of div name when calling function, Ex: .first
+        displayAll : function(element, deck){ // put . in front of div name when calling function, Ex: .first
             //displays all cards in the deck, in order.
             for (let i = 0; i < deck.length; i++) {
-                this.displayCard(div, deck[i])
+                this.displayCard(element, deck[i])
+            }
+        },
+        displayClear : function(element){ //remove all children from element
+            for (let i = 0; i < element.childElementCount; i++) {
+                document.getElementById().removeChild()
             }
         }
     },
     numToCard : function(num){ //turns inputted number into corresponding playing card number (Ex: 11 = J)
         switch (num) {
             case 1:
-                return "A"
+                return "ace"
                 break;
     
             case 11:
-                return "J"
+                return "jack"
                 break;
         
             case 12:
-                return "Q"
+                return "queen"
                 break;
         
             case 13:
-                return "K"
+                return "king"
                 break;
         
             default:
@@ -74,8 +80,8 @@ function init(numberOfDecks,joker){ //makes all cards | int, bool
             Game.deck.push(new Game.Card("diamonds",Game.numToCard(i)));
         }
         if(joker){ //add two jokers per deck
-            Game.deck.push(new Game.Card("joker","joker"));
-            Game.deck.push(new Game.Card("joker","joker"));
+            Game.deck.push(new Game.Card("red","joker"));
+            Game.deck.push(new Game.Card("black","joker"));
         }
     }
     console.log(Game.deck)

@@ -88,5 +88,6 @@ function init(numberOfDecks,joker){ //makes all cards | int, bool
     console.log(Game.deck)
 }
 
-
-
+function $(selector){
+    return document.querySelector(selector)
+}

@@ -26,6 +26,7 @@ let Game = {
             //displays a specified card. Must call with the card's object
             let img = document.createElement('img');
             img.setAttribute('src',`./res/${card.number}_of_${card.suit}.png`); //add src to image
+            img.setAttribute('class','card')
             element.appendChild(img) //create img element in given div
         },
         displayAll : function(element, deck){ // put . in front of div name when calling function, Ex: .first

@@ -11,7 +11,7 @@ let Game = {
 
     shuffle : function(){ //shuffle the deck of cards
         let final = []; //output array
-        let temp = Game.deck;
+        let temp = [...Game.deck];
         for (let i = temp.length; i > 0; i--) { //loop from end of array to beginning
             let random = Math.floor(Math.random()*temp.length) //make rand num up to array length
             final.push(temp[random]) //get a random index from temp, push it to final
@@ -22,23 +22,34 @@ let Game = {
 
     //display functions
     display : {
-        displayCard : function(element,card){ // put . in front of div name when calling function, Ex: .first
+        displayCard : function(element,card){ 
             //displays a specified card. Must call with the card's object
             let img = document.createElement('img');
             img.setAttribute('src',`./res/${card.number}_of_${card.suit}.png`); //add src to image
             img.setAttribute('class','card')
             element.appendChild(img) //create img element in given div
         },
-        displayAll : function(element, deck){ // put . in front of div name when calling function, Ex: .first
+        displayAll : function(element, deck){ 
             //displays all cards in the deck, in order.
             for (let i = 0; i < deck.length; i++) {
                 this.displayCard(element, deck[i])
             }
         },
-        clear : function(element){ //remove all children from element
-            for (let i = 0; i < element.childElementCount; i++) {
-                document.getElementById().removeChild()
+        displayFrom : function(element, deck, min, max){
+            //displays certain cards in a deck.
+            //if only 1 min/max value is specified, it gets the first __ cards from a deck. Doesn't remove from the deck.
+            if(!max){
+                max = min
+                min = 0;;
             }
+            for (let i = min; i < max; i++) {
+                this.displayCard(element, deck[i])
+            }
+        },
+        clear : function(element){ //remove all children from element
+            while (element.childElementCount) {
+                element.removeChild(element.childNodes[0])
+            } //while there still are children, remove them
         }
     },
     numToCard : function(num){ //turns inputted number into corresponding playing card number (Ex: 11 = J)

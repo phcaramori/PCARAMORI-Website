@@ -1,0 +1,120 @@
+body{
+	background-color: lightblue;
+	font-family:Impact;
+
+}
+p.welcome{
+	Color: RGB(20,100,50);
+	font-size: 27px;
+}
+p.ads{
+	font-size: 18px;
+	color: RGB(0,50,50); 
+}
+h1{
+	text-align: center;
+}
+p{
+	text-align: center;
+}
+iframe{
+	display: block;
+	margin: 0 auto;
+	
+}
+div{
+  Margin-Bottom: px; 
+  Margin-left: 120px;
+  Margin-Right: 120px;
+  Color: Darkred;
+  vertical-align:text-bottom;
+}
+h3{
+	 color: RGB:(0,100,50);
+}
+ul{
+	 color: RGB:(0,100,50);
+}
+.button{
+     color:red;
+	 font-size:30px;
+	 font:Arial;
+	 font-weight: 100;
+	 text-align: center;
+	 padding: 10px 80px;
+	 border: solid 2px red;
+	 border-radius: 10px;
+	 transition-duration: 1200ms;
+	 Margin-left: 100px;
+	 top:500px;
+}
+.button:hover{
+    background-color: Red; 
+    color: white;
+}
+
+iframe.noScrolling{
+           width: 650px; /*or any other size*/
+           height: 400px; /*or any other size*/
+           overflow: hidden;
+}
+.gamebutton{
+     color: Black;
+	 font-size:29px;
+	 font-weight: 70;
+	 text-align: center;
+	 padding: 8px 150px;
+	 border: solid 2px green;
+	 border-radius: 10px;
+	 transition-duration: 500ms;
+	 margin-left: 30%;
+	MARGIN-Right:50%;
+}
+.gamebutton:hover{
+     background-color: darkblue; 
+     color: Green;
+	 border: solid 0.5px green;
+	 font-size: 
+
+}
+div.topbutton{
+	 padding-top: 125px;
+}
+div.backbutton{
+	 color: Red;
+	 font-size:15px;
+	 text-align: center;
+	 border: solid 1px red;
+	 transition-duration: 500ms;
+	 margin-left:10%;
+	 MARGIN-Right: 80%;
+	 height: 55px;
+	 padding: 10px;
+	 margin-top: 100px;
+	 vertical-align: center;
+}
+div.backbutton:hover{
+	 color: black;
+	 background-color:Red;
+	 border: solid 1px red;
+}
+a:link{
+	 font-family:Impact;
+	 color:Black;
+	 text-decoration: none;
+	 
+}
+
+a:visited{
+	 color: black;
+	 text-decoration: none;
+}
+header{
+	background-color:lightgray;
+	position:fixed;
+	z-index: 10;
+	width: 100%;
+	top: 0px;
+	color: Green;
+	font-family: Impact, Charcoal, sans-serif;
+}

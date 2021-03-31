@@ -35,7 +35,7 @@ let Game = {
                 this.displayCard(element, deck[i])
             }
         },
-        displayClear : function(element){ //remove all children from element
+        clear : function(element){ //remove all children from element
             for (let i = 0; i < element.childElementCount; i++) {
                 document.getElementById().removeChild()
             }

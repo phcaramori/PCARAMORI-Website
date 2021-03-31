@@ -1,16 +1,11 @@
 let Game = {
-    deck: [],
-    shuffledDeck: [],
-    hand: [],
+    deck: [], //the deck with all the playing cards for the game
+    shuffledDeck: [], //the shuffled deck of cards for the game
 
-    Card : function(suit, number){
+    //constructors
+    Card : function(suit, number){ //card constructor
         this.suit = suit;
         this.number = number;
-        this.display = function(div){ // put . in front of div name when calling function, Ex: .first
-            let element = document.createElement('img');
-            element.setAttribute('src',`./res/${this.number}_of_${this.suit}.png`); //add src to image
-            document.querySelector(div).appendChild(element) //create img element in given div
-        }
     },
 
     shuffle : function(){ //shuffle the deck of cards
@@ -24,31 +19,46 @@ let Game = {
         Game.shuffledDeck = final;
     },
 
-    background: {
-        numToCard : function(num){ //turns inputted number into corresponding card number
-            switch (num) {
-                case 1:
-                    return "A"
-                    break;
-                
-                case 11:
-                    return "J"
-                    break;
-        
-                case 12:
-                    return "Q"
-                    break;
-        
-                case 13:
-                    return "K"
-                    break;
-        
-                default:
-                    return num
-                    break;
-            }
+    //display functions
+    display = {
+        displayCard : function(div,cardNum){ // put . in front of div name when calling function, Ex: .first
+            //displays a specified card
+            let element = document.createElement('img');
+            let card = Game.deck[cardNum]
+            element.setAttribute('src',`./res/${card.number}_of_${card.suit}.png`); //add src to image
+            document.querySelector(div).appendChild(element) //create img element in given div
         },
+        displayAll : function(div, deck){ // put . in front of div name when calling function, Ex: .first
+            //displays all cards in the deck, in order.
+            for (let i = 0; i < deck.length; i++) {
+                this.displayCard(div, deck[i])
+            }
+        }
     },
+    numToCard : function(num){ //turns inputted number into corresponding playing card number (Ex: 11 = J)
+        switch (num) {
+            case 1:
+                return "A"
+                break;
+    
+            case 11:
+                return "J"
+                break;
+        
+            case 12:
+                return "Q"
+                break;
+        
+            case 13:
+                return "K"
+                break;
+        
+            default:
+                return num
+                break;
+        }
+    },
+
 }
 
 

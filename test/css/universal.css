@@ -32,6 +32,7 @@ body,html{
 ::-webkit-scrollbar {
     width: 12px;
     opacity: 0;
+    z-index: 4;
 }
  
 ::-webkit-scrollbar-track {
@@ -116,7 +117,7 @@ body,html{
     justify-content: space-between;
     width: 100vw;
     background-color: var(--gray-2);
-    z-index: 1;
+    z-index: 2;
 }
 
 /*TRANSPARENT NAV IS DEFINED IN MEDIA QUERIES*/
@@ -151,8 +152,8 @@ body,html{
 }
 
 .logo-hover:hover{
-    color: var(--green-1);
-    border: 0.3rem solid var(--blue-1); 
+    color: var(--green-pastel);
+    border: 0.3rem solid var(--blue-pastel); 
     transition: ease-out 0.6s;
 }
 

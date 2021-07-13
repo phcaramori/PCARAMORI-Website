@@ -116,13 +116,6 @@ html{
     padding: 0 1.5rem;
     font-weight: 500;
 }
-.hero-contents .desc{
-    font-family: MuseoModerno;
-    margin: 0;
-    font-size: 2rem;
-    color: var(--green-1);
-    text-shadow: -1px -1px rgb(12, 71, 233), 1px -1px rgb(12, 71, 233), -1px 1px rgb(12, 71, 233), 1px 1px rgb(12, 71, 233);
-}
 
 /* 2nd section - boxes */
 
@@ -140,6 +133,7 @@ html{
     z-index: 1;
     margin-bottom: 100px;
     transition: cubic-bezier(0.63, 0.4, 0, 1.43) 500ms;
+    cursor: pointer;
 }
 
 .box-heading{
@@ -150,7 +144,7 @@ html{
 }
 
 .box p{
-    color: var(--gray-3);
+    color: var(--gray-1);
     font-size: 1.4rem;
 }
 
@@ -178,8 +172,8 @@ html{
 /*----Individual styles for boxes----*/
 
 .orange-box{
-    border-top: 4px solid var(--orange-1);
-    box-shadow: -10px 10px 5px var(--orange-1);
+    border-top: 4px solid var(--orange-pastel);
+    box-shadow: -10px 10px 5px var(--orange-pastel);
 }
 
 .orange-box h1{
@@ -187,12 +181,13 @@ html{
 }
 
 .orange-box:hover{
-    box-shadow: 0 0 7px 4px var(--orange-2);
+    border-top: 4px solid var(--orange-1);
+    box-shadow: 0 0 7px 4px var(--orange-1);
 }
 
 .purple-box{
-    border-top: 4px solid var(--purple-1);
-    box-shadow: 10px 10px 5px var(--purple-1);
+    border-top: 4px solid var(--purple-pastel);
+    box-shadow: 10px 10px 5px var(--purple-pastel);
 }
 
 .purple-box h1{
@@ -201,24 +196,26 @@ html{
 
 .purple-box:hover{
     box-shadow: 0 0 7px 4px var(--purple-1);
+    border-top: 4px solid var(--purple-1);
 }
 
 .green-box{
-    box-shadow: -10px 10px 5px var(--green-2);
-    border-top: 4px solid var(--green-2);
+    box-shadow: -10px 10px 5px var(--green-pastel);
+    border-top: 4px solid var(--green-pastel);
 }
 
 .green-box h1{
-    color: var(--green-1)
+    color: var(--green-2)
 }
 
 .green-box:hover{
-    box-shadow: 0 0 7px 4px var(--green-2);
+    border-top: 4px solid var(--green-1);
+    box-shadow: 0 0 7px 4px var(--green-1);
 }
 
 .blue-box{
-    box-shadow: 10px 10px 5px var(--blue-1);
-    border-top: 4px solid var(--blue-1);
+    box-shadow: 10px 10px 5px var(--blue-pastel);
+    border-top: 4px solid var(--blue-pastel);
 }
 
 .blue-box h1{
@@ -227,4 +224,5 @@ html{
 
 .blue-box:hover{
     box-shadow: 0 0 7px 4px var(--blue-1);
+    border-top: 4px solid var(--blue-1);
 }

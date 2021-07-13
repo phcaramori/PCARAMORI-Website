@@ -55,7 +55,9 @@ body,html{
 .noscroll{
     overflow: hidden;
 }
-
+.outline{
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
 .flex-center{
     display: flex;
     flex-direction: column;
@@ -234,7 +236,7 @@ body,html{
 
 .fa-bars{ /*hamburger / menu bars*/
     font-size: 3rem;
-    color: var(--gray-3 );
+    color: var(--gray-1 );
     cursor: pointer;
 }
 .fa-times{ /*cross / X */

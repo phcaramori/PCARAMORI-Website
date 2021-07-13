@@ -82,7 +82,7 @@ html{
     z-index: 2;
 }
 .s1::before {
-    background-image: url(./resources/landing/landing.jpg);
+    background-image: url(../resources/landing/landing.jpg);
     background-size: cover;
     content: "";
     display: block;

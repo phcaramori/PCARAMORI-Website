@@ -2,3 +2,4 @@ test/en/tarefas/
 test/en/projects/cardGameStuff
 *.gitignore
 mozinha.html
+*/node_modules

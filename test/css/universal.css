@@ -2,33 +2,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 @import url("colors.css");
+/* FONTS: Lato, MuseoModerno, Oxanium, Heebo*/
+
+/*-------------------------------------------------\
+    0 - General Styles                             \
+    1 - Scroll Bar                                 \
+    2 - Presets (Noscroll, Center, pop-ups, etc.)  \
+    3 - Top Nav Bar                                \
+    4 - Flags/Language Selection                   \
+    5 - PCARAMORI Logo                             \ 
+    6 - Big fullscreen Nav                         \
+    7 - Icons                                      \
+    8 - Footer                                     \
+--------------------------------------------------*/
 
 
-/*
-    1 - Scroll Bar
-    2 - Presets (Noscroll, Center, pop-up, etc.)
-    3 - Top Nav Bar
-    4 - Flags/Language Selection
-    5 - PCARAMORI Logo
-    6 - Big fullscreen Nav
-    7 - Icons
-    8 - Content Presets
-    9 - Footer
-*/
-
+/*----
+0. GENERAL STYLES
+-----*/
 
 *{
     margin: 0;
     padding: 0;
 }
+
 body,html{
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     background-color: var(--main-bg-color);
+    color: var(--main-text-color);
 }
 
-/*---- SCROLL BAR -----*/
+h1,h2,h3,h4,h5{
+    color: var(--main-text-color);
+    font-family: MuseoModerno, sans-serif;
+}
+
+p{
+    color: var(--main-text-color);
+}
+
+
+
+/*----
+1. SCROLL BAR
+-----*/
+
 ::-webkit-scrollbar {
     width: 12px;
     opacity: 0;
@@ -50,14 +70,19 @@ body,html{
     background: var(--orange-2); 
 }
 
-/*----- PRESETS -----*/
+
+/*----- 
+2. PRESETS 
+-----*/
 
 .noscroll{
     overflow: hidden;
 }
+
 .outline{
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
+
 .flex-center{
     display: flex;
     flex-direction: column;
@@ -69,6 +94,7 @@ body,html{
 .space-around{
     justify-content: space-around;
 }
+
 .flex-center h1{
     align-self: center;
 }
@@ -90,19 +116,7 @@ body,html{
     top: 0;
 }
 
-/*COLORS*/
-
-.orange-pink{
-    background-image: var(--orange-pink);
-}
-
-.blue-purple{
-    background-image: var(--blue-purple);
-}
-
-.green-blue{
-    background-image: var(--green-blue);
-}
+/*pop-ups*/
 
 .pop-up{
     background-color: rgb(199, 199, 199);
@@ -119,6 +133,7 @@ body,html{
     padding: 50px;
     text-align: center;
 }
+
 .pop-up hr{
     width: 400px;
     height: 5px;
@@ -127,14 +142,45 @@ body,html{
     border: none;
     outline: none;
 }
+
 .pop-up h1{
     margin-bottom: 30px;
 }
+
 .pop-up p{
     font-size: 18px;
 }
 
-/*----Top Nav Bar----*/
+/*colors*/
+
+.orange-pink{
+    background-image: var(--orange-pink);
+}
+
+.blue-purple{
+    background-image: var(--blue-purple);
+}
+
+.green-blue{
+    background-image: var(--green-blue);
+}
+
+/*content*/
+
+.content{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-family: Lato, Roboto, Arial, sans-serif;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: var(--main-text-color);
+    text-align: justify;
+}
+
+
+/*---- 
+3. TOP NAV BAR
+----*/
 
 .nav-left{
     margin-left: 1rem;
@@ -153,10 +199,12 @@ body,html{
     background-color: var(--gray-2);
     z-index: 2;
 }
-
 /*TRANSPARENT NAV IS DEFINED IN MEDIA QUERIES*/
 
-/*----FLAGS----*/
+
+/*---- 
+4. FLAGS 
+----*/
 
 .flags img{
     height: 50px;
@@ -170,7 +218,11 @@ body,html{
     right:  10px;
     bottom: 5px;
 }
-/*----Logo----*/
+
+
+/*---- 
+5. LOGO 
+----*/
 
 .logo{
     font-family: Oxanium, sans-serif;
@@ -191,7 +243,10 @@ body,html{
     transition: ease-out 0.6s;
 }
 
-/*----big nav----*/
+
+/*----
+6. BIG NAV
+----*/
 
 .nav-window{
     display: none;
@@ -232,13 +287,16 @@ body,html{
 }
 
 
-/*---- ICONS -----*/
+/*---- 
+7. ICONS 
+-----*/
 
 .fa-bars{ /*hamburger / menu bars*/
     font-size: 3rem;
     color: var(--gray-1 );
     cursor: pointer;
 }
+
 .fa-times{ /*cross / X */
     font-size: 2.5rem;
     display:none; 
@@ -247,19 +305,10 @@ body,html{
     z-index: 4;
 }
 
-/*----content presets----*/
 
-.content{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    font-family: Lato, Roboto, Arial, sans-serif;
-    margin-left: 5%;
-    margin-right: 5%;
-    color: var(--main-text-color);
-    text-align: justify;
-}
-
-/*----Footer----*/
+/*---- 
+8. FOOTER 
+----*/
 
 .footer{
     background-color: var(--gray-2);
@@ -270,26 +319,31 @@ body,html{
     align-items: center;
     font-family: lato,arial,sans-serif,;
 }
+
 .footer div{
     margin-top: -50px;
     height: 150px;
     width: 150px;
 }
+
 .footer li{
     list-style: none;
     margin: 5px;
 }
+
 .footer li a{
     font-family: lato;
     color: rgb(200,200,200);
 }
+
 .footer h2{
     margin-bottom: 20px;
     color: white;
     margin-left: 30px;
     text-decoration: underline;
-    font-family: lato,sans-serif;
+    font-family: Heebo,sans-serif;
 }
+
 #footer-svg{
     margin-bottom: -3%;
     width: 100vw;

@@ -1,5 +1,5 @@
 test/en/tarefas/
-test/en/projects/cardGameStuff
+test/projects/
 *.gitignore
 mozinha.html
 */node_modules

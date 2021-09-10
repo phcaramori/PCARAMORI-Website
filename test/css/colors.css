@@ -1,6 +1,6 @@
 :root{
-    --main-bg-color: rgb(15, 22, 24); /*gray1*/
-    --main-text-color: rgb(233, 233, 233); /*light-gray 1*/
+    --main-bg-color: var(--gray-3); /*gray3*/
+    --main-text-color: var(--light-gray-1); /*light-gray 1*/
     --transparent-bg-color:rgba(15, 22, 24,0.5);
 
         /*1 is lighter, 2 darker.*/
@@ -8,17 +8,19 @@
     --gray-1: rgb(63,71,78);
     --gray-2: rgb(34, 38, 41); 
     --gray-3: rgb(15, 22, 24); 
-    --orange-1: rgb(255, 94, 0);
-    --orange-2: rgb(197, 58, 3);
+    --orange-1: #FF5E00;
+    --orange-2: #fc4727;
     --orange-pastel: rgb(192, 91, 51);
-    --green-1: rgb(9, 255, 0);
-    --green-2: rgb(51, 192, 110);
+    --green-1: #0DFF75;
+    --green-2: #12B357;
     --green-pastel: rgb(51, 192, 110);
-    --blue-1: rgb(26, 53, 170);
-    --blue-2: rgb(7, 3, 92);
+    --blue-1: #0D81FF;
+    --blue-2: #1257B3;
     --blue-pastel: rgb(51, 107, 192);
-    --purple-1: rgb(126, 0, 230);
-    --purple-2: rgb(40, 4, 124);
+
+
+    --purple-1: #621af3;
+    --purple-2: #321077;
     --purple-pastel: rgb(89, 51, 192);
 
     --orange-pink: linear-gradient(25deg, rgb(211, 81, 30) 0%, rgb(148, 24, 131) 100%);

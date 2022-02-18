@@ -6,57 +6,58 @@
 
 */
 
-@media only screen and (max-width: 500px) { /* rules for mobile devices */
-
-    .hero-contents{
+@media only screen and (max-width: 550px) {
+    /* rules for mobile devices */
+    .hero-contents {
         margin-top: -20%;
     }
-    .hero-contents h1{
+    .hero-contents h1 {
         font-size: 50px !important;
     }
-    .hero-contents span{
+    .hero-contents span {
         font-size: 27px !important;
     }
-
-    .navbar .logo{
+    .navbar .logo {
         font-size: 1.5rem;
     }
-    .navbar i{
+    .navbar i {
         font-size: 2.5rem;
     }
-    .desktop-only{
+    .desktop-only {
         display: none !important;
     }
-    .box{
+    .box {
         width: 72vw;
         margin-left: auto;
         margin-right: auto;
         box-shadow: none;
     }
 }
-@media only screen and (min-width:500px) and (max-width: 800px) { /* rules for tablets */
-    .box{
+
+@media only screen and (min-width:550px) and (max-width: 800px) {
+    /* rules for tablets */
+    .box {
         width: 60vw;
     }
-    .box-align-right{
+    .box-align-right {
         margin-left: 20vw;
     }
-    .mobile-only{
-        display:none !important;
-    }
-    .desktop-only{
+    .mobile-only {
         display: none !important;
     }
-    .transparent-nav{
-        background: linear-gradient(0deg, rgba(15,22,24,0) 0%, rgba(15,22,24,0.8) 60%, rgba(15,22,24,1) 95%) !important;
+    .desktop-only {
+        display: none !important;
+    }
+    .transparent-nav {
+        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%) !important;
     }
 }
 
-@media only screen and (min-width:800px){
-    .mobile-only{
-        display:none !important;
+@media only screen and (min-width:800px) {
+    .mobile-only {
+        display: none !important;
     }
-    .transparent-nav{
-        background: linear-gradient(0deg, rgba(15,22,24,0) 0%, rgba(15,22,24,0.8) 60%, rgba(15,22,24,1) 95%) !important;
+    .transparent-nav {
+        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%) !important;
     }
 }

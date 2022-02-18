@@ -1,7 +1,8 @@
 @import url("colors.css");
-.behind{
+.behind {
     z-index: 0 !important;
 }
+
 
 /*
     1 - Intro
@@ -11,9 +12,10 @@
     5 - Styling for boxes 
 */
 
+
 /* Into */
 
-.intro{
+.intro {
     position: fixed;
     top: 0;
     left: 0;
@@ -26,54 +28,66 @@
     background-color: black;
     color: rgb(253, 138, 125);
 }
-.intro span{
+
+.intro span {
     padding: 30px;
-    font-family: Heebo,Roboto,sans-serif;
+    font-family: Heebo, Roboto, sans-serif;
     font-size: 3rem;
     letter-spacing: 2px;
 }
-.intro span:last-child{
+
+.intro span:last-child {
     animation: intro-anim-top 1s;
 }
-.intro .logo{
-    font-size: 4rem;
+
+.intro .logo {
+    font-size: 5rem;
     border-width: 5px;
     animation: ease-out intro-logo-anim 0.7s;
-
 }
-.intro-away-anim{
+
+.intro-away-anim {
     animation: ease-in-out intro-away-anim 300ms;
 }
+
+
 /*Intro Animations*/
 
-@keyframes intro-anim-top{
-    0%{
+@keyframes intro-anim-top {
+    0% {
         margin-top: -100vh;
     }
-
-    100%{
+    100% {
         margin-top: 0;
     }
 }
-@keyframes intro-logo-anim{
-    0%{
+
+@keyframes intro-logo-anim {
+    0% {
         margin-left: -150vw;
     }
-    100%{
+    100% {
         margin-left: 0;
     }
 }
-@keyframes intro-away-anim{
-    0%{margin-top: 0;}
-    100%{margin-top: -100vh;}
+
+@keyframes intro-away-anim {
+    0% {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: -100vh;
+    }
 }
+
 
 /*1st section -  hero*/
 
-html{
+html {
     background-color: var(--main-bg-color);
 }
-.s1{
+
+.s1 {
     height: 100vh;
     min-height: 100vh;
     min-width: 100vw;
@@ -81,6 +95,7 @@ html{
     text-align: center;
     z-index: 2;
 }
+
 .s1::before {
     background-image: url(../resources/landing/landing.jpg);
     background-size: cover;
@@ -93,22 +108,24 @@ html{
     height: 100vh;
     z-index: -1;
 }
-@media (min-aspect-ratio: 16/9){
-    .s1{
+
+@media (min-aspect-ratio: 16/9) {
+    .s1 {
         width: 100vw;
         height: auto;
     }
 }
-@media (max-aspect-ratio: 16/9){
-    .s1{
+
+@media (max-aspect-ratio: 16/9) {
+    .s1 {
         width: auto;
         height: 100vh;
-        
     }
 }
-.hero-contents h1{
+
+.hero-contents h1 {
     background-size: 600% 600%;
-    font-size: 4rem;
+    font-size: 5rem;
     border: 0.4rem solid white;
     color: white;
     margin-left: auto;
@@ -117,15 +134,17 @@ html{
     font-weight: 500;
 }
 
+
 /* 2nd section - boxes */
 
-.content{
+.content {
     margin-top: 0% !important;
 }
 
+
 /*----Presets for Boxes----*/
 
-.box{
+.box {
     background: white;
     padding: 30px;
     border-radius: 3px;
@@ -136,7 +155,7 @@ html{
     cursor: pointer;
 }
 
-.box-heading{
+.box-heading {
     font-size: 2rem;
     text-align: center;
     margin-bottom: 10px;
@@ -144,95 +163,97 @@ html{
     font-weight: 100;
 }
 
-.box p{
+.box p {
     color: var(--gray-1);
     font-size: 1.4rem;
 }
 
-.box:hover{
+.box:hover {
     z-index: -1;
     transform: translateX(15vw);
 }
 
-.box-align-right:hover{
+.box-align-right:hover {
     transform: translateX(-15vw);
 }
 
-.box-align-right{
+.box-align-right {
     margin-left: 40vw;
 }
 
-.box:nth-child(even) .box-img{
+.box:nth-child(even) .box-img {
     float: right;
     margin-right: -30px;
     margin-top: -34px;
 }
 
-.box:nth-child(odd) .box-img{
+.box:nth-child(odd) .box-img {
     float: left;
     margin-left: -30px;
     margin-top: -34px;
     transform: scaleX(-1);
 }
-.box-img img{
+
+.box-img img {
     height: 40px;
     width: 100%;
 }
 
+
 /*----Individual styles for boxes----*/
 
-.orange-box{
+.orange-box {
     border-top: 4px solid var(--orange-2);
     box-shadow: -10px 10px 5px var(--orange-2);
 }
 
-.orange-box h1{
+.orange-box h1 {
     color: var(--orange-2);
 }
 
-.orange-box:hover{
+.orange-box:hover {
     border-top: 4px solid var(--orange-1);
     box-shadow: 0 0 7px 4px var(--orange-1);
 }
 
-.blue-box{
+.blue-box {
     box-shadow: 10px 10px 5px var(--blue-2);
     border-top: 4px solid var(--blue-2);
 }
 
-.blue-box h1{
+.blue-box h1 {
     color: var(--blue-2);
 }
 
-.blue-box:hover{
+.blue-box:hover {
     box-shadow: 0 0 7px 4px var(--blue-1);
     border-top: 4px solid var(--blue-1);
 }
 
-.green-box{
+.green-box {
     box-shadow: -10px 10px 5px var(--green-2);
     border-top: 4px solid var(--green-2);
 }
 
-.green-box h1{
+.green-box h1 {
     color: var(--green-2)
 }
 
-.green-box:hover{
+.green-box:hover {
     border-top: 4px solid var(--green-1);
     box-shadow: 0 0 7px 4px var(--green-1);
 }
 
-.purple-box{
+.purple-box {
     border-top: 4px solid var(--purple-2);
     box-shadow: 10px 10px 5px var(--purple-2);
 }
 
-.purple-box h1{
+.purple-box h1 {
     color: var(--purple-2)
 }
 
-.purple-box:hover{
+.purple-box:hover {
     box-shadow: 0 0 7px 4px var(--purple-1);
     border-top: 4px solid var(--purple-1);
 }

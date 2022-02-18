@@ -15,6 +15,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
+@import url("colors.css");
 
 /* FONTS: Lato, MuseoModerno, Oxanium, Heebo*/
 
@@ -275,6 +276,7 @@ p {
     display: none;
     height: 100vh;
     width: 100vw;
+    z-index: 1;
     opacity: 0.985;
     position: absolute;
     background-image: var(--green-blue);
@@ -436,6 +438,10 @@ p {
     animation: slide-from-right 1s ease-out;
 }
 
+.menu-from-left {
+    animation: menu-from-left 1s ease;
+}
+
 .menu-back {
     animation: menu-back-left 1.5s ease;
 }
@@ -451,7 +457,7 @@ p {
 }
 
 .hr-anim {
-    animation: nav-menu-lines 0.9s ease-in 0.35s;
+    animation: nav-menu-lines 0.8s ease-in 0.3s;
 }
 
 @keyframes nav-menu-lines {
@@ -531,6 +537,9 @@ p {
     0% {
         left: -100%;
     }
+    100% {
+        left: 0
+    }
 }
 
 @keyframes menu-back-left {
@@ -556,7 +565,7 @@ p {
 
 */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 550px) {
     /* rules for mobile devices */
     .hero-contents {
         margin-top: -20%;
@@ -584,7 +593,7 @@ p {
     }
 }
 
-@media only screen and (min-width:500px) and (max-width: 800px) {
+@media only screen and (min-width:550px) and (max-width: 800px) {
     /* rules for tablets */
     .box {
         width: 60vw;
@@ -599,7 +608,7 @@ p {
         display: none !important;
     }
     .transparent-nav {
-        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 0.8) 60%, rgba(15, 22, 24, 1) 95%) !important;
+        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%) !important;
     }
 }
 
@@ -608,6 +617,6 @@ p {
         display: none !important;
     }
     .transparent-nav {
-        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 0.8) 60%, rgba(15, 22, 24, 1) 95%) !important;
+        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%) !important;
     }
 }

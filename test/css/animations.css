@@ -39,7 +39,7 @@
 }
 
 .hr-anim {
-    animation: nav-menu-lines 1s ease-in 0.25s;
+    animation: nav-menu-lines 0.8s ease-in 0.25s;
 }
 
 @keyframes nav-menu-lines {

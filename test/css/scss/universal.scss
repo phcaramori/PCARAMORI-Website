@@ -51,8 +51,12 @@ p {
     color: var(--main-text-color);
 }
 
+a {
+    color: var(--orange-1);
+}
+
 a:hover {
-    color: var(--orange-1) !important;
+    color: var(--orange-2) !important;
     transition: 0.25s;
 }
 
@@ -206,10 +210,11 @@ a:hover {
 
 .navbar {
     padding-top: 0.5rem;
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    height: 3rem;
     background-color: var(--gray-2);
     z-index: 2;
 }

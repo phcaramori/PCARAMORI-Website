@@ -1,5 +1,4 @@
 test/en/tarefas/
-test/projects/
 *.gitignore
 mozinha.html
 */node_modules

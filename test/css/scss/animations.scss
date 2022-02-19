@@ -21,7 +21,7 @@
 }
 
 .menu-from-left {
-    animation: menu-from-left 1s ease;
+    animation: 1s cubic-bezier(0, 0, 0.2, 1) 0s 1 normal none running menu-from-left
 }
 
 .menu-back {
@@ -39,7 +39,7 @@
 }
 
 .hr-anim {
-    animation: nav-menu-lines 0.8s ease-in 0.25s;
+    animation: nav-menu-lines 0.9s ease-in 0.25s;
 }
 
 @keyframes nav-menu-lines {

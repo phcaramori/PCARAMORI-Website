@@ -29,6 +29,10 @@
         margin-right: auto;
         box-shadow: none;
     }
+    .transparent-nav {
+        background-color: var(--gray-2);
+        background-image: none;
+    }
 }
 
 @media only screen and (min-width:550px) and (max-width: 800px) {
@@ -45,16 +49,10 @@
     .desktop-only {
         display: none !important;
     }
-    .transparent-nav {
-        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%) !important;
-    }
 }
 
 @media only screen and (min-width:800px) {
     .mobile-only {
         display: none !important;
-    }
-    .transparent-nav {
-        background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%) !important;
     }
 }

@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 @import url("colors.css");
 
-/* FONTS: Lato, MuseoModerno, Oxanium, Heebo*/
+/* FONTS: Lato: Text, MuseoModerno: Title, Oxanium: Logo, */
 
 
 /*-------------------------------------------------\
@@ -365,8 +365,17 @@ a:hover {
     margin-bottom: 20px;
     color: white;
     text-decoration: underline;
-    font-family: Heebo, sans-serif;
+    font-family: Lato, sans-serif;
     text-align: center;
+}
+
+.copyright {
+    color: white;
+    background-color: var(--gray-2);
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-family: museomoderno;
 }
 
 #footer-svg {

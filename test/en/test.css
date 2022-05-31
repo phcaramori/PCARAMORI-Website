@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
+/* FONTS: Lato: Text, MuseoModerno: Title, Oxanium: Logo, Anonymous Pro: Code */
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+  
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.intro-container{
+    margin-top: 5%;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: "Anonymous Pro";
+}
+
+.input{
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.input i{
+    font-size: 15rem;
+    color: var(--orange-2);
+    padding-top: auto;
+    padding-bottom: auto;
+}
+.input input{
+    width: 100%;
+    font-size: 20rem;
+    background: none;
+    border: none !important;
+    color: var(--orange-1);
+    outline: none;
+    margin-left: 50px;
+    font-family: "Anonymous Pro";
+}
+.input input::after {
+    content: "";
+    width: 5px;
+    height: 20px;
+    background: #ec7fff;
+    display: inline-block;
+}

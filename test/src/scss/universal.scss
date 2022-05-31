@@ -55,7 +55,8 @@ a {
     color: var(--orange-1);
 }
 
-.content a:hover, .footer a:hover {
+.content a:hover,
+.footer a:hover {
     color: var(--orange-2) !important;
     transition: 0.25s;
 }
@@ -345,7 +346,6 @@ a {
 }
 
 .footer div {
-    margin-top: -50px;
     height: 150px;
     width: 150px;
 }

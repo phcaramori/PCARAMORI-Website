@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
-@import url("colors.css");
 
 /* FONTS: Lato: Text, MuseoModerno: Title, Oxanium: Logo, */
 
@@ -337,8 +336,6 @@ a:hover {
 
 .footer {
     background-color: var(--gray-2);
-    width: 100vw;
-    height: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -359,7 +356,7 @@ a:hover {
 
 .footer li a {
     font-family: lato;
-    color: rgb(200, 200, 200);
+    color: var(--light-gray-1);
 }
 
 .footer h2 {
@@ -371,9 +368,10 @@ a:hover {
 }
 
 .copyright {
-    color: white;
+    color: var(--gray-1);
     background-color: var(--gray-2);
     text-align: right;
+    padding-top: 20px;
     padding-right: 10px;
     padding-bottom: 10px;
     font-family: museomoderno;

@@ -92,3 +92,112 @@ function hidePopUp() {
     document.getElementsByClassName("pop-up")[0].remove();
     allowScroll();
 }
+
+//create nav, footer, and other repeated elements
+
+function populate(){
+    /* NAV MENU:
+<div class="nav-window flex-center space-around noscroll" id="nav-window">
+    <h1></h1>
+    <a class="nav-item" href="./about_me/">About Me</a>
+    <hr class="menu-line">
+    <a class="nav-item" href="./projects/">Projects</a>
+    <hr class="menu-line">
+    <a class="nav-item" href="./history/">History</a>
+    <hr class="menu-line">
+    <a class="nav-item" href="./contact/">Contact</a>
+    <hr class="menu-line">
+    <div class="flags">
+        <a href="./pt/"><img src="./resources/br-flag.png" alt="PT" id="br-flag"></a>
+        <a href="./en/"><img src="./resources/us-flag.png" alt="EN" id="us-flag"></a>
+    </div>
+</div>
+*/
+    let navMenu = document.createElement('div')
+    navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
+    navMenu.id = "nav-window"
+    navMenu.appendChild(document.createElement("h1"))
+
+    let textArr = ["About Me", "Projects", "History", "Contact"]
+    textArr.forEach(text => {
+        let a = document.createElement("a")
+        a.classList.add("nav-item")
+        a.innerHTML = text
+        text.toLowerCase()
+        text.replace(" ","_")
+        a.href = text
+        navMenu.appendChild(a)
+
+        let b = document.createElement("hr")
+        b.classList.add("menu-line")
+        navMenu.appendChild(b)
+    });
+    
+    let flags = document.createElement("div")
+    flags.classList.add("flags")
+
+    let linkA = document.createElement("img")
+    linkA.src = "./resources/br-flag.png"
+    linkA.alt = "PT"
+    linkA.id = "br-flag"
+
+    let linkB = document.createElement("img")
+    linkB.src = "./resources/us-flag.png"
+    linkB.alt = "EN"
+    linkB.id = "us-flag"
+
+    flags.appendChild(linkA)
+    flags.appendChild(linkB)
+
+    navMenu.appendChild(flags)
+
+    document.body.insertBefore(navMenu, document.querySelector('.content'))
+
+/* NAV BAR:
+<nav class="sticky navbar transparent-nav" id="navbar">
+    <div class="nav-left">
+        <i class="fas fa-bars bar-2" id="nav-button" onclick="showNav()"></i>
+        <i class="fas fa-times" id="close-nav" style="display: none;" onclick="closeNav()"></i>
+    </div>
+    <div class="nav-right">
+        <a href="./index.html">
+            <div class="logo logo-hover" id='logo' style="display: inline-block;">
+            Pcaramori
+            </div>
+        </a>
+    </div>
+</nav>
+*/
+
+    let header = document.createElement('nav')
+    header.classList.add("sticky", "navbar", "transparent-nav")
+    
+    let left = document.createElement('div')
+    left.classList.add("nav-left")
+    let navBtn = document.createElement('i')
+    navBtn.classList.add("fas", "fa-bars", "bar-2")
+    navBtn.id = "nav-button"
+    navBtn.addEventListener("click",function(){showNav()})
+    let closeNav = document.createElement("i")
+    closeNav.classList.add("fas", "fa-times")
+    closeNav.id = "closeNav"
+    closeNav.style.display = "none"
+    closeNav.addEventListener("click",function(){closeNav()})
+    left.appendChild(navBtn)
+    left.appendChild(closeNav)
+    header.appendChild(left)
+
+    let right = document.createElement('div')
+    let link = document.createElement('a')
+    link.href = "./index.html"
+    let logo = document.createElement('div')
+    logo.classList.add("logo", "logo-hover")
+    logo.id = "logo"
+    logo.style.display = "inline-block"
+    logo.innerHTML = "Pcaramori"
+    link.appendChild(logo)
+    right.appendChild(link)
+    header.appendChild(right)
+
+    document.body.insertBefore(header, document.querySelector('.content'))
+}

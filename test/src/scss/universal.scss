@@ -17,12 +17,13 @@
     6 - Big fullscreen Nav                         \
     7 - Icons                                      \
     8 - Footer                                     \
+    9 - Sizing                                     /
 --------------------------------------------------*/
 
 
-/*----
+/*--------------
 0. GENERAL STYLES
------*/
+--------------*/
 
 * {
     margin: 0;
@@ -61,9 +62,9 @@ a:hover {
 }
 
 
-/*----
+/*--------------
 1. SCROLL BAR
------*/
+---------------*/
 
 ::-webkit-scrollbar {
     width: 12px;
@@ -86,9 +87,9 @@ a:hover {
 }
 
 
-/*----- 
+/*-------------- 
 2. PRESETS 
------*/
+--------------*/
 
 .noscroll {
     overflow: hidden;
@@ -196,9 +197,9 @@ a:hover {
 }
 
 
-/*---- 
+/*-------------- 
 3. TOP NAV BAR
-----*/
+--------------*/
 
 .nav-left {
     margin-left: 1rem;
@@ -223,9 +224,9 @@ a:hover {
 /*TRANSPARENT NAV IS DEFINED IN MEDIA QUERIES*/
 
 
-/*---- 
+/*-------------- 
 4. FLAGS 
-----*/
+--------------*/
 
 .flags img {
     height: 50px;
@@ -241,9 +242,9 @@ a:hover {
 }
 
 
-/*---- 
+/*-------------- 
 5. LOGO 
-----*/
+--------------*/
 
 .logo {
     font-family: Oxanium, sans-serif;
@@ -265,9 +266,9 @@ a:hover {
 }
 
 
-/*----
+/*--------------
 6. BIG NAV
-----*/
+--------------*/
 
 .nav-window {
     display: none;
@@ -309,9 +310,9 @@ a:hover {
 }
 
 
-/*---- 
+/*-------------- 
 7. ICONS 
------*/
+---------------*/
 
 .fa-bars {
     /*hamburger / menu bars*/
@@ -330,9 +331,9 @@ a:hover {
 }
 
 
-/*---- 
+/*-------------- 
 8. FOOTER 
-----*/
+--------------*/
 
 .footer {
     background-color: var(--gray-2);

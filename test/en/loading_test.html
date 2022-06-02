@@ -20,8 +20,8 @@
 
 <body>
     <div class="intro-container">
-        <div class="line">
-            Type "start" to begin
+        <div class="console">
+            <p class="line-of-text"> Type "start" to begin </p>
         </div>
         <div class="input">
             <i class="fas fa-chevron-right"></i>
@@ -31,3 +31,58 @@
 </body>
 
 </html>
+
+
+<script>
+    let userInput = document.querySelector('.input input')
+    userInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            if (userInput.value.toLowerCase().replace(/\s+/g, '') == "start") {
+                console.log('in')
+            } else {
+
+            }
+            userInput.value = '';
+        }
+    });
+
+    let hashItemList = [];
+    let consoleItemList = [];
+    class consoleItem {
+        constructor(str, color) {
+            this.str = str;
+            if (color) {
+                this.color = "var(--TERMINAL-" + color + ")"
+            }
+            consoleItemList.push(this)
+            hashItemList.push(this.id)
+            this.e = document.createElement('p')
+            this.e.id = makeid()
+            this.e.innerHTML = str
+            this.e.style.color = this.color;
+            this.printToConsole()
+        }
+        printToConsole = () => {
+            document.querySelector('.console').appendChild(this.e)
+        }
+        removeFromConsole = () => {
+            document.getElementById(this.id).remove()
+            let index = consoleItemList.indexOf(this)
+            consoleItemList.splice(index, 1)
+        }
+    }
+
+    function makeid() { //8 long hash
+        var result = '';
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (var i = 0; i < 8; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+
+        if (hashItemList.includes(result)) {
+            return makeid();
+        } else {
+            return result;
+        }
+    }
+</script>

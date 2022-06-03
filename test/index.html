@@ -46,7 +46,9 @@
             if (userInput.value.toLowerCase().replace(/\s+/g, '') == "start") {
                 userInput.value = '';
                 startAnim();
-            } else {
+            } else if(userInput.value.toLowerCase().replace(/\s+/g, '') == "skip"){
+                window.location.replace("./en/")
+            } else{
                 new consoleItem("Type \"start\" to begin", "red", false)
             }
             userInput.value = '';

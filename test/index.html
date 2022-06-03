@@ -36,6 +36,9 @@
 
 
 <script>
+    if(window.innerWidth<700){
+        window.location.replace("./en/")
+    }
     let userInput = document.querySelector('.input input')
     userInput.addEventListener("keypress", function(event) {
         if (event.key === "Enter") {

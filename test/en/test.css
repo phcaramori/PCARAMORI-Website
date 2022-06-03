@@ -8,6 +8,7 @@
     --TERMINAL-red: rgb(217, 33, 33);
     --TERMINAL-green: #0DFF75;
     --TERMINAL-yellow: rgb(230, 126, 23);
+    --TERMINAL-gray: rgb(150, 150, 150);
 }
 
 body {
@@ -38,12 +39,15 @@ body {
     display: block;
 }
 
-.input {
+.big-input {
     position: absolute;
     width: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.input {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -66,4 +70,12 @@ body {
     outline: none;
     margin-left: 50px;
     font-family: "Anonymous Pro";
+}
+
+.TERMINAL-glowing {
+    text-shadow: white 0 0 4px;
+}
+
+.TERMINAL-user {
+    color: rgb(100, 100, 100);
 }

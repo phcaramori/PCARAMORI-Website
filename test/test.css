@@ -1,20 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@300&family=Oxanium:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
-
-/* FONTS: Lato: Text, MuseoModerno: Title, Oxanium: Logo, Anonymous Pro: Code */
 
 :root {
     --TERMINAL-red: rgb(217, 33, 33);
     --TERMINAL-green: #0DFF75;
     --TERMINAL-yellow: rgb(230, 126, 23);
     --TERMINAL-gray: rgb(150, 150, 150);
+    --orange-1: #FF5E00;
+    --orange-2: #fc4727;
+    --TERMINAL-dark-gray: rgb(100,100,100);
 }
 
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    background-color: rgb(15, 22, 24);
+    overflow-y: hidden;
 }
 
 @keyframes blink {
@@ -33,10 +40,12 @@ body {
 
 .console {
     display: inline-block;
+    margin-bottom: 15%;
 }
 
 .console .line-of-text {
     display: block;
+    animation: loadConsoleItem 0.25s;
 }
 
 .big-input {
@@ -51,7 +60,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .input i {
@@ -59,6 +68,10 @@ body {
     color: var(--orange-2);
     padding-top: auto;
     padding-bottom: auto;
+}
+
+.input .pre{
+    width: 100px;
 }
 
 .input input {
@@ -78,4 +91,12 @@ body {
 
 .TERMINAL-user {
     color: rgb(100, 100, 100);
+}
+
+@keyframes loadConsoleItem {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 100%;
+    }
 }

@@ -26,7 +26,7 @@ function intro() {
             }
 
             //hide intro
-            document.getElementById('navbar').style.zIndex = "1"
+            document.getElementById('navbar').style.zIndex = ""
             document.getElementsByClassName('intro')[0].style.display = "none"
 
         }, 299)

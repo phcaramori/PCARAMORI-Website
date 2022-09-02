@@ -169,7 +169,6 @@ html {
 }
 
 .box:hover {
-    z-index: -1;
     transform: translateX(15vw);
 }
 
@@ -178,7 +177,8 @@ html {
 }
 
 .box-align-right {
-    margin-left: 40vw;
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .box:nth-child(even) .box-img {

@@ -194,6 +194,16 @@ a {
     margin-right: 5%;
     color: var(--main-text-color);
     text-align: justify;
+    display: flex;
+    justify-content: center;
+}
+
+.flex-shrink-container {
+    display: flex;
+    max-width: 1750px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-direction: column;
 }
 
 
@@ -217,7 +227,7 @@ a {
     width: 100vw;
     height: 3rem;
     background: linear-gradient(0deg, rgba(15, 22, 24, 0) 0%, rgba(15, 22, 24, 1) 100%);
-    z-index: 2;
+    z-index: 101;
 }
 
 
@@ -274,7 +284,7 @@ a {
     display: none;
     height: 100vh;
     width: 100vw;
-    z-index: 1;
+    z-index: 100;
     opacity: 0.985;
     position: absolute;
     background-image: var(--green-blue);

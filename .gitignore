@@ -2,3 +2,4 @@ test/en/tarefas/
 *.gitignore
 mozinha.html
 */node_modules
+test/src/css

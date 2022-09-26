@@ -96,98 +96,93 @@ function hidePopUp() {
 //create nav, footer, and other repeated elements
 
 function populate(){
-    /* NAV MENU:
-<div class="nav-window flex-center space-around noscroll" id="nav-window">
-    <h1></h1>
-    <a class="nav-item" href="./about_me/">About Me</a>
-    <hr class="menu-line">
-    <a class="nav-item" href="./projects/">Projects</a>
-    <hr class="menu-line">
-    <a class="nav-item" href="./history/">History</a>
-    <hr class="menu-line">
-    <a class="nav-item" href="./contact/">Contact</a>
-    <hr class="menu-line">
-    <div class="flags">
-        <a href="./pt/"><img src="./resources/br-flag.png" alt="PT" id="br-flag"></a>
-        <a href="./en/"><img src="./resources/us-flag.png" alt="EN" id="us-flag"></a>
-    </div>
-</div>
-*/
+    // ----- CUSTOM LANGUAGE-SENSING BASED ON DIRECTORY ----- //
+    const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
+    const active = window.location.pathname.split('/')[3] //CHANGE TO 2 ONCE TEST DIR IS GONE
+    
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
     navMenu.id = "nav-window"
     navMenu.appendChild(document.createElement("h1"))
 
-    let textArr = ["About Me", "Projects", "History", "Contact"]
-    textArr.forEach(text => {
+    let textArren = ["about-me", "projects", "history", "contact"] //must be the same in EN and PT
+    let textArrpt = ["sobre-mim", "projetos", "historico", "contato"]
+
+    let indexOfPage ;
+    if(lang === "en"){
+        indexOfPage = textArren.indexOf(active)
+    }else if(lang === "pt"){
+        indexOfPage = textArrpt.indexOf(active)
+    }
+
+
+    // ----- POPULATE NAV MENU ACCORDING TO LANGUAGE ----- //
+    eval('textArr'+lang).forEach(link => {
         let a = document.createElement("a")
         a.classList.add("nav-item")
-        a.innerHTML = text
-        text.toLowerCase()
-        text.replace(" ","_")
-        a.href = text
+        a.style.textTransform = 'capitalize';
+        let finalText = link.split("-").join(" ") //replace each space with a -
+        a.innerHTML = finalText
+        if(link === active){
+            a.classList.add("active-nav-item") //make active link orange
+        }
+        a.href = link
         navMenu.appendChild(a)
-
         let b = document.createElement("hr")
         b.classList.add("menu-line")
         navMenu.appendChild(b)
     });
     
+
+    // ----- POPULATE FLAGS ----- //
     let flags = document.createElement("div")
     flags.classList.add("flags")
 
+    let linkAWrapper = document.createElement("a")
     let linkA = document.createElement("img")
     linkA.src = "./resources/br-flag.png"
     linkA.alt = "PT"
     linkA.id = "br-flag"
+    linkAWrapper.href = "./pt/"+ textArrpt[indexOfPage] + "/"
+    linkAWrapper.appendChild(linkA)
 
+    let linkBWrapper = document.createElement("a")
     let linkB = document.createElement("img")
     linkB.src = "./resources/us-flag.png"
     linkB.alt = "EN"
     linkB.id = "us-flag"
+    linkBWrapper.href = "./en/"+ textArren[indexOfPage] + "/"
+    linkBWrapper.appendChild(linkB)
 
-    flags.appendChild(linkA)
-    flags.appendChild(linkB)
-
+    flags.appendChild(linkAWrapper)
+    flags.appendChild(linkBWrapper)
     navMenu.appendChild(flags)
+    document.body.insertBefore(navMenu, document.querySelector('.content')) //INSERT NAV MENU
 
-    document.body.insertBefore(navMenu, document.querySelector('.content'))
 
-/* NAV BAR:
-<nav class="sticky navbar transparent-nav" id="navbar">
-    <div class="nav-left">
-        <i class="fas fa-bars bar-2" id="nav-button" onclick="showNav()"></i>
-        <i class="fas fa-times" id="close-nav" style="display: none;" onclick="closeNav()"></i>
-    </div>
-    <div class="nav-right">
-        <a href="./index.html">
-            <div class="logo logo-hover" id='logo' style="display: inline-block;">
-            Pcaramori
-            </div>
-        </a>
-    </div>
-</nav>
-*/
-
+    // ----- MAKE TOP NAVBAR ----- //
     let header = document.createElement('nav')
     header.classList.add("sticky", "navbar", "transparent-nav")
     
+    // ----- LEFT NAV ----- //
     let left = document.createElement('div')
     left.classList.add("nav-left")
-    let navBtn = document.createElement('i')
-    navBtn.classList.add("fas", "fa-bars", "bar-2")
-    navBtn.id = "nav-button"
-    navBtn.addEventListener("click",function(){showNav()})
-    let closeNav = document.createElement("i")
-    closeNav.classList.add("fas", "fa-times")
-    closeNav.id = "closeNav"
-    closeNav.style.display = "none"
-    closeNav.addEventListener("click",function(){closeNav()})
-    left.appendChild(navBtn)
-    left.appendChild(closeNav)
+    let showNavBtn = document.createElement('i')
+    showNavBtn.classList.add("fas", "fa-bars", "bar-2")
+    showNavBtn.id = "nav-button"
+    showNavBtn.addEventListener("click",function(){showNav()})
+    let closeNavBtn = document.createElement("i")
+    closeNavBtn.classList.add("fas", "fa-times")
+    closeNavBtn.id = "close-nav"
+    closeNavBtn.style.display = "none"
+    closeNavBtn.addEventListener("click",function(){closeNav()})
+    left.appendChild(showNavBtn)
+    left.appendChild(closeNavBtn)
     header.appendChild(left)
-
+    
+    // ----- RIGHT NAV ----- //
     let right = document.createElement('div')
+    right.classList.add("nav-right")
     let link = document.createElement('a')
     link.href = "./index.html"
     let logo = document.createElement('div')
@@ -199,5 +194,5 @@ function populate(){
     right.appendChild(link)
     header.appendChild(right)
 
-    document.body.insertBefore(header, document.querySelector('.content'))
+    document.body.insertBefore(header, document.querySelector('.content')) //INSERT NAVBAR HEADER
 }

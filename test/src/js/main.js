@@ -41,7 +41,7 @@ function closeNav() {
             for (let i = 0; i < menuLine.length; i++) {
                 menuLine[i].classList.remove('hr-anim'); //remove "hr-anim" from all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
             }
-        }, 500) //wait 600ms before hiding menu so animation can complete
+        }, 501) //wait 500ms before hiding menu so animation can complete | 1 extra ms prevents flashing of menu of high refresh-rate screens, for whatever reason
 }
 //
 function lockScroll() {

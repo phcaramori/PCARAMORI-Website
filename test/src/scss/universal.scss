@@ -305,8 +305,12 @@ a {
 .nav-item:hover {
     opacity: 1;
     border: 0.25rem solid transparent;
-    border-image: linear-gradient(to top, var(--green-2), rgba(0, 0, 0, 0)) 1 100%;
+    border-image: linear-gradient(to top, var(--orange-2), rgba(0, 0, 0, 0)) 1 100%; //DECIDE ON THIS | EITHER ORANGE-2 OR GREEN-2
     font-size: 40px;
+}
+
+.active-nav-item {
+    color: var(--orange-1);
 }
 
 .nav-window hr {

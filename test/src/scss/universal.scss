@@ -14,9 +14,10 @@
     4 - Flags/Language Selection                   \
     5 - PCARAMORI Logo                             \ 
     6 - Big fullscreen Nav                         \
+    6.5 - Nav transition between pages             \
     7 - Icons                                      \
     8 - Footer                                     \
-    9 - Sizing                                     /
+    9 - Sizing                                     \
 --------------------------------------------------*/
 
 
@@ -323,6 +324,42 @@ a {
     height: 0.2rem;
     border: 0;
     background-color: var(--green-1);
+}
+
+
+/*-------------- 
+6. Nav transition between pages 
+---------------*/
+
+.link-transition {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    animation: black-slide-animation 0.3s ease-in;
+}
+
+@keyframes black-slide-animation {
+    0% {
+        transform: translate(-50%, 50%);
+    }
+}
+
+@keyframes black-slide-animation-back {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -150%);
+    }
+}
+
+.link-transition-out {
+    animation: black-slide-animation-back 0.5s ease-in !important;
 }
 
 

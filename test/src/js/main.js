@@ -3,10 +3,13 @@
     1 - Show/hide nav
     2 - lock/allow scroll
     3 - pop-up maker
+    4 - nav menu maker
 
 */
 console.log("%c What are you snooping around for?", "font-family:sans-serif; font-size:40px; color: red; text-shadow: 2px 2px 0 rgb(217,31,38) , 4px 4px 0 rgb(226,91,14) , 6px 6px 0 rgb(245,221,8) , 8px 8px 0 rgb(5,148,68)")
 
+
+// show/hide navigation
 function showNav() {
     document.getElementById('nav-window').style.display = 'flex';
     document.getElementById('nav-button').style.display = 'none';
@@ -43,7 +46,9 @@ function closeNav() {
             }
         }, 501) //wait 500ms before hiding menu so animation can complete | 1 extra ms prevents flashing of menu of high refresh-rate screens, for whatever reason
 }
-//
+
+
+// lock/allow scroll
 function lockScroll() {
     document.getElementsByTagName('body')[0].classList.add('noscroll')
 }
@@ -52,8 +57,8 @@ function allowScroll() {
     document.getElementsByTagName('body')[0].classList.remove('noscroll')
 }
 
-// pop-ups
 
+// pop-ups
 function popUp(text, head) {
     //lock scrolling
     lockScroll();
@@ -93,13 +98,25 @@ function hidePopUp() {
     allowScroll();
 }
 
-//create nav, footer, and other repeated elements
 
-function populate(){
+//create nav, footer, and other repeated elements
+function populate(noIntroAnim) {
+    //make animation on page load before anything else
+    if (!noIntroAnim) {
+        lockScroll()
+        let loadingCover = document.createElement("div")
+        document.body.appendChild(loadingCover)
+        loadingCover.classList.add("link-transition")
+        loadingCover.classList.add("link-transition-out")
+        setTimeout(() => {
+            loadingCover.remove()
+            allowScroll()
+        }, 500)
+    }
     // ----- CUSTOM LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
     const active = window.location.pathname.split('/')[3] //CHANGE TO 2 ONCE TEST DIR IS GONE
-    
+
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
     navMenu.id = "nav-window"
@@ -108,31 +125,40 @@ function populate(){
     let textArren = ["about-me", "projects", "history", "contact"] //must be the same in EN and PT
     let textArrpt = ["sobre-mim", "projetos", "historico", "contato"]
 
-    let indexOfPage ;
-    if(lang === "en"){
+    let indexOfPage;
+    if (lang === "en") {
         indexOfPage = textArren.indexOf(active)
-    }else if(lang === "pt"){
+    } else if (lang === "pt") {
         indexOfPage = textArrpt.indexOf(active)
     }
 
 
     // ----- POPULATE NAV MENU ACCORDING TO LANGUAGE ----- //
-    eval('textArr'+lang).forEach(link => {
+    eval('textArr' + lang).forEach(link => {
         let a = document.createElement("a")
         a.classList.add("nav-item")
         a.style.textTransform = 'capitalize';
         let finalText = link.split("-").join(" ") //replace each space with a -
         a.innerHTML = finalText
-        if(link === active){
+        if (link === active) {
             a.classList.add("active-nav-item") //make active link orange
         }
-        a.href = link
+        a.addEventListener("click", (e) => {
+            lockScroll()
+            let cover = document.createElement("div")
+            cover.classList.add("link-transition")
+            document.body.appendChild(cover)
+            setTimeout(() => {
+                window.location.href = lang + '/' + link; //after animation is complete change link to simulate click
+                document.body.classList.remove("link-transition")
+            }, 300)
+        })
         navMenu.appendChild(a)
         let b = document.createElement("hr")
         b.classList.add("menu-line")
         navMenu.appendChild(b)
     });
-    
+
 
     // ----- POPULATE FLAGS ----- //
     let flags = document.createElement("div")
@@ -143,7 +169,7 @@ function populate(){
     linkA.src = "./resources/br-flag.png"
     linkA.alt = "PT"
     linkA.id = "br-flag"
-    linkAWrapper.href = "./pt/"+ textArrpt[indexOfPage] + "/"
+    linkAWrapper.href = "./pt/" + textArrpt[indexOfPage] + "/"
     linkAWrapper.appendChild(linkA)
 
     let linkBWrapper = document.createElement("a")
@@ -151,7 +177,7 @@ function populate(){
     linkB.src = "./resources/us-flag.png"
     linkB.alt = "EN"
     linkB.id = "us-flag"
-    linkBWrapper.href = "./en/"+ textArren[indexOfPage] + "/"
+    linkBWrapper.href = "./en/" + textArren[indexOfPage] + "/"
     linkBWrapper.appendChild(linkB)
 
     flags.appendChild(linkAWrapper)
@@ -163,28 +189,28 @@ function populate(){
     // ----- MAKE TOP NAVBAR ----- //
     let header = document.createElement('nav')
     header.classList.add("sticky", "navbar", "transparent-nav")
-    
+
     // ----- LEFT NAV ----- //
     let left = document.createElement('div')
     left.classList.add("nav-left")
     let showNavBtn = document.createElement('i')
     showNavBtn.classList.add("fas", "fa-bars", "bar-2")
     showNavBtn.id = "nav-button"
-    showNavBtn.addEventListener("click",function(){showNav()})
+    showNavBtn.addEventListener("click", function() { showNav() })
     let closeNavBtn = document.createElement("i")
     closeNavBtn.classList.add("fas", "fa-times")
     closeNavBtn.id = "close-nav"
     closeNavBtn.style.display = "none"
-    closeNavBtn.addEventListener("click",function(){closeNav()})
+    closeNavBtn.addEventListener("click", function() { closeNav() })
     left.appendChild(showNavBtn)
     left.appendChild(closeNavBtn)
     header.appendChild(left)
-    
+
     // ----- RIGHT NAV ----- //
     let right = document.createElement('div')
     right.classList.add("nav-right")
     let link = document.createElement('a')
-    link.href = "./index.html"
+    link.href = lang + "/index.html"
     let logo = document.createElement('div')
     logo.classList.add("logo", "logo-hover")
     logo.id = "logo"

@@ -98,21 +98,20 @@ function hidePopUp() {
     allowScroll();
 }
 
+function animateTransition(){
+    lockScroll()
+    let loadingCover = document.createElement("div")
+    document.body.appendChild(loadingCover)
+    loadingCover.classList.add("link-transition")
+    loadingCover.classList.add("link-transition-out")
+    setTimeout(() => {
+        loadingCover.remove()
+        allowScroll()
+    }, 500)
+}
 
-//create nav, footer, and other repeated elements
-function populate(noIntroAnim) {
-    //make animation on page load before anything else
-    if (!noIntroAnim) {
-        lockScroll()
-        let loadingCover = document.createElement("div")
-        document.body.appendChild(loadingCover)
-        loadingCover.classList.add("link-transition")
-        loadingCover.classList.add("link-transition-out")
-        setTimeout(() => {
-            loadingCover.remove()
-            allowScroll()
-        }, 500)
-    }
+//create nav, footer, and other common elements
+function populate() {
     // ----- CUSTOM LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
     const active = window.location.pathname.split('/')[3] //CHANGE TO 2 ONCE TEST DIR IS GONE

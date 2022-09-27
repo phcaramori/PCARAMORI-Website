@@ -33,5 +33,3 @@ function intro() {
         }, 299)
     }, 1000)
 }
-intro()
-

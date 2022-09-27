@@ -116,6 +116,7 @@ function populate(noIntroAnim) {
     // ----- CUSTOM LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
     const active = window.location.pathname.split('/')[3] //CHANGE TO 2 ONCE TEST DIR IS GONE
+    console.log(window.location.pathname.split('/'))
 
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
@@ -183,12 +184,17 @@ function populate(noIntroAnim) {
     flags.appendChild(linkAWrapper)
     flags.appendChild(linkBWrapper)
     navMenu.appendChild(flags)
-    document.body.insertBefore(navMenu, document.querySelector('.content')) //INSERT NAV MENU
+    if(document.querySelector('.s1')){ //is in index
+        document.body.insertBefore(navMenu, document.querySelector('.s1')) //INSERT MENU 
+    }else{
+        document.body.insertBefore(navMenu, document.querySelector('.content')) //INSERT MENU
+    }
 
 
     // ----- MAKE TOP NAVBAR ----- //
     let header = document.createElement('nav')
     header.classList.add("sticky", "navbar", "transparent-nav")
+    header.id = 'navbar'
 
     // ----- LEFT NAV ----- //
     let left = document.createElement('div')
@@ -220,5 +226,9 @@ function populate(noIntroAnim) {
     right.appendChild(link)
     header.appendChild(right)
 
-    document.body.insertBefore(header, document.querySelector('.content')) //INSERT NAVBAR HEADER
+    if(document.querySelector('.s1')){ //is in index
+        document.body.insertBefore(header, document.querySelector('.s1')) //INSERT NAVBAR HEADER
+    }else{
+        document.body.insertBefore(header, document.querySelector('.content')) //INSERT NAVBAR HEADER
+    }
 }

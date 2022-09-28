@@ -61,6 +61,10 @@ p>a {
     text-decoration: underline;
 }
 
+li>a {
+    text-decoration: underline;
+}
+
 p>a:hover,
 .footer a:hover {
     color: var(--orange-2) !important;

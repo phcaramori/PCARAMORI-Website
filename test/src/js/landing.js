@@ -6,10 +6,10 @@ function intro() {
     }
 
     //hide navbar
-    document.getElementById('navbar').style.display = "none"
+    // document.getElementById('navbar').style.display = "none"
 
     //put intro in front
-    document.getElementsByClassName('intro')[0].style.zIndex = "1";
+    document.getElementsByClassName('intro')[0].style.zIndex = "10000";
 
 
     setTimeout(function() {

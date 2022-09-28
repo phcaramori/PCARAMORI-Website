@@ -202,58 +202,58 @@ html {
 
 /*----Individual styles for boxes----*/
 
-.orange-box {
+#orange-box {
     border-top: 4px solid var(--orange-2);
     box-shadow: -10px 10px 5px var(--orange-2);
 }
 
-.orange-box h1 {
+#orange-box h1 {
     color: var(--orange-2);
 }
 
-.orange-box:hover {
+#orange-box:hover {
     border-top: 4px solid var(--orange-1);
     box-shadow: 0 0 7px 4px var(--orange-1);
 }
 
-.blue-box {
+#blue-box {
     box-shadow: 10px 10px 5px var(--blue-2);
     border-top: 4px solid var(--blue-2);
 }
 
-.blue-box h1 {
+#blue-box h1 {
     color: var(--blue-2);
 }
 
-.blue-box:hover {
+#blue-box:hover {
     box-shadow: 0 0 7px 4px var(--blue-1);
     border-top: 4px solid var(--blue-1);
 }
 
-.green-box {
+#green-box {
     box-shadow: -10px 10px 5px var(--green-2);
     border-top: 4px solid var(--green-2);
 }
 
-.green-box h1 {
+#green-box h1 {
     color: var(--green-2)
 }
 
-.green-box:hover {
+#green-box:hover {
     border-top: 4px solid var(--green-1);
     box-shadow: 0 0 7px 4px var(--green-1);
 }
 
-.purple-box {
+#purple-box {
     border-top: 4px solid var(--purple-2);
     box-shadow: 10px 10px 5px var(--purple-2);
 }
 
-.purple-box h1 {
+#purple-box h1 {
     color: var(--purple-2)
 }
 
-.purple-box:hover {
+#purple-box:hover {
     box-shadow: 0 0 7px 4px var(--purple-1);
     border-top: 4px solid var(--purple-1);
 }

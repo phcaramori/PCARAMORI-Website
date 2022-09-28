@@ -53,10 +53,15 @@ p {
 }
 
 a {
-    color: var(--orange-1);
+    text-decoration: none;
 }
 
-.content a:hover,
+p>a {
+    color: var(--orange-1);
+    text-decoration: underline;
+}
+
+p>a:hover,
 .footer a:hover {
     color: var(--orange-2) !important;
     transition: 0.25s;
@@ -98,7 +103,7 @@ a {
 
 .noscroll::-webkit-scrollbar {
     visibility: hidden;
- }
+}
 
 .outline {
     text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
@@ -132,9 +137,39 @@ a {
     background-color: var(--orange-2);
 }
 
+.orange {
+    color: var(--orange-1)
+}
+
 .sticky {
     position: sticky;
     top: 0;
+}
+
+.initial {
+    font-size: 1.3rem;
+}
+
+.initial .big-initial-letter {
+    font-size: 2rem;
+}
+
+.round-profile-picture {
+    border-radius: 50%;
+    height: 250px;
+    min-width: 250px;
+    float: left;
+    background-color: white;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.content h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+    color: var(--blue-purple)
 }
 
 
@@ -195,12 +230,33 @@ a {
     margin-top: 5%;
     margin-bottom: 5%;
     font-family: Lato, Roboto, Arial, sans-serif;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
     color: var(--main-text-color);
     text-align: justify;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    width: 25rem;
+    margin-top: 20px;
+}
+
+.flex-column p {
+    font-size: 1.3rem;
+}
+
+.flex-column h2 {
+    font-style: 1.5rem;
+    color: var(--purple-pastel)
 }
 
 .flex-shrink-container {

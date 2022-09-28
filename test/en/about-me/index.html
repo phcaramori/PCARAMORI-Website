@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <base href="http://pcaramori.com.br/test/">
+    <!-- <base href="http://pcaramori.com.br/test/"> -->
+    <base href="http://127.0.0.1:5500/test/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Pcaramori</title>
     <!-- CSS -->
@@ -12,27 +13,68 @@
     <!-- JS -->
     <script src="https://kit.fontawesome.com/10baeb6ba4.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./src/js/main.js"></script>
-    <script>document.addEventListener("DOMContentLoaded",()=>{animateTransition()})</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            animateTransition()
+        })
+    </script>
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" rel="stylesheet">
-</head> <!-- same across all documents -->
+</head>
+<!-- same across all documents -->
 
 <body onload="populate()">
 
     <div class="content" id="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi necessitatibus quidem nam labore sed numquam incidunt inventore libero illum accusamus consequatur placeat, laborum soluta obcaecati dolorum enim corrupti ut! Et inventore tenetur
-        cupiditate quia incidunt tempora corrupti aut maxime ipsam nihil, corporis ipsum perspiciatis quas accusantium totam. Iusto ex reiciendis, rem consequuntur voluptatibus harum neque ipsa officiis deleniti aut? Quisquam illum consectetur eveniet
-        non culpa veritatis aspernatur quam dolore, officia illo pariatur laudantium, tempora fugit debitis omnis ex ut at possimus corrupti? Eos nisi voluptatem officiis illum dolores suscipit! Laudantium nostrum dignissimos ut possimus! Aliquid illum
-        error explicabo temporibus nostrum aspernatur quo sunt provident dolor iure possimus, ratione hic accusantium voluptas culpa. Aliquid blanditiis mollitia aut, omnis necessitatibus quo. Quas necessitatibus architecto qui molestiae pariatur, alias
-        sint atque aliquam maxime illo hic aut dolorem nesciunt magnam mollitia doloribus, inventore porro dicta voluptates reiciendis possimus earum eius laborum. Perferendis, sint? Qui nihil distinctio rerum quidem esse maxime cupiditate accusantium
-        fugit nemo odit ratione quae eum rem aspernatur numquam dolor, consequuntur earum nobis natus ad itaque. Repudiandae, beatae! Impedit, accusantium earum. Error nam, ullam nemo aspernatur totam amet veniam rem eaque reiciendis quia sunt hic. In
-        optio facilis incidunt laboriosam nesciunt laudantium assumenda temporibus voluptatibus, animi aspernatur fuga omnis numquam recusandae? Repellendus impedit deserunt eum, ex eius porro, necessitatibus facilis itaque laboriosam illum vero? Earum,
-        modi eius ullam officia voluptas dolorum id accusantium possimus eaque, voluptatibus odit officiis amet similique provident. Quo rem nihil, magni debitis hic ipsum deserunt exercitationem ducimus veniam vitae, aspernatur quisquam ipsa unde nam
-        nobis est iusto numquam iure at! Cumque, debitis. Vero suscipit nihil beatae nisi. Natus fugit, quaerat autem inventore, eum distinctio vel aspernatur numquam, voluptatem obcaecati repudiandae? Libero, quibusdam. Repellat distinctio neque accusamus
-        est, soluta esse assumenda omnis totam similique illo, at dignissimos modi.
+        <div class="flex-shrink-container">
+            <div class="initial">
+                <div class="round-profile-picture">
+
+                </div>
+                <span class="orange big-initial-letter">H</span>i! I'm <span class="orange">Pedro Caramori</span>, a 16-year-old developer based in Brazil. I am a <span class="orange">Full-stack</span> programmer who is always learning through various
+                projects and eager to find learning opportunities. I have over <span class="orange">1 year</span> of real-world work experience as a front-end developer, and have recently dove into back-end development technologies, with <span class="orange">6 months</span>                of experience.
+                <br><br> I have been programming since I was <span class="orange">12</span>, and this website has existed ever since then. I love to share what I learn, and this website is a platform for that - it <span class="orange">evolves</span> together
+                with me and my skills.
+            </div>
+            <h1 style="color:var(--purple-1)">My Skills</h1>
+            <div class="flex-container">
+                <div class="flex-column" style="text-align: center;">
+                    <h2>Front-End</h2>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>React.js</p>
+                    <p>Responsive Deisgn</p>
+                    <p>Tailwind.css</p>
+                    <p>Adobe XD</p>
+                </div>
+                <div class="flex-column" style="text-align: center;">
+                    <h2>Back-End</h2>
+                    <p>Node.js</p>
+                    <p>API Integration</p>
+                    <p>Java</p>
+                    <p>Express.js</p>
+                    <p></p>
+                </div>
+                <div class="flex-column " style="text-align: center; ">
+                    <h2>Other</h2>
+                    <p>GitHub</p>
+                    <p>Digital Ocean</p>
+                    <p>TDD with Mocha</p>
+                </div>
+                <div class="flex-column " style="text-align: center; ">
+                    <h2>Currently Learning</h2>
+                    <p>Mobile Development</p>
+                    <p>Flutter & Dart</p>
+                    <p>C++</p>
+                    <p>Google Firebase</p>
+                    <p>Database Management</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="footer">
+    <div class="footer ">
 
     </div>
 </body>

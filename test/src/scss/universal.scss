@@ -141,16 +141,12 @@ p>a:hover,
     background-color: var(--orange-2);
 }
 
-.orange {
-    color: var(--orange-1)
-}
-
 .sticky {
     position: sticky;
     top: 0;
 }
 
-.initial {
+.content {
     font-size: 1.3rem;
 }
 
@@ -160,8 +156,10 @@ p>a:hover,
 
 .round-profile-picture {
     border-radius: 50%;
-    height: 250px;
-    min-width: 250px;
+    max-height: 250px;
+    height: 25vw;
+    max-width: 250px;
+    width: 25vw;
     float: left;
     background-color: white;
     margin-right: 20px;
@@ -215,6 +213,22 @@ h4 {
 
 /*colors*/
 
+.orange {
+    color: var(--orange-1);
+}
+
+.purple {
+    color: var(--purple-1);
+}
+
+.blue {
+    color: var(--blue-1);
+}
+
+.green {
+    color: var(--green-1);
+}
+
 .orange-pink {
     background-image: var(--orange-pink);
 }
@@ -250,7 +264,6 @@ h4 {
 }
 
 .flex-column {
-    width: 25rem;
     margin-top: 20px;
 }
 

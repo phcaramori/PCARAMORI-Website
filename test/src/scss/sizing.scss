@@ -33,28 +33,13 @@
         background-color: var(--gray-2);
         background-image: none;
     }
-    .intro .logo{
+    .intro .logo {
         font-size: 4rem;
     }
 }
 
-@media only screen and (min-width:550px) and (max-width: 800px) {
-    /* rules for tablets */
-    .box {
-        width: 60vw;
-    }
-    .box-align-right {
-        margin-left: 20vw;
-    }
-    .mobile-only {
-        display: none !important;
-    }
-    .desktop-only {
-        display: none !important;
-    }
-}
-
 @media only screen and (min-width:800px) {
+    /* rules for monitors */
     .mobile-only {
         display: none !important;
     }

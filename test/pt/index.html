@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+        TODO:
+    Footer - add content
+    Make sub-pages
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <base href="https://www.pcaramori.com.br/test/"> -->
+    <base href="http://127.0.0.1:5500/test/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Pcaramori</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/landing.css">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/68f907237b.js" crossorigin="anonymous"></script>
+    <script defer type="text/javascript" src="./src/js/main.js"></script>
+    <script defer src="./src/js/landing.js"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body onload="populate(),intro()">
+    <div class="intro" style="z-index: 100;">
+        <div class="logo">Pcaramori</div>
+    </div>
+
+    <div class="s1 flex-center" id="s1">
+        <div class="hero-contents flex-center">
+            <h1 class="hero-title background-wave-anim logo">Pcaramori</h1>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <div class="flex-shrink-container">
+            <div class="box" id="orange-box">
+                <a href="./en/about-me/" style="text-decoration: none;">
+                    <div class="box-img">
+                        <img src="./resources/landing/red-box-detail.png" alt="">
+                    </div>
+                    <h1 class="box-heading">Sobre Mim</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                </a>
+            </div>
+            <div class="box box-align-right" id="blue-box">
+                <a href="./en/history/" style="text-decoration: none;">
+                    <div class="box-img">
+                        <img src="./resources/landing/blue-box-detail.png" alt="" width="80px">
+                    </div>
+                    <h1 class="box-heading">Histórico</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                </a>
+            </div>
+            <div class="box" id="green-box">
+                <a href="./en/projects/" style="text-decoration: none;">
+                    <div class="box-img">
+                        <img src="./resources/landing/green-box-detail.png" alt="">
+                    </div>
+                    <h1 class="box-heading">Projetos</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                </a>
+            </div>
+            <div class="box box-align-right" id="purple-box">
+                <a href="./en/contact/" style="text-decoration: none;">
+                    <div class="box-img">
+                        <img src="./resources/landing/purple-box-detail.png" alt="">
+                    </div>
+                    <h1 class="box-heading">Contato</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <div class="footer-container">
+        <svg id="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#222629" fill-opacity="1" d="M0,256L48,234.7C96,213,192,171,288,149.3C384,128,480,128,576,138.7C672,149,768,171,864,192C960,213,1056,235,1152,208C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        <div class="footer">
+            <div class="col1">
+                <h2>c1</h2>
+                <ul>
+                    <li><a href="">Option</a></li>
+                    <li><a href="">Option</a></li>
+                    <li><a href="">Option</a></li>
+                    <li><a href="">Option</a></li>
+                </ul>
+            </div>
+            <div class="col3">
+                <h2>c3</h2>
+                <ul>
+                    <li><a href="">Option</a></li>
+                    <li><a href="">Option</a></li>
+                    <li><a href="">Option</a></li>
+                    <li><a href="">Option</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            Made with much ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022
+        </div>
+    </div>
+</body>
+
+</html>

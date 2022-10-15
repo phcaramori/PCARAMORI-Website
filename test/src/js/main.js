@@ -98,7 +98,7 @@ function hidePopUp() {
     allowScroll();
 }
 
-function animateTransition(){
+function animateTransition() {
     lockScroll()
     let loadingCover = document.createElement("div")
     document.body.appendChild(loadingCover)
@@ -112,29 +112,49 @@ function animateTransition(){
 
 //create nav, footer, and other common elements
 function populate() {
-    // ----- CUSTOM LANGUAGE-SENSING BASED ON DIRECTORY ----- //
+    /* ===========\
+     *             | 
+     *  LANGUAGES  |
+     *             |
+     *  ========= */
+    //one object per language - order of items should be the same, just translated
+    //first entry in footer column array should be the title of that collumn
+    const en = {
+        menuItemsArr: ["about-me", "projects", "history", "contact"],
+        footerTextArrs: [
+            ["col1 with 5 options", "option", "option", "option", "option", "option"],
+            ["col 2 with 4 options", "op1", "op2", "op3", "op4"]
+        ],
+        footerLinkArrs: [
+            [null, "op1link", "op2link", "op3link", "op4link", "op5link"],
+            [null, "op1link", "op2link", "op3link", "op4link"]
+        ]
+    }
+    const pt = {
+        menuItemsArr: ["sobre-mim", "projetos", "historico", "contato"],
+        footerTextArrs: [],
+        footerLinkArrs: [
+            [],
+            []
+        ]
+
+    }
+
+
+    // ----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
-    const active = window.location.pathname.split('/')[3] //CHANGE TO 2 ONCE TEST DIR IS GONE
-    console.log(window.location.pathname.split('/'))
+    const active = window.location.pathname.split('/')[3] //!CHANGE TO 2 ONCE TEST DIR IS GONE
 
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
     navMenu.id = "nav-window"
     navMenu.appendChild(document.createElement("h1"))
 
-    let textArren = ["about-me", "projects", "history", "contact"] //must be the same in EN and PT
-    let textArrpt = ["sobre-mim", "projetos", "historico", "contato"]
-
-    let indexOfPage;
-    if (lang === "en") {
-        indexOfPage = textArren.indexOf(active)
-    } else if (lang === "pt") {
-        indexOfPage = textArrpt.indexOf(active)
-    }
+    let indexOfActivePage = eval(lang).menuItemsArr.indexOf(active);
 
 
     // ----- POPULATE NAV MENU ACCORDING TO LANGUAGE ----- //
-    eval('textArr' + lang).forEach(link => {
+    eval(lang).menuItemsArr.forEach(link => { //iterate through corrent language array
         let a = document.createElement("a")
         a.classList.add("nav-item")
         a.style.textTransform = 'capitalize';
@@ -169,7 +189,7 @@ function populate() {
     linkA.src = "./resources/br-flag.png"
     linkA.alt = "PT"
     linkA.id = "br-flag"
-    linkAWrapper.href = "./pt/" + textArrpt[indexOfPage] + "/"
+    linkAWrapper.href = "./pt/" + pt.menuItemsArr[indexOfActivePage] + "/"
     linkAWrapper.appendChild(linkA)
 
     let linkBWrapper = document.createElement("a")
@@ -177,15 +197,15 @@ function populate() {
     linkB.src = "./resources/us-flag.png"
     linkB.alt = "EN"
     linkB.id = "us-flag"
-    linkBWrapper.href = "./en/" + textArren[indexOfPage] + "/"
+    linkBWrapper.href = "./en/" + en.menuItemsArr[indexOfActivePage] + "/"
     linkBWrapper.appendChild(linkB)
 
     flags.appendChild(linkAWrapper)
     flags.appendChild(linkBWrapper)
     navMenu.appendChild(flags)
-    if(document.querySelector('.s1')){ //is in index
+    if (document.querySelector('.s1')) { //is in index
         document.body.insertBefore(navMenu, document.querySelector('.s1')) //INSERT MENU 
-    }else{
+    } else {
         document.body.insertBefore(navMenu, document.querySelector('.content')) //INSERT MENU
     }
 
@@ -194,6 +214,7 @@ function populate() {
     let header = document.createElement('nav')
     header.classList.add("sticky", "navbar", "transparent-nav")
     header.id = 'navbar'
+
 
     // ----- LEFT NAV ----- //
     let left = document.createElement('div')
@@ -211,11 +232,12 @@ function populate() {
     left.appendChild(closeNavBtn)
     header.appendChild(left)
 
+
     // ----- RIGHT NAV ----- //
     let right = document.createElement('div')
     right.classList.add("nav-right")
     let link = document.createElement('a')
-    link.href = lang + "/index.html"
+    link.href = lang + "/"
     let logo = document.createElement('div')
     logo.classList.add("logo", "logo-hover")
     logo.id = "logo"
@@ -225,9 +247,47 @@ function populate() {
     right.appendChild(link)
     header.appendChild(right)
 
-    if(document.querySelector('.s1')){ //is in index
+
+    // ----- FOOTER ----- //
+    let footerContainer = document.createElement('div')
+    footerContainer.classList.add('footer-container')
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg", "XML") //! FIX THIS AAAAAAAAAA
+    let path = document.createElement('path')
+    footerContainer.appendChild(svg)
+    svg.appendChild(path)
+    svg.id = "footer-svg"
+    svg.setAttribute("viewBox", "0 0 1440 320")
+    path.setAttribute("fill", "#222629")
+    path.setAttribute("fill-opacity", "1")
+    path.setAttribute("d", "M0,256L48,234.7C96,213,192,171,288,149.3C384,128,480,128,576,138.7C672,149,768,171,864,192C960,213,1056,235,1152,208C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z")
+
+    let footer = document.createElement('div')
+    footer.classList.add("footer")
+    for (let e = 0; e < eval(lang).footerTextArrs.length; e++) { //iterates through each col
+        let col = document.createElement("div")
+        let h2 = document.createElement("h2")
+        h2.innerHTML = eval(lang).footerTextArrs[e][0] //set col title
+        let ul = document.createElement("ul")
+        col.appendChild(h2)
+        col.appendChild(ul)
+        for (let i = 1; i < eval(lang).footerTextArrs[e].length; i++) { //iterates through each option
+            let listItem = document.createElement("li")
+            let a = document.createElement("a")
+            listItem.appendChild(a)
+            a.innerHTML = eval(lang).footerTextArrs[e][i]
+            a.href = eval(lang).footerLinkArrs[e][i]
+            ul.appendChild(listItem)
+        }
+        footer.appendChild(col)
+    }
+    footerContainer.appendChild(footer)
+
+
+    // ----- append the elements ----- // 
+    if (document.querySelector('.s1')) { //is in index
         document.body.insertBefore(header, document.querySelector('.s1')) //INSERT NAVBAR HEADER
-    }else{
+    } else {
         document.body.insertBefore(header, document.querySelector('.content')) //INSERT NAVBAR HEADER
     }
+    document.querySelector('.content').after(footerContainer) //INSERT FOOTER AFTER CONTENT
 }

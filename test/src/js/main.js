@@ -128,7 +128,8 @@ function populate() {
         footerLinkArrs: [
             [null, "op1link", "op2link", "op3link", "op4link", "op5link"],
             [null, "op1link", "op2link", "op3link", "op4link"]
-        ]
+        ],
+        copyright: "Made with lost of ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022"
     }
     const pt = {
         menuItemsArr: ["sobre-mim", "projetos", "historico", "contato"],
@@ -136,8 +137,8 @@ function populate() {
         footerLinkArrs: [
             [],
             []
-        ]
-
+        ],
+        copyright: ""
     }
 
 
@@ -251,12 +252,13 @@ function populate() {
     // ----- FOOTER ----- //
     let footerContainer = document.createElement('div')
     footerContainer.classList.add('footer-container')
-    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg", "XML") //! FIX THIS AAAAAAAAAA
-    let path = document.createElement('path')
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg") //! FIX THIS AAAAAAAAAA
+    let path = document.createElementNS("http://www.w3.org/2000/svg", 'path')
     footerContainer.appendChild(svg)
-    svg.appendChild(path)
     svg.id = "footer-svg"
     svg.setAttribute("viewBox", "0 0 1440 320")
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg")
+    svg.appendChild(path)
     path.setAttribute("fill", "#222629")
     path.setAttribute("fill-opacity", "1")
     path.setAttribute("d", "M0,256L48,234.7C96,213,192,171,288,149.3C384,128,480,128,576,138.7C672,149,768,171,864,192C960,213,1056,235,1152,208C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z")
@@ -281,7 +283,10 @@ function populate() {
         footer.appendChild(col)
     }
     footerContainer.appendChild(footer)
-
+    let copyright = document.createElement("div")
+    copyright.className = "copyright"
+    copyright.innerHTML = eval(lang).copyright
+    footerContainer.appendChild(copyright)
 
     // ----- append the elements ----- // 
     if (document.querySelector('.s1')) { //is in index

@@ -491,6 +491,24 @@ h4 {
     text-align: center;
 }
 
+.footer .text-col {
+    width: 150px;
+}
+
+.footer .icon-col {
+    width: 50px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // align-self: center;
+}
+
+.footer .icon-col .footer-icon{
+    font-size: 40px;
+    color: var(--footer-text-color);
+}
+
 .copyright {
     color: var(--light-gray-2);
     background-color: var(--gray-2);

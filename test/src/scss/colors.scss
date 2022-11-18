@@ -1,9 +1,23 @@
 :root {
-    --main-bg-color: var(--gray-3); /*gray3*/
-    --main-text-color: var(--light-gray-1); /*light-gray 1*/
+    --main-bg-color: var(--DARK-main-bg-color); /*gray3*/
+    --main-text-color: var(--DARK-main-text-color); /*light-gray 1*/
+    --footer-text-color: var(--DARK-footer-text-color);
+    --footer-bg-color: var(--DARK-footer-bg-color);
     --transparent-bg-color: rgba(15, 22, 24, 0.5);
     
-    /*1 is lighter, 2 darker.*/
+    //dark is default
+    --DARK-main-bg-color: var(--gray-3);
+    --DARK-main-text-color: var(--light-gray-1);
+    --DARK-footer-text-color: var(--gray-1);
+    --DARK-footer-bg-color: var(--gray-1);
+
+    --LIGHT-main-bg-color: var(--light-gray-1);
+    --LIGHT-main-text-color: var(--gray-2);
+    --LIGHT-footer-text-color: var(--gray-3);
+    --LIGHT-footer-bg-color: var(--light-gray-2);
+
+    
+    /*the higher the number, the darker the color*/
     --light-gray-1: rgb(200, 200, 200);
     --light-gray-2: rgb(150, 150, 150);
     /*grays are slightly blue*/

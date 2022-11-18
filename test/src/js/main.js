@@ -1,5 +1,6 @@
 /*
 
+    0 - page constants maker
     1 - Show/hide nav
     2 - lock/allow scroll
     3 - pop-up maker
@@ -7,108 +8,6 @@
 
 */
 console.log("%c What are you snooping around for?", "font-family:sans-serif; font-size:40px; color: red; text-shadow: 2px 2px 0 rgb(217,31,38) , 4px 4px 0 rgb(226,91,14) , 6px 6px 0 rgb(245,221,8) , 8px 8px 0 rgb(5,148,68)")
-
-
-// show/hide navigation
-function showNav() {
-    document.getElementById('nav-window').style.display = 'flex';
-    document.getElementById('nav-button').style.display = 'none';
-    document.getElementById('close-nav').style.display = 'inline-block';
-    document.getElementsByClassName('flags')[0].style.display = '';
-
-    //animating menu 
-    document.getElementById('nav-window').classList.remove("menu-back");
-    document.getElementById('nav-window').classList.add("menu-from-left");
-    let menuLine = document.getElementsByClassName('menu-line');
-    for (let i = 0; i < menuLine.length; i++) {
-        menuLine[i].classList.add('hr-anim'); //add "hr-anim" to all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
-    }
-}
-
-function closeNav() {
-    //animating menu
-    document.getElementById('nav-window').classList.add("menu-back");
-
-    //hiding menu
-    setTimeout(function() {
-            document.getElementById('nav-button').style.display = 'inline-block';
-            document.getElementById('close-nav').style.display = 'none';
-            document.getElementsByClassName('menu-line');
-            document.getElementsByClassName('flags')[0].style.display = 'none'
-            document.getElementById('nav-window').style.display = 'none';
-
-            //removing animations from menu items
-            document.getElementById('nav-window').classList.remove("menu-from-left");
-            let menuLine = document.getElementsByClassName('menu-line');
-            document.getElementById('nav-window').style.display = 'none';
-            for (let i = 0; i < menuLine.length; i++) {
-                menuLine[i].classList.remove('hr-anim'); //remove "hr-anim" from all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
-            }
-        }, 501) //wait 500ms before hiding menu so animation can complete | 1 extra ms prevents flashing of menu of high refresh-rate screens, for whatever reason
-}
-
-
-// lock/allow scroll
-function lockScroll() {
-    document.getElementsByTagName('body')[0].classList.add('noscroll')
-}
-
-function allowScroll() {
-    document.getElementsByTagName('body')[0].classList.remove('noscroll')
-}
-
-
-// pop-ups
-function popUp(text, head) {
-    //lock scrolling
-    lockScroll();
-
-    //create div and give it the pop-up class
-    let newPopUp = document.createElement("div");
-    document.body.appendChild(newPopUp);
-    newPopUp.classList.add("pop-up");
-
-    //add h1, hr, and p elements to div
-    let h1 = document.createElement("h1");
-    newPopUp.appendChild(h1);
-    let hr = document.createElement("hr");
-    newPopUp.appendChild(hr);
-    let p = document.createElement("p");
-    newPopUp.appendChild(p);
-
-    //give h1 and p elements their text
-    p.innerHTML = text;
-    if (head) {
-        h1.innerHTML = head;
-    } else {
-        h1.innerHTML = "Warning!"
-    }
-
-    // pop-up removal
-    document.addEventListener('click', function(event) {
-        let isClickInside = newPopUp.contains(event.target);
-        if (!isClickInside) { //if the click isn't inside the pop-up, hide it.
-            hidePopUp();
-        }
-    })
-}
-
-function hidePopUp() {
-    document.getElementsByClassName("pop-up")[0].remove();
-    allowScroll();
-}
-
-function animateTransition() {
-    lockScroll()
-    let loadingCover = document.createElement("div")
-    document.body.appendChild(loadingCover)
-    loadingCover.classList.add("link-transition")
-    loadingCover.classList.add("link-transition-out")
-    setTimeout(() => {
-        loadingCover.remove()
-        allowScroll()
-    }, 500)
-}
 
 //create nav, footer, and other common elements
 function populate() {
@@ -122,8 +21,8 @@ function populate() {
     const en = {
         menuItemsArr: ["about-me", "projects", "history", "contact"],
         footerTextArrs: [
-            ["col1 with 5 options", "option", "option", "option", "option", "option"],
-            ["col 2 with 4 options", "op1", "op2", "op3", "op4"]
+            ["col1", "option", "option", "option", "option", "option"],
+            ["col 2", "op1", "op2", "op3", "op4"]
         ],
         footerLinkArrs: [
             [null, "op1link", "op2link", "op3link", "op4link", "op5link"],
@@ -140,7 +39,11 @@ function populate() {
         ],
         copyright: "Feito com muito ❤️ e HTML, CSS & JS puros | © Pedro Caramori, 2018-2022"
     }
-
+    const footerLinks = {
+        name: ["GitHub", "LinkedIn", "Source Code", "Instagram"],
+        link: ["https://github.com", "https://linkedin.com", "https://github.com", "https://instagram.com/"],
+        icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code", "fa-brands fa-instagram",]
+    }
 
     // ----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
@@ -280,14 +183,28 @@ function populate() {
             a.href = eval(lang).footerLinkArrs[e][i]
             ul.appendChild(listItem)
         }
+        col.className = "text-col"
         footer.appendChild(col)
     }
+    footerIcons = document.createElement("div")
+    footerIcons.className = "icon-col"
+
+    for(let i = 0; i < footerLinks.name.length; i++){
+        let a = document.createElement("a")
+        a.className = footerLinks.icon[i] + " footer-icon"
+        a.href = footerLinks.link[i]
+        a.setAttribute("title",footerLinks.name[i])
+        footerIcons.appendChild(a)
+    }
+
+    footer.insertBefore(footerIcons, footer.children[1]) //INSERT FOOTER ICON BETWEEN BOTH COLS
     footerContainer.appendChild(footer)
     let copyright = document.createElement("div")
     copyright.className = "copyright"
     copyright.innerHTML = eval(lang).copyright
     footerContainer.appendChild(copyright)
 
+    
     // ----- append the elements ----- // 
     if (document.querySelector('.s1')) { //is in index
         document.body.insertBefore(header, document.querySelector('.s1')) //INSERT NAVBAR HEADER
@@ -296,3 +213,126 @@ function populate() {
     }
     document.querySelector('.content').after(footerContainer) //INSERT FOOTER AFTER CONTENT
 }
+
+//light/dark mode
+let currentTheme = "dark"
+function changeTheme(){
+    let root = document.documentElement
+    
+    if(currentTheme == "dark"){ //change to light
+        currentTheme = "light"; 
+        root.style.setProprty(--main-bg-color,--LIGHT-main-bg-color)
+        root.style.setProprty(--main-text-color,--LIGHT-main-text-color)
+        root.style.setProprty(--footer-text-color,--LIGHT-footer-text-color)
+        root.style.setProprty(--footer-bg-color,--LIGHT-footer-bg-color)    
+    }
+    else if(currentTheme == "light"){ //change to dark
+        currentTheme = "dark"; 
+        root.style.setProprty(--main-bg-color,--DARK-main-bg-color)
+        root.style.setProprty(--main-text-color,--DARK-main-text-color)
+        root.style.setProprty(--footer-text-color,--DARK-footer-text-color)
+        root.style.setProprty(--footer-bg-color,--DARK-footer-bg-color)
+    }
+}
+
+// show/hide navigation
+function showNav() {
+    document.getElementById('nav-window').style.display = 'flex';
+    document.getElementById('nav-button').style.display = 'none';
+    document.getElementById('close-nav').style.display = 'inline-block';
+    document.getElementsByClassName('flags')[0].style.display = '';
+
+    //animating menu 
+    document.getElementById('nav-window').classList.remove("menu-back");
+    document.getElementById('nav-window').classList.add("menu-from-left");
+    let menuLine = document.getElementsByClassName('menu-line');
+    for (let i = 0; i < menuLine.length; i++) {
+        menuLine[i].classList.add('hr-anim'); //add "hr-anim" to all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
+    }
+}
+
+function closeNav() {
+    //animating menu
+    document.getElementById('nav-window').classList.add("menu-back");
+
+    //hiding menu
+    setTimeout(function() {
+            document.getElementById('nav-button').style.display = 'inline-block';
+            document.getElementById('close-nav').style.display = 'none';
+            document.getElementsByClassName('menu-line');
+            document.getElementsByClassName('flags')[0].style.display = 'none'
+            document.getElementById('nav-window').style.display = 'none';
+
+            //removing animations from menu items
+            document.getElementById('nav-window').classList.remove("menu-from-left");
+            let menuLine = document.getElementsByClassName('menu-line');
+            document.getElementById('nav-window').style.display = 'none';
+            for (let i = 0; i < menuLine.length; i++) {
+                menuLine[i].classList.remove('hr-anim'); //remove "hr-anim" from all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
+            }
+        }, 501) //wait 500ms before hiding menu so animation can complete | 1 extra ms prevents flashing of menu of high refresh-rate screens, for whatever reason
+}
+
+
+// lock/allow scroll
+function lockScroll() {
+    document.getElementsByTagName('body')[0].classList.add('noscroll')
+}
+
+function allowScroll() {
+    document.getElementsByTagName('body')[0].classList.remove('noscroll')
+}
+
+
+// pop-ups
+function popUp(text, head) {
+    //lock scrolling
+    lockScroll();
+
+    //create div and give it the pop-up class
+    let newPopUp = document.createElement("div");
+    document.body.appendChild(newPopUp);
+    newPopUp.classList.add("pop-up");
+
+    //add h1, hr, and p elements to div
+    let h1 = document.createElement("h1");
+    newPopUp.appendChild(h1);
+    let hr = document.createElement("hr");
+    newPopUp.appendChild(hr);
+    let p = document.createElement("p");
+    newPopUp.appendChild(p);
+
+    //give h1 and p elements their text
+    p.innerHTML = text;
+    if (head) {
+        h1.innerHTML = head;
+    } else {
+        h1.innerHTML = "Warning!"
+    }
+
+    // pop-up removal
+    document.addEventListener('click', function(event) {
+        let isClickInside = newPopUp.contains(event.target);
+        if (!isClickInside) { //if the click isn't inside the pop-up, hide it.
+            hidePopUp();
+        }
+    })
+}
+
+function hidePopUp() {
+    document.getElementsByClassName("pop-up")[0].remove();
+    allowScroll();
+}
+
+function animateTransition() {
+    lockScroll()
+    let loadingCover = document.createElement("div")
+    document.body.appendChild(loadingCover)
+    loadingCover.classList.add("link-transition")
+    loadingCover.classList.add("link-transition-out")
+    setTimeout(() => {
+        loadingCover.remove()
+        allowScroll()
+    }, 500)
+}
+

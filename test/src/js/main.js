@@ -217,21 +217,21 @@ function populate() {
 //light/dark mode
 let currentTheme = "dark"
 function changeTheme(){
-    let root = document.documentElement
+    let root = document.documentElement.style
     
     if(currentTheme == "dark"){ //change to light
         currentTheme = "light"; 
-        root.style.setProprty(--main-bg-color,--LIGHT-main-bg-color)
-        root.style.setProprty(--main-text-color,--LIGHT-main-text-color)
-        root.style.setProprty(--footer-text-color,--LIGHT-footer-text-color)
-        root.style.setProprty(--footer-bg-color,--LIGHT-footer-bg-color)    
+        root.setProperty("--main-bg-color","--LIGHT-main-bg-color")
+        root.setProperty("--main-text-color","--LIGHT-main-text-color")
+        root.setProperty("--footer-text-color","--LIGHT-footer-text-color")
+        root.setProperty("--footer-bg-color","--LIGHT-footer-bg-color")    
     }
     else if(currentTheme == "light"){ //change to dark
         currentTheme = "dark"; 
-        root.style.setProprty(--main-bg-color,--DARK-main-bg-color)
-        root.style.setProprty(--main-text-color,--DARK-main-text-color)
-        root.style.setProprty(--footer-text-color,--DARK-footer-text-color)
-        root.style.setProprty(--footer-bg-color,--DARK-footer-bg-color)
+        root.setProperty("--main-bg-color","--DARK-main-bg-color")
+        root.setProperty("--main-text-color","--DARK-main-text-color")
+        root.setProperty("--footer-text-color","--DARK-footer-text-color")
+        root.setProperty("--footer-bg-color","--DARK-footer-bg-color")
     }
 }
 

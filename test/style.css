@@ -2,6 +2,7 @@
 
 :root {
     --TERMINAL-red: rgb(217, 33, 33);
+    --TERMINAL-dark-red: rgb(122, 20, 20);
     --TERMINAL-green: #0DFF75;
     --TERMINAL-yellow: rgb(230, 126, 23);
     --TERMINAL-gray: rgb(150, 150, 150);

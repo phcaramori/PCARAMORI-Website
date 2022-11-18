@@ -41,15 +41,26 @@
     }
     let userInput = document.querySelector('.input input')
     userInput.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            new consoleItem(userInput.value, 'gray', false, true)
+        if (event.key === "Enter") { //inputs
+            new consoleItem(userInput.value, 'gray', false, true) //String, color, glowing, madeByUsr
             if (userInput.value.toLowerCase().replace(/\s+/g, '') == "start") {
                 userInput.value = '';
                 startAnim();
             } else if(userInput.value.toLowerCase().replace(/\s+/g, '') == "skip"){
                 window.location.replace("./en/")
-            } else{
-                new consoleItem("Type \"start\" to begin", "red", false)
+            } else if(userInput.value.toLowerCase() == "rm -rf"){ //whoa you found the easter egg 😮
+                new consoleItem("You do not have the system priviliges to perform that command.", "yellow")
+                setTimeout(() => {
+                    new consoleItem("Try to run with the \"sudo\" prefix", "yellow", true)
+                },500)
+            } else if(userInput.value.toLowerCase() == "sudo rm -rf"){
+                new consoleItem("uh oh", "red", true, true, true) //make this a game..? hmmm
+                setTimeout(() => {
+                    document.body.innerHTML = ""
+                    document.body.style.backgroundColor = "white"
+                },1000)
+            }else{
+                new consoleItem("Unknown Command. Type \"start\" to begin", "red")
             }
             userInput.value = '';
         }
@@ -59,7 +70,7 @@
     let consoleItemList = [];
     const consoleUserName = "user:" + Math.round(Math.random() * 1000) + " > "
     class consoleItem {
-        constructor(str, color, glowing, madeByUser) {
+        constructor(str, color, glowing, madeByUser, easterEgg) {
             if (color) {
                 this.color = "var(--TERMINAL-" + color + ")"
             } else {
@@ -81,6 +92,9 @@
             this.text.style.color = this.color
             if (glowing) {
                 this.text.classList.add("TERMINAL-glowing")
+            }
+            if (easterEgg) {
+                this.e.style.fontSize = "200px"
             }
             this.e.appendChild(this.text)
             this.printToConsole()

@@ -138,7 +138,7 @@ function populate() {
             [],
             []
         ],
-        copyright: ""
+        copyright: "Feito com muito ❤️ e HTML, CSS & JS puros | © Pedro Caramori, 2018-2022"
     }
 
 

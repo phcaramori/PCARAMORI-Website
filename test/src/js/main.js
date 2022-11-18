@@ -39,9 +39,9 @@ function populate() {
         ],
         copyright: "Feito com muito ❤️ e HTML, CSS & JS puros | © Pedro Caramori, 2018-2022"
     }
-    const footerLinks = {
+    const footerSocials = {
         name: ["GitHub", "LinkedIn", "Source Code", "Instagram"],
-        link: ["https://github.com", "https://linkedin.com", "https://github.com", "https://instagram.com/"],
+        link: ["https://github.com/phcaramori", "https://www.linkedin.com/in/pedro-caramori-b175a7240/", "https://github.com/phcaramori/PCARAMORI-Website", "https://www.instagram.com/phcaramori_/"],
         icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code", "fa-brands fa-instagram",]
     }
 
@@ -189,11 +189,11 @@ function populate() {
     footerIcons = document.createElement("div")
     footerIcons.className = "icon-col"
 
-    for(let i = 0; i < footerLinks.name.length; i++){
+    for(let i = 0; i < footerSocials.name.length; i++){
         let a = document.createElement("a")
-        a.className = footerLinks.icon[i] + " footer-icon"
-        a.href = footerLinks.link[i]
-        a.setAttribute("title",footerLinks.name[i])
+        a.className = footerSocials.icon[i] + " footer-icon"
+        a.href = footerSocials.link[i]
+        a.setAttribute("title",footerSocials.name[i])
         footerIcons.appendChild(a)
     }
 

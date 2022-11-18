@@ -47,6 +47,7 @@ html {
 .console .line-of-text {
     display: block;
     animation: loadConsoleItem 0.25s;
+    font-size: 2vh;
 }
 
 .big-input {
@@ -65,7 +66,7 @@ html {
 }
 
 .input i {
-    font-size: 15rem;
+    font-size: 30vh;
     color: var(--orange-2);
     padding-top: auto;
     padding-bottom: auto;
@@ -77,7 +78,7 @@ html {
 
 .input input {
     width: 100%;
-    font-size: 20rem;
+    font-size: 40vh;
     background: none;
     border: none !important;
     color: var(--orange-1);

@@ -7,7 +7,6 @@
     4 - nav menu maker
 
 */
-console.log("%c What are you snooping around for?", "font-family:sans-serif; font-size:40px; color: red; text-shadow: 2px 2px 0 rgb(217,31,38) , 4px 4px 0 rgb(226,91,14) , 6px 6px 0 rgb(245,221,8) , 8px 8px 0 rgb(5,148,68)")
 
 //create nav, footer, and other common elements
 function populate() {
@@ -42,7 +41,7 @@ function populate() {
     const footerSocials = {
         name: ["GitHub", "LinkedIn", "Source Code", "Instagram"],
         link: ["https://github.com/phcaramori", "https://www.linkedin.com/in/pedro-caramori-b175a7240/", "https://github.com/phcaramori/PCARAMORI-Website", "https://www.instagram.com/phcaramori_/"],
-        icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code", "fa-brands fa-instagram",]
+        icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code", "fa-brands fa-instagram", ]
     }
 
     // ----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
@@ -189,11 +188,11 @@ function populate() {
     footerIcons = document.createElement("div")
     footerIcons.className = "icon-col"
 
-    for(let i = 0; i < footerSocials.name.length; i++){
+    for (let i = 0; i < footerSocials.name.length; i++) {
         let a = document.createElement("a")
         a.className = footerSocials.icon[i] + " footer-icon"
         a.href = footerSocials.link[i]
-        a.setAttribute("title",footerSocials.name[i])
+        a.setAttribute("title", footerSocials.name[i])
         footerIcons.appendChild(a)
     }
 
@@ -204,7 +203,7 @@ function populate() {
     copyright.innerHTML = eval(lang).copyright
     footerContainer.appendChild(copyright)
 
-    
+
     // ----- append the elements ----- // 
     if (document.querySelector('.s1')) { //is in index
         document.body.insertBefore(header, document.querySelector('.s1')) //INSERT NAVBAR HEADER
@@ -216,22 +215,22 @@ function populate() {
 
 //light/dark mode
 let currentTheme = "dark"
-function changeTheme(){
+
+function changeTheme() {
     let root = document.documentElement.style
-    
-    if(currentTheme == "dark"){ //change to light
-        currentTheme = "light"; 
-        root.setProperty("--main-bg-color","--LIGHT-main-bg-color")
-        root.setProperty("--main-text-color","--LIGHT-main-text-color")
-        root.setProperty("--footer-text-color","--LIGHT-footer-text-color")
-        root.setProperty("--footer-bg-color","--LIGHT-footer-bg-color")    
-    }
-    else if(currentTheme == "light"){ //change to dark
-        currentTheme = "dark"; 
-        root.setProperty("--main-bg-color","--DARK-main-bg-color")
-        root.setProperty("--main-text-color","--DARK-main-text-color")
-        root.setProperty("--footer-text-color","--DARK-footer-text-color")
-        root.setProperty("--footer-bg-color","--DARK-footer-bg-color")
+
+    if (currentTheme == "dark") { //change to light
+        currentTheme = "light";
+        root.setProperty("--main-bg-color", "--LIGHT-main-bg-color")
+        root.setProperty("--main-text-color", "--LIGHT-main-text-color")
+        root.setProperty("--footer-text-color", "--LIGHT-footer-text-color")
+        root.setProperty("--footer-bg-color", "--LIGHT-footer-bg-color")
+    } else if (currentTheme == "light") { //change to dark
+        currentTheme = "dark";
+        root.setProperty("--main-bg-color", "--DARK-main-bg-color")
+        root.setProperty("--main-text-color", "--DARK-main-text-color")
+        root.setProperty("--footer-text-color", "--DARK-footer-text-color")
+        root.setProperty("--footer-bg-color", "--DARK-footer-bg-color")
     }
 }
 
@@ -335,4 +334,3 @@ function animateTransition() {
         allowScroll()
     }, 500)
 }
-

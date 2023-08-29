@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <base href="http://pcaramori.com.br/test/">
-    <!-- <base href="http://127.0.0.1:5500/test/"> -->
+    <!-- <base href="http://pcaramori.com.br/test/"> -->
+    <base href="http://127.0.0.1:5500/test/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History | Pcaramori</title>
     <!-- CSS -->
@@ -22,18 +22,18 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" rel="stylesheet">
     <style>
-        .carousel {
-            width: 80%;
-            height: 90vh;
-        }
-        
-        .slide {
+        .slide-container {
             background-image: linear-gradient(25deg, var(--blue-3) 0%, var(--purple-3) 100%);
-            display: inline-block;
+            display: block;
             opacity: 0.8;
             height: 100%;
             width: 100%;
+            position: relative;
+        }
+        
+        .slide {
             display: flex;
+            margin-bottom: 10%;
             flex-direction: column;
             position: relative;
         }
@@ -68,6 +68,12 @@
             flex-direction: column;
             align-items: stretch;
             row-gap: 3%;
+            flex: 1;
+        }
+        
+        .text-column {
+            flex: 3;
+            margin-right: 5%;
         }
         
         .version-number {
@@ -82,13 +88,13 @@
             position: absolute;
             top: 50%;
             bottom: 50%;
-            margin-left: 25px;
+            margin-left: min(25px, 5%);
             font-size: 25px;
             text-align: center;
         }
         
         i#right {
-            right: 25px;
+            right: min(25px, 5%);
         }
         
         .carousel .dots {
@@ -112,8 +118,38 @@
         .dot#active {
             background-color: rgb(255, 255, 255);
         }
+        
+        @media only screen and (max-width: 550px) {
+            .flex-container {
+                flex-direction: column;
+            }
+        }
     </style>
 
+    <script>
+        //carrousel
+
+        let slides = document.getElementsByClassName('slide');
+        let dots = document.getElementsByClassName('dot');
+        let activeSlide = 1;
+
+        function slideForward() {
+            slides[activeSlide - 1].style.display = 'none';
+            dots[activeSlide - 1].id = "";
+            activeSlide++;
+            dots[activeSlide - 1].id = "active";
+            slides[activeSlide - 1].style.display = 'flex';
+
+        }
+
+        function slideBackward() {
+
+        }
+        document.getElementById('right').addEventListener("click", () => {
+            slideForward()
+        });
+        document.getElementById('left').addEventListener("click", slideBackward());
+    </script>
 
 </head>
 <!-- same across all documents -->
@@ -121,25 +157,59 @@
 <body onload="populate()">
 
     <div class="content carousel">
-        <div class="slide" id="1">
-            <i id="left" class="arrow fas fa-solid fa-chevron-left"></i>
-            <i id="right" class="arrow fas fa-solid fa-chevron-right"></i>
+        <div class="slide-container">
+            <i id="left" class="arrow fas fa-solid fa-chevron-left" style="height: 5px; width: 5px;"></i>
+            <i id="right" class="arrow fas fa-solid fa-chevron-right" style="height: 5px; width: 5px;"></i>
             <div class="dots">
                 <i class="dot" id="active"></i>
                 <i class="dot"></i>
                 <i class="dot"></i>
                 <i class="dot"></i>
             </div>
-            <h1>Original Game Website</h1>
-            <br>
-            <div class="flex-container">
-                <div class="flex-column">
-                    <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
-                    <br>
-                    <p>main text</p>
+            <div class="slide" id="1">
+                <h1>Original Game Website</h1>
+                <br>
+                <div class="flex-container" style="flex-wrap: nowrap;">
+                    <div class="flex-column text-column">
+                        <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
+                        <br>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, enim aperiam laboriosam at illum in magni maiores, eius modi eligendi consequatur minima iusto voluptatem dolor! Consequatur pariatur accusamus recusandae omnis?
+                            In eligendi facilis, voluptatibus ipsum quis nobis dignissimos ratione ut. Deleniti provident ea reiciendis cumque rerum maxime tempora consequatur inventore autem. Aut eum dicta eaque soluta fugiat quos et? Blanditiis? Atque
+                            optio iure dolorem maxime iusto exercitationem natus rerum vitae quo inventore ipsam quaerat alias repudiandae dolore nulla, aliquid labore aliquam numquam quas magnam omnis facere iste consequatur? Eaque, maxime? Illum rem
+                            fuga tempore vel porro ea, molestias recusandae exercitationem neque perferendis deleniti dicta eos, nostrum fugit. Molestiae nisi labore, quasi vero, soluta, eligendi libero velit sapiente nam nobis quisquam. Consequatur distinctio,
+                            praesentium corrupti excepturi ipsa ullam facere aut ab nulla repellat ad, suscipit omnis dicta doloribus neque quo recusandae reprehenderit facilis autem. Sed reprehenderit aliquid quia hic harum nulla.</p>
+                    </div>
+                    <div class="flex-column img-column">
+                        <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                    </div>
                 </div>
-                <div class="flex-column img-column">
-                    <img src="" alt=""><img src="" alt=""><img src="" alt="">
+            </div>
+            <div class="slide" id="2" style="display: none;">
+                <h1>Original Game Website</h1>
+                <br>
+                <div class="flex-container" style="flex-wrap: nowrap;">
+                    <div class="flex-column text-column">
+                        <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur et cum sapiente excepturi dolore aperiam esse minima natus maxime illo possimus illum suscipit voluptates veritatis praesentium, ratione mollitia sit? Consectetur.</p>
+                    </div>
+                    <div class="flex-column img-column">
+                        <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="3" style="display: none;">
+                <h1>Original Game Website</h1>
+                <br>
+                <div class="flex-container" style="flex-wrap: nowrap;">
+                    <div class="flex-column text-column">
+                        <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur et cum sapiente excepturi dolore aperiam esse minima natus maxime illo possimus illum suscipit voluptates veritatis praesentium, ratione mollitia sit? Consectetur.</p>
+                    </div>
+                    <div class="flex-column img-column">
+                        <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                    </div>
                 </div>
             </div>
         </div>

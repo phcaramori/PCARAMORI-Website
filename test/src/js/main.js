@@ -27,7 +27,7 @@ function populate() {
             [null, "op1link", "op2link", "op3link", "op4link", "op5link"],
             [null, "op1link", "op2link", "op3link", "op4link"]
         ],
-        copyright: "Made with lost of ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022"
+        copyright: "Made with lots of ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022"
     }
     const pt = {
         menuItemsArr: ["sobre-mim", "projetos", "historico", "contato"],
@@ -126,6 +126,10 @@ function populate() {
     showNavBtn.classList.add("fas", "fa-bars", "bar-2")
     showNavBtn.id = "nav-button"
     showNavBtn.addEventListener("click", function() { showNav() })
+    let changeThemeBtn = document.createElement('i')
+    changeThemeBtn.classList.add("fa-solid", "fa-sun", "change-theme-btn")
+    changeThemeBtn.addEventListener("click", () => { changeTheme() })
+    changeThemeBtn.id = "change-theme-btn"
     let closeNavBtn = document.createElement("i")
     closeNavBtn.classList.add("fas", "fa-times")
     closeNavBtn.id = "close-nav"
@@ -133,6 +137,7 @@ function populate() {
     closeNavBtn.addEventListener("click", function() { closeNav() })
     left.appendChild(showNavBtn)
     left.appendChild(closeNavBtn)
+    left.appendChild(changeThemeBtn)
     header.appendChild(left)
 
 
@@ -161,7 +166,7 @@ function populate() {
     svg.setAttribute("viewBox", "0 0 1440 320")
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg")
     svg.appendChild(path)
-    path.setAttribute("fill", "#222629")
+    path.setAttribute("fill", "var(--footer-bg-color)")
     path.setAttribute("fill-opacity", "1")
     path.setAttribute("d", "M0,256L48,234.7C96,213,192,171,288,149.3C384,128,480,128,576,138.7C672,149,768,171,864,192C960,213,1056,235,1152,208C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z")
 
@@ -221,16 +226,26 @@ function changeTheme() {
 
     if (currentTheme == "dark") { //change to light
         currentTheme = "light";
-        root.setProperty("--main-bg-color", "--LIGHT-main-bg-color")
-        root.setProperty("--main-text-color", "--LIGHT-main-text-color")
-        root.setProperty("--footer-text-color", "--LIGHT-footer-text-color")
-        root.setProperty("--footer-bg-color", "--LIGHT-footer-bg-color")
+        root.setProperty("--main-bg-color", "var(--LIGHT-main-bg-color)")
+        root.setProperty("--secondary-bg-color", "var(--LIGHT-secondary-bg-color)")
+        root.setProperty("--main-text-color", "var(--LIGHT-main-text-color)")
+        root.setProperty("--footer-text-color", "var(--LIGHT-footer-text-color)")
+        root.setProperty("--footer-bg-color", "var(--LIGHT-footer-bg-color)")
+        root.setProperty("--navbar-bg-color", "var(--LIGHT-navbar-bg-color)")
+        root.setProperty("--logo-text-color", "var(--LIGHT-logo-text-color)")
+        document.getElementById('change-theme-btn').classList.add('fa-moon');
+        document.getElementById('change-theme-btn').classList.remove('fa-sun');
     } else if (currentTheme == "light") { //change to dark
         currentTheme = "dark";
-        root.setProperty("--main-bg-color", "--DARK-main-bg-color")
-        root.setProperty("--main-text-color", "--DARK-main-text-color")
-        root.setProperty("--footer-text-color", "--DARK-footer-text-color")
-        root.setProperty("--footer-bg-color", "--DARK-footer-bg-color")
+        root.setProperty("--main-bg-color", "var(--DARK-main-bg-color)")
+        root.setProperty("--secondary-bg-color", "var(--DARK-secondary-bg-color)")
+        root.setProperty("--main-text-color", "var(--DARK-main-text-color)")
+        root.setProperty("--footer-text-color", "var(--DARK-footer-text-color)")
+        root.setProperty("--footer-bg-color", "var(--DARK-footer-bg-color)")
+        root.setProperty("--navbar-bg-color", "var(--DARK-navbar-bg-color)")
+        root.setProperty("--logo-text-color", "var(--DARK-logo-text-color)")
+        document.getElementById('change-theme-btn').classList.add('fa-sun');
+        document.getElementById('change-theme-btn').classList.remove('fa-moon');
     }
 }
 

@@ -18,7 +18,7 @@ function populate() {
     //one object per language - order of items should be the same, just translated
     //first entry in footer column array should be the title of that collumn
     const en = {
-        menuItemsArr: ["about-me", "projects", "history", "contact"],
+        menuItemsArr: ["about-me", "projects", "progress", "contact"],
         footerTextArrs: [
             ["col1", "option", "option", "option", "option", "option"],
             ["col 2", "op1", "op2", "op3", "op4"]
@@ -30,7 +30,7 @@ function populate() {
         copyright: "Made with lots of ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022"
     }
     const pt = {
-        menuItemsArr: ["sobre-mim", "projetos", "historico", "contato"],
+        menuItemsArr: ["sobre-mim", "projetos", "progresso", "contato"],
         footerTextArrs: [],
         footerLinkArrs: [
             [],

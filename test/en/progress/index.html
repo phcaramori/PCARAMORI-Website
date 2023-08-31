@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <base href="http://pcaramori.com.br/test/">
-    <!-- <base href="http://127.0.0.1:5500/test/"> -->
+    <!-- <base href="http://pcaramori.com.br/test/"> -->
+    <base href="http://127.0.0.1:5500/test/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress | Pcaramori</title>
     <!-- CSS -->
@@ -136,7 +136,7 @@
         <div class="slide-container">
             <i id="left" class="arrow fas fa-solid fa-chevron-left" style="height: 5px; width: 5px;"></i>
             <i id="right" class="arrow fas fa-solid fa-chevron-right" style="height: 5px; width: 5px;"></i>
-            <div class="dots">
+            <div id="dots" class="dots">
 
             </div>
             <div class="slide" id="1">
@@ -192,17 +192,16 @@
     </div>
 </body>
 <script>
-    let dotsContainer = document.getElementsByClassName('dots')[0]
+    let dotsContainer = document.getElementById('dots')
     let dots = [];
     let activeSlide = 0;
     let slides = document.getElementsByClassName('slide');
 
     for (let i = 0; i < slides.length; i++) {
-        console.log('a')
-        if (i = 0) {
+        let dot = document.createElement('i');
+        if (i === 0) {
             dot.id = "active"
         }
-        let dot = document.createElement('i');
         dot.classList.add('dot');
         dotsContainer.appendChild(dot);
         dots.push(dot);

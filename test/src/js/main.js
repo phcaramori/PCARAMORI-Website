@@ -1,20 +1,19 @@
 /*
 
-    0 - page constants maker
-    1 - Show/hide nav
-    2 - lock/allow scroll
-    3 - pop-up maker
-    4 - nav menu maker
-
+    !0 - page constants maker (Nav menu, language, etc.)
+    !1 - Light/Dark mode 
+    !2 - Show/Hide nav
+    !3 - lock/allow scroll
+    !4 - pop-up maker
+    !5 - nav menu maker
 */
 
-//create nav, footer, and other common elements
+/* ===========\
+ *      0      | 
+ *  PAGE MAKER |
+ *             |
+ *  ========= */
 function populate() {
-    /* ===========\
-     *             | 
-     *  LANGUAGES  |
-     *             |
-     *  ========= */
     //one object per language - order of items should be the same, just translated
     //first entry in footer column array should be the title of that collumn
     const en = {
@@ -44,7 +43,7 @@ function populate() {
         icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code", "fa-brands fa-instagram", ]
     }
 
-    // ----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
+    // !----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
     const active = window.location.pathname.split('/')[3] //!CHANGE TO 2 ONCE TEST DIR IS GONE
 
@@ -56,7 +55,7 @@ function populate() {
     let indexOfActivePage = eval(lang).menuItemsArr.indexOf(active);
 
 
-    // ----- POPULATE NAV MENU ACCORDING TO LANGUAGE ----- //
+    // !----- POPULATE NAV MENU ACCORDING TO LANGUAGE ----- //
     eval(lang).menuItemsArr.forEach(link => { //iterate through corrent language array
         let a = document.createElement("a")
         a.classList.add("nav-item")
@@ -83,7 +82,7 @@ function populate() {
     });
 
 
-    // ----- POPULATE FLAGS ----- //
+    // !----- POPULATE FLAGS ----- //
     let flags = document.createElement("div")
     flags.classList.add("flags")
 
@@ -113,13 +112,13 @@ function populate() {
     }
 
 
-    // ----- MAKE TOP NAVBAR ----- //
+    // !----- MAKE TOP NAVBAR ----- //
     let header = document.createElement('nav')
     header.classList.add("sticky", "navbar", "transparent-nav")
     header.id = 'navbar'
 
 
-    // ----- LEFT NAV ----- //
+    // !----- LEFT NAV ----- //
     let left = document.createElement('div')
     left.classList.add("nav-left")
     let showNavBtn = document.createElement('i')
@@ -141,7 +140,7 @@ function populate() {
     header.appendChild(left)
 
 
-    // ----- RIGHT NAV ----- //
+    // !----- RIGHT NAV ----- //
     let right = document.createElement('div')
     right.classList.add("nav-right")
     let link = document.createElement('a')
@@ -156,7 +155,7 @@ function populate() {
     header.appendChild(right)
 
 
-    // ----- FOOTER ----- //
+    // !----- FOOTER ----- //
     let footerContainer = document.createElement('div')
     footerContainer.classList.add('footer-container')
     let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg") //! FIX THIS AAAAAAAAAA
@@ -209,7 +208,7 @@ function populate() {
     footerContainer.appendChild(copyright)
 
 
-    // ----- append the elements ----- // 
+    // !----- append the elements ----- // 
     if (document.querySelector('.s1')) { //is in index
         document.body.insertBefore(header, document.querySelector('.s1')) //INSERT NAVBAR HEADER
     } else {
@@ -218,14 +217,30 @@ function populate() {
     document.querySelector('.content').after(footerContainer) //INSERT FOOTER AFTER CONTENT
 }
 
-//light/dark mode
-let currentTheme = "dark"
+
+/* ===========\
+ *      1      | 
+ * THEME CHANGE|
+ *             |
+ *  ========= */
+if (!localStorage.getItem('theme')) {
+    localStorage.setItem('theme', 'dark');
+}
 
 function changeTheme() {
-    let root = document.documentElement.style
+    if (localStorage.getItem('theme') == "light") {
+        setTheme("dark")
+    } else if (localStorage.getItem('theme') == "dark") {
+        setTheme("light");
+    } else { //no theme set
+        setTheme("dark");
+    }
+}
 
-    if (currentTheme == "dark") { //change to light
-        currentTheme = "light";
+function setTheme(theme) {
+    let root = document.documentElement.style
+    if (theme == "light") {
+        localStorage.setItem('theme', 'light');
         root.setProperty("--main-bg-color", "var(--LIGHT-main-bg-color)")
         root.setProperty("--secondary-bg-color", "var(--LIGHT-secondary-bg-color)")
         root.setProperty("--main-text-color", "var(--LIGHT-main-text-color)")
@@ -235,8 +250,8 @@ function changeTheme() {
         root.setProperty("--logo-text-color", "var(--LIGHT-logo-text-color)")
         document.getElementById('change-theme-btn').classList.add('fa-moon');
         document.getElementById('change-theme-btn').classList.remove('fa-sun');
-    } else if (currentTheme == "light") { //change to dark
-        currentTheme = "dark";
+    } else if (theme == "dark") {
+        localStorage.setItem('theme', 'dark');
         root.setProperty("--main-bg-color", "var(--DARK-main-bg-color)")
         root.setProperty("--secondary-bg-color", "var(--DARK-secondary-bg-color)")
         root.setProperty("--main-text-color", "var(--DARK-main-text-color)")
@@ -248,8 +263,13 @@ function changeTheme() {
         document.getElementById('change-theme-btn').classList.remove('fa-moon');
     }
 }
+setTheme(localStorage.getItem('theme')) //load theme
 
-// show/hide navigation
+/* ===========\
+ *      2      | 
+ *SHOW/HIDE NAV|
+ *             |
+ *  ========= */
 function showNav() {
     document.getElementById('nav-window').style.display = 'flex';
     document.getElementById('nav-button').style.display = 'none';
@@ -288,6 +308,11 @@ function closeNav() {
 }
 
 
+/* ===========\
+ *      3      | 
+ * LOCK SCROLL |
+ *             |
+ *  ========= */
 // lock/allow scroll
 function lockScroll() {
     document.getElementsByTagName('body')[0].classList.add('noscroll')
@@ -297,7 +322,11 @@ function allowScroll() {
     document.getElementsByTagName('body')[0].classList.remove('noscroll')
 }
 
-
+/* ===========\
+ *      4      | 
+ *    POP-UP   |
+ *             |
+ *  ========= */
 // pop-ups
 function popUp(text, head) {
     //lock scrolling
@@ -338,6 +367,11 @@ function hidePopUp() {
     allowScroll();
 }
 
+/* ===========\
+ *      5      | 
+ *  TRANSITION |
+ *             |
+ *  ========= */
 function animateTransition() {
     lockScroll()
     let loadingCover = document.createElement("div")

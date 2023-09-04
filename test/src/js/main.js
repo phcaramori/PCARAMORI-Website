@@ -126,7 +126,7 @@ function populate() {
     showNavBtn.id = "nav-button"
     showNavBtn.addEventListener("click", function() { showNav() })
     let changeThemeBtn = document.createElement('i')
-    changeThemeBtn.classList.add("fa-solid", "fa-sun", "change-theme-btn")
+    changeThemeBtn.classList.add("fa-solid", "fa-sun", "change-theme-btn", "fas")
     changeThemeBtn.addEventListener("click", () => { changeTheme() })
     changeThemeBtn.id = "change-theme-btn"
     let closeNavBtn = document.createElement("i")

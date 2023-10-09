@@ -9,7 +9,7 @@
 /*-------------------------------------------------\
     0 - General Styles                             \
     1 - Scroll Bar                                 \
-    2 - Presets (Noscroll, Center, pop-ups, etc.)  \
+    2 - Presets (Noscroll, Center, Boxes, etc.)    \
     3 - Top Nav Bar                                \
     4 - Flags/Language Selection                   \
     5 - PCARAMORI Logo                             \ 
@@ -287,6 +287,43 @@ h4 {
     flex-direction: column;
 }
 
+.square-grid{
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 90vw;
+}
+
+@media (min-width: 800px){
+    .square-grid{ grid-template-columns: repeat(3,1fr);}
+}
+
+/* boxes */
+
+.sm-box{
+    background: white;
+    padding: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.sm-box-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: MuseoModerno;
+    font-weight: 100;
+}
+
+.sm-box p {
+    color: var(--gray-1);
+    font-size: 1.4rem;
+    text-align: justify;
+}
 
 /*-------------- 
 3. TOP NAV BAR

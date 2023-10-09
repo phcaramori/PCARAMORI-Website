@@ -322,50 +322,6 @@ function allowScroll() {
     document.getElementsByTagName('body')[0].classList.remove('noscroll')
 }
 
-/* ===========\
- *      4      | 
- *    POP-UP   |
- *             |
- *  ========= */
-// pop-ups
-function popUp(text, head) {
-    //lock scrolling
-    lockScroll();
-
-    //create div and give it the pop-up class
-    let newPopUp = document.createElement("div");
-    document.body.appendChild(newPopUp);
-    newPopUp.classList.add("pop-up");
-
-    //add h1, hr, and p elements to div
-    let h1 = document.createElement("h1");
-    newPopUp.appendChild(h1);
-    let hr = document.createElement("hr");
-    newPopUp.appendChild(hr);
-    let p = document.createElement("p");
-    newPopUp.appendChild(p);
-
-    //give h1 and p elements their text
-    p.innerHTML = text;
-    if (head) {
-        h1.innerHTML = head;
-    } else {
-        h1.innerHTML = "Warning!"
-    }
-
-    // pop-up removal
-    document.addEventListener('click', function(event) {
-        let isClickInside = newPopUp.contains(event.target);
-        if (!isClickInside) { //if the click isn't inside the pop-up, hide it.
-            hidePopUp();
-        }
-    })
-}
-
-function hidePopUp() {
-    document.getElementsByClassName("pop-up")[0].remove();
-    allowScroll();
-}
 
 /* ===========\
  *      5      | 

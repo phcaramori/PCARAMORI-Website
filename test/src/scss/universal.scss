@@ -289,14 +289,19 @@ h4 {
 
 .square-grid{
     display: grid;
-    gap: 1rem;
+    gap: 3rem;
     margin: 0 auto;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
     max-width: 90vw;
 }
 
-@media (min-width: 800px){
-    .square-grid{ grid-template-columns: repeat(3,1fr);}
+@media (max-width: 800px){
+    .square-grid{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* boxes */
@@ -559,7 +564,7 @@ h4 {
     background-color: var(--footer-bg-color);
     text-align: right;
     padding-top: 20px;
-    padding-right: 10px;
+    padding-right: 20px;
     padding-bottom: 10px;
     font-family: museomoderno;
 }

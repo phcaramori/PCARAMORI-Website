@@ -328,6 +328,11 @@ function allowScroll() {
  *  TRANSITION |
  *             |
  *  ========= */
+
+function show(e){
+    e.getElementsByClassName('hidden-content')[0].style.display = "inline-block";
+}
+
 function animateTransition() {
     lockScroll()
     let loadingCover = document.createElement("div")

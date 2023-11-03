@@ -105,12 +105,6 @@ function populate() {
     flags.appendChild(linkAWrapper)
     flags.appendChild(linkBWrapper)
     navMenu.appendChild(flags)
-    if (document.querySelector('.s1')) { //is in index
-        document.body.insertBefore(navMenu, document.querySelector('.s1')) //INSERT MENU 
-    } else {
-        document.body.insertBefore(navMenu, document.querySelector('.content')) //INSERT MENU
-    }
-
 
     // !----- MAKE TOP NAVBAR ----- //
     let header = document.createElement('nav')
@@ -209,10 +203,18 @@ function populate() {
 
 
     // !----- append the elements ----- // 
-    if (document.querySelector('.s1')) { //is in index
-        document.body.insertBefore(header, document.querySelector('.s1')) //INSERT NAVBAR HEADER
+    //INSERT NAVBAR HEADER & MENU
+    if (document.querySelector('.s1')) { //is in index ALSO FIX
+        document.body.insertBefore(navMenu, document.querySelector('.s1'))
+        document.body.insertBefore(header, document.querySelector('.s1'))
     } else {
-        document.body.insertBefore(header, document.querySelector('.content')) //INSERT NAVBAR HEADER
+        if (document.querySelector('.content') != null) {
+            document.body.insertBefore(navMenu, document.querySelector('.content'))
+            document.body.insertBefore(header, document.querySelector('.content'))
+        } else if (document.querySelector('.content-no-margin') != null) {
+            document.body.insertBefore(navMenu, document.querySelector('.content-no-margin'))
+            document.body.insertBefore(header, document.querySelector('.content-no-margin'))
+        }
     }
     document.querySelector('.content').after(footerContainer) //INSERT FOOTER AFTER CONTENT
 }

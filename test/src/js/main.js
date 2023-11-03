@@ -17,30 +17,33 @@ function populate() {
     //one object per language - order of items should be the same, just translated
     //first entry in footer column array should be the title of that collumn
     const en = {
-        menuItemsArr: ["about-me", "projects", "progress", "contact"],
+        menuItemsArr: ["about-me", "projects", "progress", "behind-the-scenes"],
         footerTextArrs: [
-            ["col1", "option", "option", "option", "option", "option"],
-            ["col 2", "op1", "op2", "op3", "op4"]
+            ["Column 1", "I don't", "know", "what to", "put", "here", "yet"],
+            ["Column 2", "these", "don't", "work but", "I'm proud", "I implemented", "them"]
         ],
         footerLinkArrs: [
-            [null, "op1link", "op2link", "op3link", "op4link", "op5link"],
-            [null, "op1link", "op2link", "op3link", "op4link"]
+            [null, "op1link", "op2link", "op3link", "op4link", "op5link", "op6link"],
+            [null, "op1link", "op2link", "op3link", "op4link", "op5link", "op6link"]
         ],
         copyright: "Made with lots of ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022"
     }
     const pt = {
-        menuItemsArr: ["sobre-mim", "projetos", "progresso", "contato"],
-        footerTextArrs: [],
+        menuItemsArr: ["sobre-mim", "projetos", "progresso", "sobre-esse-site"],
+        footerTextArrs: [
+            ["Column 1", "Ainda", "não", "sei o", "que", "botar", "aqui"],
+            ["Column 2", "isso", "não", "funciona", "mas foi", "legal", "implementar"]
+        ],
         footerLinkArrs: [
-            [],
-            []
+            [null, "op1link", "op2link", "op3link", "op4link", "op5link"],
+            [null, "op1link", "op2link", "op3link", "op4link", "op5link"]
         ],
         copyright: "Feito com muito ❤️ e HTML, CSS & JS puros | © Pedro Caramori, 2018-2022"
     }
     const footerSocials = {
-        name: ["GitHub", "LinkedIn", "Source Code", "Instagram"],
-        link: ["https://github.com/phcaramori", "https://www.linkedin.com/in/pedro-caramori-b175a7240/", "https://github.com/phcaramori/PCARAMORI-Website", "https://www.instagram.com/phcaramori_/"],
-        icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code", "fa-brands fa-instagram", ]
+        name: ["GitHub", "LinkedIn", "Source Code"],
+        link: ["https://github.com/phcaramori", "https://www.linkedin.com/in/pedro-caramori-b175a7240/", "https://github.com/phcaramori/PCARAMORI-Website"],
+        icon: ["fa-brands fa-github", "fa-brands fa-linkedin", "fa-solid fa-code"]
     }
 
     // !----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //

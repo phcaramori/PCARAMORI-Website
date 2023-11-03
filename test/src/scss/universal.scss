@@ -52,6 +52,10 @@ h5 {
     font-size: 4rem;
 }
 
+.very-large-header {
+    font-size: 6rem;
+}
+
 p {
     color: var(--main-text-color);
 }
@@ -329,6 +333,9 @@ img.img-list {
     .square-grid {
         display: flex;
         flex-direction: column;
+    }
+    .sm-box {
+        min-height: 300px;
     }
 }
 

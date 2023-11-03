@@ -65,7 +65,7 @@ function populate() {
         if (link === active) {
             a.classList.add("active-nav-item") //make active link orange
         }
-        a.addEventListener("click", (e) => {
+        a.addEventListener("click", (e) => { //link transition on menu anchors
             lockScroll()
             let cover = document.createElement("div")
             cover.classList.add("link-transition")
@@ -329,7 +329,7 @@ function allowScroll() {
  *             |
  *  ========= */
 
-function show(e){
+function show(e) {
     e.getElementsByClassName('hidden-content')[0].style.display = "inline-block";
 }
 

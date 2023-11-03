@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress | Pcaramori</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/main.css">
+
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/68f907237b.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./src/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            animateTransition()
+        })
+    </script>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgb(100, 100, 100);
+        }
+        
+        .slide-container {
+            background-image: linear-gradient(25deg, var(--blue-3) 0%, var(--purple-3) 100%);
+            display: block;
+            opacity: 0.8;
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        
+        .slide {
+            display: flex;
+            margin-bottom: 10%;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .carousel h1 {
+            color: var(--main-bg-color);
+            margin-top: 20px;
+            font-size: 80px;
+            width: 100%;
+        }
+        
+        .carousel .flex-container {
+            margin-top: -3%;
+            margin-left: 10%;
+            margin-right: 10%;
+            justify-content: space-between;
+            height: 75%;
+            margin-bottom: 20px;
+        }
+        
+        .carousel .flex-container img {
+            width: auto;
+            height: 100%;
+            background-color: gray;
+        }
+        
+        .img-column {
+            width: 50%;
+            display: flex;
+            justify-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: stretch;
+            row-gap: 3%;
+            flex: 1;
+        }
+        
+        .text-column {
+            flex: 3;
+            margin-right: 5%;
+        }
+        
+        .version-number {
+            color: var(--green-1);
+        }
+        
+        .carousel p {
+            font-size: 25px;
+        }
+        
+        .carousel .arrow {
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            z-index: 2;
+            bottom: 50%;
+            margin-left: min(25px, 5%);
+            font-size: 25px;
+            text-align: center;
+        }
+        
+        i#right {
+            right: min(25px, 5%);
+        }
+        
+        .carousel .dots {
+            position: absolute;
+            bottom: 15px;
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+        
+        i.dot {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            margin: 5px;
+            margin-bottom: 0;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .dot#active {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        @media only screen and (max-width: 550px) {
+            .flex-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<!-- same across all documents -->
+<div class="carousel">
+    <div class="slide-container">
+        <i id="left" class="arrow fas fa-solid fa-chevron-left" style="height: 5px; width: 5px;"></i>
+        <i id="right" class="arrow fas fa-solid fa-chevron-right" style="height: 5px; width: 5px;"></i>
+        <div id="dots" class="dots">
+
+        </div>
+        <div class="slide" id="1">
+            <h1 class="transparent-text">Original Game Website</h1>
+            <br>
+            <div class="flex-container" style="flex-wrap: nowrap;">
+                <div class="flex-column text-column">
+                    <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
+                    <br>
+                    <p class="transparent-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, enim aperiam laboriosam at illum in magni maiores, eius modi eligendi consequatur minima iusto voluptatem dolor! Consequatur pariatur accusamus recusandae omnis?
+                        In eligendi facilis, voluptatibus ipsum quis nobis dignissimos ratione ut. Deleniti provident ea reiciendis cumque rerum maxime tempora consequatur inventore autem. Aut eum dicta eaque soluta fugiat quos et? Blanditiis? Atque optio
+                        iure dolorem maxime iusto exercitationem natus rerum vitae quo inventore ipsam quaerat alias repudiandae dolore nulla, aliquid labore aliquam numquam quas magnam omnis facere iste consequatur? Eaque, maxime? Illum rem fuga tempore
+                        vel porro ea, molestias recusandae exercitationem neque perferendis deleniti dicta eos, nostrum fugit. Molestiae nisi labore, quasi vero, soluta, eligendi libero velit sapiente nam nobis quisquam. Consequatur distinctio, praesentium
+                        corrupti excepturi ipsa ullam facere aut ab nulla repellat ad, suscipit omnis dicta doloribus neque quo recusandae reprehenderit facilis autem. Sed reprehenderit aliquid quia hic harum nulla.</p>
+                </div>
+                <div class="flex-column img-column">
+                    <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="2" style="display: none;">
+            <h1 class="transparent-text">Original Game Website</h1>
+            <br>
+            <div class="flex-container" style="flex-wrap: nowrap;">
+                <div class="flex-column text-column">
+                    <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
+                    <br>
+                    <p class="transparent-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur et cum sapiente excepturi dolore aperiam esse minima natus maxime illo possimus illum suscipit voluptates veritatis praesentium, ratione mollitia sit? Consectetur.</p>
+                </div>
+                <div class="flex-column img-column">
+                    <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="3" style="display: none;">
+            <h1 class="transparent-text">Original Game Website</h1>
+            <br>
+            <div class="flex-container" style="flex-wrap: nowrap;">
+                <div class="flex-column text-column">
+                    <h3 class="version-number">01/04/2021 - 01/10/2023</h3>
+                    <br>
+                    <p class="transparent-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur et cum sapiente excepturi dolore aperiam esse minima natus maxime illo possimus illum suscipit voluptates veritatis praesentium, ratione mollitia sit? Consectetur.</p>
+                </div>
+                <div class="flex-column img-column">
+                    <img src="" alt=""><img src="" alt=""><img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+
+</div>
+</body>
+<script>
+    let dotsContainer = document.getElementById('dots')
+    let dots = [];
+    let activeSlide = 0;
+    let slides = document.getElementsByClassName('slide');
+
+    for (let i = 0; i < slides.length; i++) {
+        let dot = document.createElement('i');
+        if (i === 0) {
+            dot.id = "active"
+        }
+        dot.classList.add('dot');
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+    }
+
+    document.getElementById('right').addEventListener("click", () => {
+        slideForward()
+    });
+    document.getElementById('left').addEventListener("click", () => {
+        slideBackward()
+    });
+
+    function slideForward() {
+        slides[activeSlide].style.display = 'none';
+        dots[activeSlide].id = "";
+        if (activeSlide >= slides.length - 1) {
+            activeSlide = 0;
+        } else {
+            activeSlide++;
+        }
+        dots[activeSlide].id = "active";
+        slides[activeSlide].style.display = 'flex';
+    }
+
+    function slideBackward() {
+        slides[activeSlide].style.display = 'none';
+        dots[activeSlide].id = "";
+        if (activeSlide <= 0) {
+            activeSlide = slides.length - 1;
+        } else {
+            activeSlide--;
+        }
+        dots[activeSlide].id = "active";
+        slides[activeSlide].style.display = 'flex';
+    }
+</script>
+
+</html>

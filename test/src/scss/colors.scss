@@ -1,9 +1,7 @@
 :root {
     --secondary-bg-color: var(--DARK-secondary-bg-color);
     --main-bg-color: var(--DARK-main-bg-color);
-    /*gray3*/
     --main-text-color: var(--DARK-main-text-color);
-    /*light-gray 1*/
     --footer-text-color: var(--DARK-footer-text-color);
     --footer-bg-color: var(--DARK-footer-bg-color);
     --transparent-bg-color: rgba(15, 22, 24, 0.5);
@@ -21,7 +19,7 @@
     --LIGHT-main-text-color: var(--gray-2);
     --LIGHT-footer-text-color: var(--gray-3);
     --LIGHT-footer-bg-color: var(--light-gray-2);
-    --LIGHT-navbar-bg-color: rgba(0, 0, 0, 0);
+    --LIGHT-navbar-bg-color: linear-gradient(0deg, rgba(230, 230, 230, 0) 0%, rgba(230, 230, 230, 0.5) 100%);
     --LIGHT-logo-text-color: black;
     --LIGHT-secondary-bg-color: var(--light-gray-2);
     /*the higher the number, the darker the color*/

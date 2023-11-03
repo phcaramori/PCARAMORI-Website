@@ -324,6 +324,33 @@ function allowScroll() {
     document.getElementsByTagName('body')[0].classList.remove('noscroll')
 }
 
+/* ===========\
+ *      4      | 
+ *    POP-UP   |
+ *             |
+ *  ========= */
+
+function popUp(heading, txt) {
+    let e = document.createElement('div');
+    e.classList.add('pop-up');
+    let closeButton = document.createElement("span");
+    closeButton.innerHTML = "&times;";
+    closeButton.style.float = "right";
+    closeButton.style.cursor = "pointer";
+    closeButton.onclick = () => {
+        document.getElementsByClassName('pop-up')[0].remove();
+    };
+    let h = document.createElement('h1');
+    let hr = document.createElement('hr');
+    let p = document.createElement('p');
+    e.appendChild(closeButton);
+    e.appendChild(h);
+    e.appendChild(hr);
+    e.appendChild(p);
+    h.innerHTML = heading;
+    p.innerHTML = txt;
+    document.body.appendChild(e);
+}
 
 /* ===========\
  *      5      | 

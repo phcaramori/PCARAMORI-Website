@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <!--
         TODO:
-    Footer - add content
     Make sub-pages
+    Decide: colors of sub pages (orange headers, page-color subheadings)
+    Decide: Center or Justify text on boxes?
 -->
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <base href="https://www.pcaramori.com.br/test/">
     <!-- <base href="http://127.0.0.1:5500/test/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Pcaramori</title>
+    <title>Início | Pcaramori</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./src/css/landing.css">
     <link rel="stylesheet" href="./src/css/main.css">
@@ -25,7 +26,9 @@
 
 <body onload="populate(),intro()">
     <div class="intro" style="z-index: 100;">
-        <div class="logo">Pcaramori</div>
+        <span>Welcome to</span>
+        <div class="logo" style="border-color: white;">Pcaramori</div>
+        <span>Full-Stack Developer</span>
     </div>
 
     <div class="s1 flex-center" id="s1">
@@ -34,24 +37,25 @@
         </div>
     </div>
 
-    <div class="content" id="content">
+    <article class="content" id="content">
         <div class="flex-shrink-container">
             <div class="box" id="orange-box">
                 <a href="./en/about-me/" style="text-decoration: none;">
                     <div class="box-img">
                         <img src="./resources/landing/red-box-detail.png" alt="">
                     </div>
-                    <h1 class="box-heading">Sobre Mim</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                    <h1 class="box-heading">About Me</h1>
+                    <p>Hi! I'm <span class="orange">Pedro Caramori</span>. Here's where you should go to learn more about me, my <span class="orange">aspirations</span>, my <span class="orange">skills</span>, and <span class="orange">my story</span>.</p>
                 </a>
             </div>
             <div class="box box-align-right" id="blue-box">
-                <a href="./en/progresso/" style="text-decoration: none;">
+                <a href="./en/progress/" style="text-decoration: none;">
                     <div class="box-img">
                         <img src="./resources/landing/blue-box-detail.png" alt="" width="80px">
                     </div>
-                    <h1 class="box-heading">Histórico</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                    <h1 class="box-heading">Progress</h1>
+                    <p>After <span class="orange">teaching myself how to code</span>, I started this website at age 12, and it's been the <span class="orange">home to my imagination</span> ever since. It started as a website to play a few <span class="orange">flash games</span>                        on, then the number of games increased to over 70 - now, it's home to this portfolio. This website has been up for over <span class="orange">a fourth</span> of my life, so here you'll take a look at how the website (and I) have
+                        <span class="orange">grown over time</span>.</p>
                 </a>
             </div>
             <div class="box" id="green-box">
@@ -59,8 +63,9 @@
                     <div class="box-img">
                         <img src="./resources/landing/green-box-detail.png" alt="">
                     </div>
-                    <h1 class="box-heading">Projetos</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                    <h1 class="box-heading">Projects</h1>
+                    <p><span class="orange">I learn by doing.</span> I believe that the only way to master a skill is by practicing it, <span class="orange">so thats what I did</span>, for a very, very long time. Here you'll be able to take a look at
+                        <span class="orange">all of my projects</span>, from large to small, since I began coding. Some of them are <span class="orange">finished products</span>, while others are mere <span class="orange">experiments</span>.</p>
                 </a>
             </div>
             <div class="box box-align-right" id="purple-box">
@@ -68,39 +73,13 @@
                     <div class="box-img">
                         <img src="./resources/landing/purple-box-detail.png" alt="">
                     </div>
-                    <h1 class="box-heading">Contato</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ullam unde dignissimos porro odit rerum, pariatur laborum praesentium similique nobis sunt officia repudiandae eos consequuntur nemo recusandae dolore rem veritatis.</p>
+                    <h1 class="box-heading">Behind The Scenes</h1>
+                    <p>Learn how the <span class="orange">few thousand lines of code</span> behind this website work. Learn how I built the language selection, the console-like intro, the theme selection, and everything else you see <span class="orange">without the use of any libraries</span>.
+                        (I know this isn't practical, but it's how I learn to <span class="orange">master the tech</span> on which those libraries work on top of!) </p>
                 </a>
             </div>
         </div>
-    </div>
-    <!-- FOOTER -->
-    <div class="footer-container">
-        <svg id="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#222629" fill-opacity="1" d="M0,256L48,234.7C96,213,192,171,288,149.3C384,128,480,128,576,138.7C672,149,768,171,864,192C960,213,1056,235,1152,208C1248,181,1344,107,1392,69.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-        <div class="footer">
-            <div class="col1">
-                <h2>c1</h2>
-                <ul>
-                    <li><a href="">Option</a></li>
-                    <li><a href="">Option</a></li>
-                    <li><a href="">Option</a></li>
-                    <li><a href="">Option</a></li>
-                </ul>
-            </div>
-            <div class="col3">
-                <h2>c3</h2>
-                <ul>
-                    <li><a href="">Option</a></li>
-                    <li><a href="">Option</a></li>
-                    <li><a href="">Option</a></li>
-                    <li><a href="">Option</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            Made with much ❤️ and vanilla HTML, CSS & JS | © Pedro Caramori, 2018-2022
-        </div>
-    </div>
+    </article>
 </body>
 
 </html>

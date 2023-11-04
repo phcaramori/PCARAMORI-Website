@@ -361,8 +361,10 @@ function popUp(heading, txt) {
  *             |
  *  ========= */
 
-function show(e) {
-    e.getElementsByClassName('hidden-content')[0].style.display = "inline-block";
+function showContentsWithin(e) { //shows hidden content inside the parent container
+    for (let i = 0; i < e.getElementsByClassName('hidden-content').length; i++) {
+        e.getElementsByClassName('hidden-content')[i].style.display = "inline-block";
+    }
 }
 
 function animateTransition() {

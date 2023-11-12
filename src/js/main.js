@@ -48,15 +48,23 @@ function populate() {
 
     // !----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
-    const active = window.location.pathname.split('/')[2] 
+    let active = 'landing';
+    if(window.location.pathname.split('/')[2]){ //if not in landing
+        active = window.location.pathname.split('/')[2];
+    } 
 
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
     navMenu.id = "nav-window"
     navMenu.appendChild(document.createElement("h1"))
 
-    let indexOfActivePage = eval(lang).menuItemsArr.indexOf(active);
-
+    let indexOfActivePage;
+    if(active != 'landing'){
+        indexOfActivePage = eval(lang).menuItemsArr.indexOf(active);
+    }
+    else{
+        indexOfActivePage = null;
+    }
 
     // !----- POPULATE NAV MENU ACCORDING TO LANGUAGE ----- //
     eval(lang).menuItemsArr.forEach(link => { //iterate through corrent language array
@@ -94,7 +102,11 @@ function populate() {
     linkA.src = "./resources/br-flag.png"
     linkA.alt = "PT"
     linkA.id = "br-flag"
-    linkAWrapper.href = "./pt/" + pt.menuItemsArr[indexOfActivePage] + "/"
+    if(active == 'landing'){
+        linkAWrapper.href = "./pt/"
+    }else{
+        linkAWrapper.href = "./pt/" + pt.menuItemsArr[indexOfActivePage] + "/"
+    }
     linkAWrapper.appendChild(linkA)
 
     let linkBWrapper = document.createElement("a")
@@ -102,7 +114,11 @@ function populate() {
     linkB.src = "./resources/us-flag.png"
     linkB.alt = "EN"
     linkB.id = "us-flag"
-    linkBWrapper.href = "./en/" + en.menuItemsArr[indexOfActivePage] + "/"
+    if(active == 'landing'){
+        linkBWrapper.href = "./en/"
+    }else{
+        linkBWrapper.href = "./en/" + en.menuItemsArr[indexOfActivePage] + "/"
+    }
     linkBWrapper.appendChild(linkB)
 
     flags.appendChild(linkAWrapper)
@@ -212,6 +228,7 @@ function populate() {
         document.body.insertBefore(header, document.querySelector('.s1'))
     } else {
         if (document.querySelector('.content') != null) {
+            console.log("shouldve worked")
             document.body.insertBefore(navMenu, document.querySelector('.content'))
             document.body.insertBefore(header, document.querySelector('.content'))
             document.querySelector('.content').after(footerContainer)

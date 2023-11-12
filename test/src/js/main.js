@@ -214,12 +214,13 @@ function populate() {
         if (document.querySelector('.content') != null) {
             document.body.insertBefore(navMenu, document.querySelector('.content'))
             document.body.insertBefore(header, document.querySelector('.content'))
+            document.querySelector('.content').after(footerContainer)
         } else if (document.querySelector('.content-no-margin') != null) {
             document.body.insertBefore(navMenu, document.querySelector('.content-no-margin'))
             document.body.insertBefore(header, document.querySelector('.content-no-margin'))
+            document.querySelector('.content-no-margin').after(footerContainer)
         }
     }
-    document.querySelector('.content').after(footerContainer) //INSERT FOOTER AFTER CONTENT
 }
 
 

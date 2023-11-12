@@ -1,1 +1,165 @@
-<meta http-equiv="Refresh" content="0; url='https://www.dewalt.com/'" />
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="https://www.pcaramori.com.br/test/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading.. | Pcaramori</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./terminal.css">
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/68f907237b.js" crossorigin="anonymous"></script>
+    <!-- LOADING IN THE BACKGROUND FOR REDIRECT -->
+    <link rel="prefetch" as="html" src="./src/js/landing.js">
+    <link rel="prefetch" as="script" type="text/javascript" src="./src/js/main.js">
+    <link rel="prefetch" as="script" src="./src/js/landing.js">
+    <link rel="prefetch" as="stylesheet" href="./src/css/main.css">
+    <link rel="prefetch" href = "./index.html">
+    <link rel="prefetch" href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" as="stylesheet">
+</head>
+
+<body>
+    <div class="intro-container">
+        <div class="console">
+        </div>
+        <div class="input big-input">
+            <i class="fas fa-chevron-right"></i>
+            <p class="pre" style="display:none;"></p>
+            <input type="text" class="ui" autofocus>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    if(window.innerWidth<700){
+        window.location.replace("./en/")
+    }
+    let userInput = document.querySelector('.input input')
+    userInput.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") { //inputs
+            new consoleItem(userInput.value, 'gray', false, true) //String, color, glowing, madeByUsr
+            if (userInput.value.toLowerCase().replace(/\s+/g, '') == "start") {
+                userInput.value = '';
+                startAnim();
+            } else if(userInput.value.toLowerCase().replace(/\s+/g, '') == "skip"){
+                window.location.replace("./en/")
+            } else if(userInput.value.toLowerCase() == "rm -rf"){ //whoa you found the easter egg 😮
+                new consoleItem("You do not have the system priviliges to perform that command.", "yellow")
+                setTimeout(() => {
+                    new consoleItem("Try to run with the \"sudo\" prefix", "yellow", true)
+                },500)
+            } else if(userInput.value.toLowerCase() == "sudo rm -rf"){
+                new consoleItem("uh oh", "red", true, true, true) //make this a game..? hmmm
+                setTimeout(() => {
+                    document.body.innerHTML = ""
+                    document.body.style.backgroundColor = "white"
+                },1000)
+            }else{
+                new consoleItem("Unknown Command. Type \"start\" to begin", "red")
+            }
+            userInput.value = '';
+        }
+    });
+
+    let randomConsoleCommands = ["Reaching host","Creating styles","Managing HTTP Access","Making sure nothing illegal is going on","Connecting to the internet","Awaiting host at port","opening a minecraft server","searching for random ASCII art","Enabling HTTP Protocol","connecting to satelites","making sure no one is watching","downloading CSS","downloading JS","compiling...","compilation complete","downloading JAVAHAHEE1.4.323","hacking the NSA","creating animations","loading boilerplate code","writing random things on the terminal","creating a website","talking to host","website version: 1.02.42","Reaching host","Creating styles","Managing HTTP Access","Making sure nothing illegal is going on","Connecting to the internet","Awaiting host at port","opening a minecraft server","searching for random ASCII art","Enabling HTTP Protocol","connecting to satelites","making sure no one is watching","downloading CSS","downloading JS","compiling...","compilation complete","downloading JAVAHAHEE1.4.323","hacking the NSA","creating animations","loading boilerplate code","creating a website","website version: 1.02.42","Redirecting..."]
+    let consoleItemList = [];
+    const consoleUserName = "user:" + Math.round(Math.random() * 1000) + " > "
+    class consoleItem {
+        constructor(str, color, glowing, madeByUser, easterEgg) {
+            if (color) {
+                this.color = "var(--TERMINAL-" + color + ")"
+            } else {
+                this.color = "white"
+            }
+            consoleItemList.push(this)
+            this.e = document.createElement('p')
+            this.e.classList.add('line-of-text')
+            this.user = document.createElement('span')
+            this.user.classList.add("TERMINAL-user")
+            if (madeByUser) {
+                this.user.innerHTML = consoleUserName
+            } else {
+                this.user.innerHTML = "Pcaramori.com > "
+            }
+            this.e.appendChild(this.user)
+            this.text = document.createElement('span')
+            this.text.innerHTML = str
+            this.text.style.color = this.color
+            if (glowing) {
+                this.text.classList.add("TERMINAL-glowing")
+            }
+            if (easterEgg) {
+                this.e.style.fontSize = "200px"
+            }
+            this.e.appendChild(this.text)
+            this.printToConsole()
+        }
+
+        printToConsole = () => {
+            document.querySelector('.console').appendChild(this.e)
+        }
+
+        removeFromConsole = () => {
+            this.e.remove()
+            let index = consoleItemList.indexOf(this)
+            consoleItemList.splice(index, 1)
+        }
+
+        updateText = (text) => {
+            this.e.lastChild.innerHTML = text
+        }
+    }
+
+    new consoleItem("Type \"start\" to begin")
+
+    async function startAnim() {
+        //move text input
+        document.querySelector('.input i').style.display = "none"
+        document.querySelector('.input input').style.fontSize = "1rem"
+        document.querySelector('.input input').style.marginLeft = "0"
+        document.querySelector('.big-input').classList.remove('big-input')
+        document.querySelector('.input .pre').innerHTML = consoleUserName
+        document.querySelector('.input .pre').style.display = ''
+
+        //animation
+        hideInput()
+        await timer(250)
+        new consoleItem("logging-in","yellow","true")
+        await timer(500)
+        new consoleItem('Access Granted', 'green', true)
+        await timer(250)
+        const dotAnimList = ["[----------]","[█---------]","[██--------]","[███-------]","[████------]","[█████-----]","[██████----]","[███████---]","[████████--]","[█████████-]","[██████████]"]
+        let dotLoad = new consoleItem("LOADING...    " + dotAnimList[0],"green", true);
+        for (let i = 0; i < dotAnimList.length; i++) {
+            dotLoad.e.lastChild.innerHTML = "LOADING...    " + dotAnimList[i];
+            let randInterval = Math.floor(Math.random()*400)
+            await timer(randInterval)
+        }
+        new consoleItem("LOADING COMPLETE!","green","true")
+        await timer(250)
+        for (let i = 0; i < randomConsoleCommands.length; i++) {
+            new consoleItem(randomConsoleCommands[i])
+            let randInterval = Math.pow(Math.floor(Math.random()*15),2)
+            await timer(randInterval)
+            var elem = document.querySelector('body');
+            elem.scrollTop = elem.scrollHeight;
+        }
+        new consoleItem("SUCCESS!","green",true)
+        //SELECT LANGUAGE HERE
+        window.location.replace("./en/")
+    }
+
+    function hideInput(){
+        document.querySelector('.input').style.display ='none';
+    }
+
+    function showInput(){
+        document.querySelector('.input').style.display ='';
+    }
+
+    const timer = ms => new Promise(res => setTimeout(res, ms))
+</script>

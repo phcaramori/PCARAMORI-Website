@@ -365,18 +365,6 @@ img.img-list {
     transition: 1.2s;
 }
 
-.sm-box.img-bg:nth-child(1)::before {
-    background-image: url(../../resources/br-flag.png);
-}
-
-.sm-box.img-bg:nth-child(2)::before {
-    background-image: url(../../resources/us-flag.png);
-}
-
-.sm-box.img-bg:nth-child(3)::before {
-    background-image: url(../../resources/us-flag.png);
-}
-
 .sm-box.img-bg a {
     display: block;
     position: relative;

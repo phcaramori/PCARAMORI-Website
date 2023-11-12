@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <base href="http://pcaramori.com.br/test/">
-    <!-- <base href="http://127.0.0.1:5500/test/"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History | Pcaramori</title>
+    <title>Projetos | Pcaramori</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./src/css/main.css">
 
@@ -21,24 +20,62 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Muli&family=MuseoModerno:wght@300&family=Oxanium:wght@200&display=swap" rel="stylesheet">
+    <style>
+        .sm-box.img-bg:nth-child(1)::before {
+            background-image: url(resources/Minecraft-Thumbnail.jpg);
+        }
+        
+        .sm-box.img-bg:nth-child(2)::before {
+            background-image: url(resources/Flappy-Bord-Thumbnail.jpg);
+            background-color: rgb(106, 214, 76);
+        }
+        
+        .sm-box.img-bg:nth-child(3)::before {
+            background-color: gray;
+        }
+    </style>
 </head>
+<!-- same across all documents -->
 
 <body onload="populate()">
-
     <div class="content" id="content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi eligendi necessitatibus quidem nam labore sed numquam incidunt inventore libero illum accusamus consequatur placeat, laborum soluta obcaecati dolorum enim corrupti ut! Et inventore tenetur
-        cupiditate quia incidunt tempora corrupti aut maxime ipsam nihil, corporis ipsum perspiciatis quas accusantium totam. Iusto ex reiciendis, rem consequuntur voluptatibus harum neque ipsa officiis deleniti aut? Quisquam illum consectetur eveniet
-        non culpa veritatis aspernatur quam dolore, officia illo pariatur laudantium, tempora fugit debitis omnis ex ut at possimus corrupti? Eos nisi voluptatem officiis illum dolores suscipit! Laudantium nostrum dignissimos ut possimus! Aliquid illum
-        error explicabo temporibus nostrum aspernatur quo sunt provident dolor iure possimus, ratione hic accusantium voluptas culpa. Aliquid blanditiis mollitia aut, omnis necessitatibus quo. Quas necessitatibus architecto qui molestiae pariatur, alias
-        sint atque aliquam maxime illo hic aut dolorem nesciunt magnam mollitia doloribus, inventore porro dicta voluptates reiciendis possimus earum eius laborum. Perferendis, sint? Qui nihil distinctio rerum quidem esse maxime cupiditate accusantium
-        fugit nemo odit ratione quae eum rem aspernatur numquam dolor, consequuntur earum nobis natus ad itaque. Repudiandae, beatae! Impedit, accusantium earum. Error nam, ullam nemo aspernatur totam amet veniam rem eaque reiciendis quia sunt hic. In
-        optio facilis incidunt laboriosam nesciunt laudantium assumenda temporibus voluptatibus, animi aspernatur fuga omnis numquam recusandae? Repellendus impedit deserunt eum, ex eius porro, necessitatibus facilis itaque laboriosam illum vero? Earum,
-        modi eius ullam officia voluptas dolorum id accusantium possimus eaque, voluptatibus odit officiis amet similique provident. Quo rem nihil, magni debitis hic ipsum deserunt exercitationem ducimus veniam vitae, aspernatur quisquam ipsa unde nam
-        nobis est iusto numquam iure at! Cumque, debitis. Vero suscipit nihil beatae nisi. Natus fugit, quaerat autem inventore, eum distinctio vel aspernatur numquam, voluptatem obcaecati repudiandae? Libero, quibusdam. Repellat distinctio neque accusamus
-        est, soluta esse assumenda omnis totam similique illo, at dignissimos modi.
-    </div>
-    <div class="footer">
-
+        <h1 class="center-header very-large-header" style="color: var(--green-2);">Meus Projetos</h1>
+        <h2 class="center-header" style="color: var(--green-2)">Feitos para PC (e em inglês)</h2>
+        <br>
+        <div class="square-grid">
+            <div class="sm-box img-bg" style="grid-column: span 4; grid-row: span 1;" onmouseover="showContentsWithin(this)">
+                <h1 class="bottom-left-text">Bot do Discord</h1>
+                <div class="hidden-content">
+                    <div>
+                        <a href="https://github.com/phcaramori/mc-botl">
+                            <h1>Bot do Discord</h1>
+                            <p>Um bot que fiz para facilitar a integração de servidores do Minecraft ao Discord. No Discord, os usuários podem verificar quem está online no momento, verificar comandos do servidor e outras informações úteis, como IP e seed. Feito com Discord.JS, ainda work-in-progress. Atualmente, funciona apenas para exibir o status de um único servidor - estou trabalhando para adicionar um banco de dados para que os comandos possam ser definidos individualmente para cada servidor</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-box img-bg" style="grid-column: span 2; grid-row: span 2;" onmouseover="showContentsWithin(this)">
+                <a href="./projects/flappy-bord"></a>
+                <h1 class="bottom-left-text">Flappy Bord</h1>
+                <div class="hidden-content">
+                    <div>
+                        <h1>Flappy Bord</h1>
+                        <p>Uma réplica do Flappy Bird que fiz, utilizando, novamente, apenas HTML, JS e CSS simples. Com 4 níveis de dificuldade e um contador de high-score, o jogo usa o método getBoundingClientRect para calcular as colisões entre objetos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-box img-bg" style="grid-column: span 2; grid-row: span 1;" onmouseover="showContentsWithin(this)">
+                <a href="./projects/carrosel"></a>
+                <h1 class="bottom-left-text">Carrossel</h1>
+                <div class="hidden-content">
+                    <div>
+                        <h1>Carrossel</h1>
+                        <p>Um carrossel simples que fiz para implementação em sites, usando apenas CSS, HTML e JS.</p>
+                    </div>
+                </div>
+            </div>
+            Muito mais a vir...
+        </div>
     </div>
 </body>
 

@@ -1,6 +1,5 @@
 /t
 .gitignore
-mozinha.html
 */node_modules
-test/src/css
+src/css
 .DS_Store

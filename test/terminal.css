@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
+:root {
+    --TERMINAL-red: rgb(217, 33, 33);
+    --TERMINAL-dark-red: rgb(122, 20, 20);
+    --TERMINAL-green: #0DFF75;
+    --TERMINAL-yellow: rgb(230, 126, 23);
+    --TERMINAL-gray: rgb(150, 150, 150);
+    --orange-1: #FF5E00;
+    --orange-2: #fc4727;
+    --TERMINAL-dark-gray: rgb(100,100,100);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: rgb(15, 22, 24);
+    overflow-y: hidden;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.intro-container {
+    margin-top: 5%;
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: "Anonymous Pro";
+}
+
+.console {
+    display: inline-block;
+    margin-bottom: 15%;
+}
+
+.console .line-of-text {
+    display: block;
+    animation: loadConsoleItem 0.25s;
+    font-size: 2vh;
+}
+
+.big-input {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input i {
+    font-size: 30vh;
+    color: var(--orange-2);
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+.input .pre{
+    width: 100px;
+}
+
+.input input {
+    width: 100%;
+    font-size: 40vh;
+    background: none;
+    border: none !important;
+    color: var(--orange-1);
+    outline: none;
+    margin-left: 50px;
+    font-family: "Anonymous Pro";
+}
+
+.TERMINAL-glowing {
+    text-shadow: white 0 0 4px;
+}
+
+.TERMINAL-user {
+    color: rgb(100, 100, 100);
+}
+
+@keyframes loadConsoleItem {
+    from{
+        opacity: 0;
+    }to{
+        opacity: 100%;
+    }
+}

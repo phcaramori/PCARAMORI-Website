@@ -228,7 +228,6 @@ function populate() {
         document.body.insertBefore(header, document.querySelector('.s1'))
     } else {
         if (document.querySelector('.content') != null) {
-            console.log("shouldve worked")
             document.body.insertBefore(navMenu, document.querySelector('.content'))
             document.body.insertBefore(header, document.querySelector('.content'))
             document.querySelector('.content').after(footerContainer)

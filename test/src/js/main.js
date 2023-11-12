@@ -20,7 +20,7 @@ function populate() {
         menuItemsArr: ["about-me", "projects", "progress", "behind-the-scenes"],
         footerTextArrs: [
             ["Column 1", "I don't", "know", "what to", "put", "here", "yet"],
-            ["Column 2", "these", "don't", "work but", "I'm proud", "I implemented", "them"]
+            ["Column 2", "these", "don't link", "to anything", "but I'm proud", "I implemented", "them"]
         ],
         footerLinkArrs: [
             [null, "op1link", "op2link", "op3link", "op4link", "op5link", "op6link"],
@@ -32,7 +32,7 @@ function populate() {
         menuItemsArr: ["sobre-mim", "projetos", "progresso", "sobre-esse-site"],
         footerTextArrs: [
             ["Column 1", "Ainda", "não", "sei o", "que", "botar", "aqui"],
-            ["Column 2", "isso", "não", "funciona", "mas foi", "legal", "implementar"]
+            ["Column 2", "isso", "não", "serve para", "nada mas", "foi legal", "implementar"]
         ],
         footerLinkArrs: [
             [null, "op1link", "op2link", "op3link", "op4link", "op5link"],

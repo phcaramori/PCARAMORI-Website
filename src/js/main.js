@@ -48,7 +48,7 @@ function populate() {
 
     // !----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
-    const active = window.location.pathname.split('/')[3] //!CHANGE TO 2 ONCE TEST DIR IS GONE
+    const active = window.location.pathname.split('/')[2] 
 
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")

@@ -76,7 +76,6 @@ function populate() {
             a.classList.add("active-nav-item") //make active link orange
         }
         a.addEventListener("click", (e) => { //link transition on menu anchors
-            lockScroll()
             let cover = document.createElement("div")
             cover.classList.add("link-transition")
             document.body.appendChild(cover)
@@ -308,6 +307,7 @@ function showNav() {
     for (let i = 0; i < menuLine.length; i++) {
         menuLine[i].classList.add('hr-anim'); //add "hr-anim" to all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
     }
+    lockScroll();
 }
 
 function closeNav() {
@@ -330,6 +330,7 @@ function closeNav() {
                 menuLine[i].classList.remove('hr-anim'); //remove "hr-anim" from all lines in the nav menu. (the green lines that go from left to right as the menu comes in)
             }
         }, 501) //wait 500ms before hiding menu so animation can complete | 1 extra ms prevents flashing of menu of high refresh-rate screens, for whatever reason
+    allowScroll();
 }
 
 

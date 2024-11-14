@@ -32,9 +32,9 @@
 
 body,
 html {
-    width: 100vw;
-    height: 100vh;
-    overflow-x: hidden;
+    // width: 100vw;
+    // height: 100vh;
+    // overflow-x: hidden;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
@@ -285,7 +285,7 @@ img.img-list {
 
 .content-no-margin {
     @extend .content-base;
-    width: 100vw;
+    width: 100%;
 }
 
 .section {
@@ -455,7 +455,7 @@ img.img-list {
     padding-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     height: 3rem;
     background: var(--navbar-bg-color);
     z-index: 100;
@@ -514,10 +514,10 @@ img.img-list {
 .nav-window {
     display: none;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
     opacity: 0.985;
-    position: absolute;
+    position: fixed;
     background-image: var(--green-blue);
 }
 
@@ -563,7 +563,7 @@ img.img-list {
 
 .link-transition {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: black;
     position: absolute;
     top: 50%;
@@ -679,5 +679,5 @@ img.img-list {
 
 #footer-svg {
     margin-bottom: -3%;
-    width: 100vw;
+    width: 100%;
 }

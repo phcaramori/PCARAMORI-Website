@@ -49,9 +49,9 @@ function populate() {
     // !----- LANGUAGE-SENSING BASED ON DIRECTORY ----- //
     const lang = document.getElementsByTagName('html')[0].getAttribute('lang'); //en, pt
     let active = 'landing';
-    if(window.location.pathname.split('/')[2]){ //if not in landing
+    if (window.location.pathname.split('/')[2]) { //if not in landing
         active = window.location.pathname.split('/')[2];
-    } 
+    }
 
     let navMenu = document.createElement('div')
     navMenu.classList.add("nav-window", "flex-center", "space-around", "noscroll")
@@ -59,10 +59,9 @@ function populate() {
     navMenu.appendChild(document.createElement("h1"))
 
     let indexOfActivePage;
-    if(active != 'landing'){
+    if (active != 'landing') {
         indexOfActivePage = eval(lang).menuItemsArr.indexOf(active);
-    }
-    else{
+    } else {
         indexOfActivePage = null;
     }
 
@@ -102,9 +101,9 @@ function populate() {
     linkA.src = "./resources/br-flag.png"
     linkA.alt = "PT"
     linkA.id = "br-flag"
-    if(active == 'landing'){
+    if (active == 'landing') {
         linkAWrapper.href = "./pt/"
-    }else{
+    } else {
         linkAWrapper.href = "./pt/" + pt.menuItemsArr[indexOfActivePage] + "/"
     }
     linkAWrapper.appendChild(linkA)
@@ -114,9 +113,9 @@ function populate() {
     linkB.src = "./resources/us-flag.png"
     linkB.alt = "EN"
     linkB.id = "us-flag"
-    if(active == 'landing'){
+    if (active == 'landing') {
         linkBWrapper.href = "./en/"
-    }else{
+    } else {
         linkBWrapper.href = "./en/" + en.menuItemsArr[indexOfActivePage] + "/"
     }
     linkBWrapper.appendChild(linkB)
@@ -237,6 +236,7 @@ function populate() {
             document.querySelector('.content-no-margin').after(footerContainer)
         }
     }
+    loadTheme();
 }
 
 
@@ -245,8 +245,12 @@ function populate() {
  * THEME CHANGE|
  *             |
  *  ========= */
-if (!localStorage.getItem('theme')) {
-    localStorage.setItem('theme', 'dark');
+
+function loadTheme() {
+    if (!localStorage.getItem('theme')) {
+        localStorage.setItem('theme', 'dark');
+    }
+    setTheme(localStorage.getItem('theme')) //load theme
 }
 
 function changeTheme() {
@@ -285,7 +289,6 @@ function setTheme(theme) {
         document.getElementById('change-theme-btn').classList.remove('fa-moon');
     }
 }
-setTheme(localStorage.getItem('theme')) //load theme
 
 /* ===========\
  *      2      | 
